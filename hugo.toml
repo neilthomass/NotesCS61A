@@ -1,6 +1,6 @@
 # hugo server --minify --themesDir ../.. --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
-#baseURL = 'https://example.com/'
+baseURL = 'https://neilthomass.github.io/cs61a/'
 title = 'CS61A NT'
 theme = 'hugo-book'
 
@@ -33,8 +33,6 @@ enableGitInfo = true
     url = "https://neilthomass.github.io"
     weight = 10
 
-
-
 [params]
   # (Optional, default light) Sets color theme: light, dark or auto.
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
@@ -57,8 +55,6 @@ enableGitInfo = true
   # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/
   # For backward compatibility you can set '*' to render all sections to menu. Acts same as '/'
   BookSection = 'docs'
-
-
 
   # (Optional, default 'commit') Specifies commit portion of the link to the page's last modified
   # commit hash for 'doc' page type.
