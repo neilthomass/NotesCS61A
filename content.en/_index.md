@@ -44,25 +44,3 @@ These notes are written from the perspective of someone who has gone through CS6
 Feel free to use these notes in whatever way helps you learn best. Whether you're looking for a quick reference, a detailed explanation, or just a different perspective, I hope you find these resources helpful in your CS61A journey.
 
 Happy coding!
-
-# CS61A Notes
-
-
-
-## How I would have taught myself CS61A
-
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
-
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
-
-## Locis suis novi cum suoque decidit eadem
-
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab
