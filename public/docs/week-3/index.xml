@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CS61A NT</title>
-    <link>http://localhost:1313/cs61a/docs/week-3/</link>
+    <link>https://neilthomass.github.io/cs61a/docs/week-3/</link>
     <description>Recent content on CS61A NT</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/cs61a/docs/week-3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://neilthomass.github.io/cs61a/docs/week-3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Decorators</title>
-      <link>http://localhost:1313/cs61a/docs/week-3/decorators/</link>
+      <link>https://neilthomass.github.io/cs61a/docs/week-3/decorators/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cs61a/docs/week-3/decorators/</guid>
+      <guid>https://neilthomass.github.io/cs61a/docs/week-3/decorators/</guid>
       <description>&lt;h1 id=&#34;decorators&#34;&gt;&#xA;  Decorators&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#decorators&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Python decorators allow you to wrap functions inside one another easily. These may not be seen that often in the CS61A course, but in general, are pretty good to know due to the simplicity that it has as well as the common usage of it in web frameworks such as Flask, or in larger codebases.&lt;/p&gt;&#xA;&lt;h2 id=&#34;example-usage&#34;&gt;&#xA;  Example Usage&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example-usage&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s take this trace function for example:&lt;/p&gt;&#xA;&lt;p&gt;It returns a function that takes a single argument which traces the inputs and outputs of each function.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Design</title>
-      <link>http://localhost:1313/cs61a/docs/week-3/design/</link>
+      <link>https://neilthomass.github.io/cs61a/docs/week-3/design/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cs61a/docs/week-3/design/</guid>
+      <guid>https://neilthomass.github.io/cs61a/docs/week-3/design/</guid>
       <description>&lt;h1 id=&#34;design&#34;&gt;&#xA;  Design&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#design&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;abstraction&#34;&gt;&#xA;  Abstraction&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#abstraction&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Abstraction (in a CS context) is broadly understood as extracting relevant information from other sources in order to simplify the codebase.&lt;/p&gt;&#xA;&lt;h3 id=&#34;abstraction-by-parameterization&#34;&gt;&#xA;  Abstraction by Parameterization&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#abstraction-by-parameterization&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;This is pretty much DRY (Don&amp;rsquo;t Repeat Yourself). Instead of hard-coding code that have similar structure, you could write a function that takes in parameters (arguments) which can be used to do the same thing. (Taken from CS61A Fall 2021 Design Slides)&lt;/p&gt;</description>
     </item>
   </channel>

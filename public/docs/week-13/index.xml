@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CS61A NT</title>
-    <link>http://localhost:1313/cs61a/docs/week-13/</link>
+    <link>https://neilthomass.github.io/cs61a/docs/week-13/</link>
     <description>Recent content on CS61A NT</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/cs61a/docs/week-13/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://neilthomass.github.io/cs61a/docs/week-13/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/cs61a/docs/week-13/sql-intro/</link>
+      <link>https://neilthomass.github.io/cs61a/docs/week-13/sql-intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cs61a/docs/week-13/sql-intro/</guid>
+      <guid>https://neilthomass.github.io/cs61a/docs/week-13/sql-intro/</guid>
       <description>&lt;h1 id=&#34;introduction-to-sql&#34;&gt;&#xA;  Introduction to SQL&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-sql&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;SQL (Structured Query Language) is a powerful language used for managing and manipulating relational databases. It allows us to create, read, update, and delete data in a structured way.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic-concepts&#34;&gt;&#xA;  Basic Concepts&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#basic-concepts&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;tables&#34;&gt;&#xA;  Tables&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tables&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Tables are the fundamental structure in SQL databases. They consist of:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Columns (attributes)&lt;/li&gt;&#xA;&lt;li&gt;Rows (records)&lt;/li&gt;&#xA;&lt;li&gt;Primary keys (unique identifiers)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Example table structure:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; students (&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    id INTEGER &lt;span style=&#34;color:#66d9ef&#34;&gt;PRIMARY&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;KEY&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name TEXT &lt;span style=&#34;color:#66d9ef&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;NULL&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    major TEXT,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gpa FLOAT&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;basic-operations&#34;&gt;&#xA;  Basic Operations&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#basic-operations&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;h4 id=&#34;select&#34;&gt;&#xA;  SELECT&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#select&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;p&gt;The most common operation to retrieve data:&lt;/p&gt;</description>
     </item>
   </channel>
