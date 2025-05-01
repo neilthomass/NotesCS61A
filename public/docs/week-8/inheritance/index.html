@@ -1,4 +1,9 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   Inheritance
   #
 
@@ -12,90 +17,933 @@ class Animal:
         self.times_fed = 0
 
     def feed(self, food):
-        self.food = self.food + [food]
-        self.times_fed += 1
-        self.energy += 10
+        self.food = self.food &#43; [food]
+        self.times_fed &#43;= 1
+        self.energy &#43;= 10
 
     def play(self):
-        if energy <= 20:
-            return "Not Enough Energy"
+        if energy &lt;= 20:
+            return &#34;Not Enough Energy&#34;
         self.energy -= 20
         self.is_happy = True # Creates new instance variable
-        return f"{self.name} has {self.energy} energy."
+        return f&#34;{self.name} has {self.energy} energy.&#34;
 
-my_cat = Animal("Sochi")
-my_cat.feed("Tuna")
-Instead of making my_cat an instance of the Animal class, we could instead create a Cat class that inherits from the Animal class - meaning that it contains the same class, methods, and instance variables as the Animal class (which can then be overridden).'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-8/inheritance/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Inheritance"><meta property="og:description" content='Inheritance # Inheritance is a powerful tool that is very often used to reduce redundant code. If you have more specific versions of a larger class, inheritance can be extremely useful. Using our Animal class from the Objects notes, we can use all its general attributes, but then add more specific classes.
-class Animal: default_food = [] def __init__(self, name, energy = 100): self.name = name self.food = self.default_food[:] self.energy = energy self.times_fed = 0 def feed(self, food): self.food = self.food + [food] self.times_fed += 1 self.energy += 10 def play(self): if energy <= 20: return "Not Enough Energy" self.energy -= 20 self.is_happy = True # Creates new instance variable return f"{self.name} has {self.energy} energy." my_cat = Animal("Sochi") my_cat.feed("Tuna") Instead of making my_cat an instance of the Animal class, we could instead create a Cat class that inherits from the Animal class - meaning that it contains the same class, methods, and instance variables as the Animal class (which can then be overridden).'><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Inheritance | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-8/inheritance/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/ class=active>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Inheritance</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#inheritance>Inheritance</a><ul><li><a href=#example-of-inheritance>Example of Inheritance</a></li><li><a href=#the-super-function>The super() Function</a></li><li><a href=#use-cases>Use Cases</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=inheritance>Inheritance
-<a class=anchor href=#inheritance>#</a></h1><p>Inheritance is a powerful tool that is very often used to reduce redundant code. If you have more specific versions of a larger class, inheritance can be extremely useful. Using our Animal class from the Objects notes, we can use all its general attributes, but then add more specific classes.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Animal</span>:
-</span></span><span style=display:flex><span>    default_food <span style=color:#f92672>=</span> []
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, name, energy <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>):
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>food <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>default_food[:]
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>energy <span style=color:#f92672>=</span> energy
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>times_fed <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>feed</span>(self, food):
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>food <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>food <span style=color:#f92672>+</span> [food]
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>times_fed <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>energy <span style=color:#f92672>+=</span> <span style=color:#ae81ff>10</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>play</span>(self):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> energy <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>20</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Not Enough Energy&#34;</span>
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>energy <span style=color:#f92672>-=</span> <span style=color:#ae81ff>20</span>
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>is_happy <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span> <span style=color:#75715e># Creates new instance variable</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74> has </span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>energy<span style=color:#e6db74>}</span><span style=color:#e6db74> energy.&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>my_cat <span style=color:#f92672>=</span> Animal(<span style=color:#e6db74>&#34;Sochi&#34;</span>)
-</span></span><span style=display:flex><span>my_cat<span style=color:#f92672>.</span>feed(<span style=color:#e6db74>&#34;Tuna&#34;</span>)
-</span></span></code></pre></div><p>Instead of making my_cat an instance of the Animal class, we could instead create a Cat class that inherits from the Animal class - meaning that it contains the same class, methods, and instance variables as the Animal class (which can then be overridden).</p><p>The syntax for creating a class inherited from another class is shown below:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cat</span>(Animal):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pass</span>
-</span></span></code></pre></div><p>Right now, this will create a new Cat class pointing towards the Animal class we&rsquo;ve already created, meaning that it can also access the class attributes/variables alongside the methods of the Animal class.</p><h2 id=example-of-inheritance>Example of Inheritance
-<a class=anchor href=#example-of-inheritance>#</a></h2><p>In the image above, we can see the Cat class we created pointing towards the Animal class, meaning that in terms of our lookup order, we first look to see if something exists in the instance, then Cat, then Animal.</p><p>For example, let&rsquo;s edit our Cat class a bit, so it has a use, then create an instance:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cat</span>(Animal):
-</span></span><span style=display:flex><span>    default_food <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Tuna&#34;</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>sochi <span style=color:#f92672>=</span> Cat(<span style=color:#e6db74>&#34;Sochi&#34;</span>)
-</span></span></code></pre></div><p>When <code>sochi = Cat("Sochi")</code> is called, it first looks for an <code>__init__</code> method in its own class (Cat), which doesn&rsquo;t exist, so it looks up to its parent (Animal) for an <code>__init__</code>, which is found, so that <code>__init__</code> method is used. If there is no <code>__init__</code> method in the lookup, that method will simply not be called.</p><p>As a result of that, we get the following diagram (in this case, the <code>__init__</code> method is called from class Animal as that is the highest level where an <code>__init__</code> is defined):</p><pre tabindex=0><code>Cat → Animal
+my_cat = Animal(&#34;Sochi&#34;)
+my_cat.feed(&#34;Tuna&#34;)
+Instead of making my_cat an instance of the Animal class, we could instead create a Cat class that inherits from the Animal class - meaning that it contains the same class, methods, and instance variables as the Animal class (which can then be overridden).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-8/inheritance/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="Inheritance">
+  <meta property="og:description" content="Inheritance # Inheritance is a powerful tool that is very often used to reduce redundant code. If you have more specific versions of a larger class, inheritance can be extremely useful. Using our Animal class from the Objects notes, we can use all its general attributes, but then add more specific classes.
+class Animal: default_food = [] def __init__(self, name, energy = 100): self.name = name self.food = self.default_food[:] self.energy = energy self.times_fed = 0 def feed(self, food): self.food = self.food &#43; [food] self.times_fed &#43;= 1 self.energy &#43;= 10 def play(self): if energy &lt;= 20: return &#34;Not Enough Energy&#34; self.energy -= 20 self.is_happy = True # Creates new instance variable return f&#34;{self.name} has {self.energy} energy.&#34; my_cat = Animal(&#34;Sochi&#34;) my_cat.feed(&#34;Tuna&#34;) Instead of making my_cat an instance of the Animal class, we could instead create a Cat class that inherits from the Animal class - meaning that it contains the same class, methods, and instance variables as the Animal class (which can then be overridden).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>Inheritance | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-8/inheritance/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="active">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Inheritance</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#inheritance">Inheritance</a>
+      <ul>
+        <li><a href="#example-of-inheritance">Example of Inheritance</a></li>
+        <li><a href="#the-super-function">The super() Function</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="inheritance">
+  Inheritance
+  <a class="anchor" href="#inheritance">#</a>
+</h1>
+<p>Inheritance is a powerful tool that is very often used to reduce redundant code. If you have more specific versions of a larger class, inheritance can be extremely useful. Using our Animal class from the Objects notes, we can use all its general attributes, but then add more specific classes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>:
+</span></span><span style="display:flex;"><span>    default_food <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, energy <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>food <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>default_food[:]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>energy <span style="color:#f92672">=</span> energy
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>times_fed <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feed</span>(self, food):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>food <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>food <span style="color:#f92672">+</span> [food]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>times_fed <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>energy <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">play</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> energy <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">20</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Not Enough Energy&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>energy <span style="color:#f92672">-=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>is_happy <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span> <span style="color:#75715e"># Creates new instance variable</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> has </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>energy<span style="color:#e6db74">}</span><span style="color:#e6db74"> energy.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_cat <span style="color:#f92672">=</span> Animal(<span style="color:#e6db74">&#34;Sochi&#34;</span>)
+</span></span><span style="display:flex;"><span>my_cat<span style="color:#f92672">.</span>feed(<span style="color:#e6db74">&#34;Tuna&#34;</span>)
+</span></span></code></pre></div><p>Instead of making my_cat an instance of the Animal class, we could instead create a Cat class that inherits from the Animal class - meaning that it contains the same class, methods, and instance variables as the Animal class (which can then be overridden).</p>
+<p>The syntax for creating a class inherited from another class is shown below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span>(Animal):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><p>Right now, this will create a new Cat class pointing towards the Animal class we&rsquo;ve already created, meaning that it can also access the class attributes/variables alongside the methods of the Animal class.</p>
+<h2 id="example-of-inheritance">
+  Example of Inheritance
+  <a class="anchor" href="#example-of-inheritance">#</a>
+</h2>
+<p>In the image above, we can see the Cat class we created pointing towards the Animal class, meaning that in terms of our lookup order, we first look to see if something exists in the instance, then Cat, then Animal.</p>
+<p>For example, let&rsquo;s edit our Cat class a bit, so it has a use, then create an instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span>(Animal):
+</span></span><span style="display:flex;"><span>    default_food <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Tuna&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sochi <span style="color:#f92672">=</span> Cat(<span style="color:#e6db74">&#34;Sochi&#34;</span>)
+</span></span></code></pre></div><p>When <code>sochi = Cat(&quot;Sochi&quot;)</code> is called, it first looks for an <code>__init__</code> method in its own class (Cat), which doesn&rsquo;t exist, so it looks up to its parent (Animal) for an <code>__init__</code>, which is found, so that <code>__init__</code> method is used. If there is no <code>__init__</code> method in the lookup, that method will simply not be called.</p>
+<p>As a result of that, we get the following diagram (in this case, the <code>__init__</code> method is called from class Animal as that is the highest level where an <code>__init__</code> is defined):</p>
+<pre tabindex="0"><code>Cat → Animal
 +--------+  +------------------+
 |default_|  | default_food = []|
 |food =  |  | __init__()      |
 |[&#34;Tuna&#34;]|  | feed()          |
 +--------+  | play()          |
             +------------------+
-</code></pre><p>When looking for <code>self.default_food[:]</code>, default_food from the Cat class is taken, because the created instance first looks to see if there is a default_food already located in the instance (it doesn&rsquo;t), then looks to where the arrow is pointing, which is the Cat class, then looks for default_food, which is then found.</p><p>Our current version of the Cat class doesn&rsquo;t really do much. We can override our default methods by simply redefining them in our new class. The lookup order will make it such that only our newly defined method will be called.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cat</span>(Animal):
-</span></span><span style=display:flex><span>    default_food <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Tuna&#34;</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>feed</span>(self, food):
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>food <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>food <span style=color:#f92672>+</span> [food]
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>times_fed <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>energy <span style=color:#f92672>+=</span> <span style=color:#ae81ff>10000</span>
-</span></span></code></pre></div><p>Now our current diagram looks like this. If we call <code>sochi.feed("apple")</code>, it will look at the feed method defined in Cat and then call it because it exists in that class.</p><h2 id=the-super-function>The super() Function
-<a class=anchor href=#the-super-function>#</a></h2><p>The <code>super()</code> function, at least in the scope of CS 61A, looks at its parent class.</p><p>This could be useful if you wanted to use a method of the parent class but add a few extra details. The <code>super()</code> function automatically passes in self.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cat</span>(Animal):
-</span></span><span style=display:flex><span>    default_food <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Tuna&#34;</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, name, energy <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>):
-</span></span><span style=display:flex><span>        super()<span style=color:#f92672>.</span>__init__(name, energy) <span style=color:#75715e># will automatically define instance variables from the Animal class</span>
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>is_very_cute <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>feed</span>(self, food):
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>food <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>food <span style=color:#f92672>+</span> [food]
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>times_fed <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>energy <span style=color:#f92672>+=</span> <span style=color:#ae81ff>10000</span>
-</span></span></code></pre></div><p>Now, looking at our diagrams, we have the following:</p><pre tabindex=0><code>Cat → Animal
+</code></pre><p>When looking for <code>self.default_food[:]</code>, default_food from the Cat class is taken, because the created instance first looks to see if there is a default_food already located in the instance (it doesn&rsquo;t), then looks to where the arrow is pointing, which is the Cat class, then looks for default_food, which is then found.</p>
+<p>Our current version of the Cat class doesn&rsquo;t really do much. We can override our default methods by simply redefining them in our new class. The lookup order will make it such that only our newly defined method will be called.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span>(Animal):
+</span></span><span style="display:flex;"><span>    default_food <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Tuna&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feed</span>(self, food):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>food <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>food <span style="color:#f92672">+</span> [food]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>times_fed <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>energy <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10000</span>
+</span></span></code></pre></div><p>Now our current diagram looks like this. If we call <code>sochi.feed(&quot;apple&quot;)</code>, it will look at the feed method defined in Cat and then call it because it exists in that class.</p>
+<h2 id="the-super-function">
+  The super() Function
+  <a class="anchor" href="#the-super-function">#</a>
+</h2>
+<p>The <code>super()</code> function, at least in the scope of CS 61A, looks at its parent class.</p>
+<p>This could be useful if you wanted to use a method of the parent class but add a few extra details. The <code>super()</code> function automatically passes in self.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span>(Animal):
+</span></span><span style="display:flex;"><span>    default_food <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Tuna&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, energy <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(name, energy) <span style="color:#75715e"># will automatically define instance variables from the Animal class</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>is_very_cute <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">feed</span>(self, food):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>food <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>food <span style="color:#f92672">+</span> [food]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>times_fed <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>energy <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10000</span>
+</span></span></code></pre></div><p>Now, looking at our diagrams, we have the following:</p>
+<pre tabindex="0"><code>Cat → Animal
 +--------+  +------------------+
 |default_|  | default_food = []|
 |food =  |  | __init__()      |
 |[&#34;Tuna&#34;]|  | feed()          |
 |feed()  |  | play()          |
 +--------+  +------------------+
-</code></pre><p>If we then create an instance of our newly created Cat class, we will do the following:</p><p>First, create our instance and find whether an <code>__init__</code> exists:</p><pre tabindex=0><code>sochi → (○) Instance
+</code></pre><p>If we then create an instance of our newly created Cat class, we will do the following:</p>
+<p>First, create our instance and find whether an <code>__init__</code> exists:</p>
+<pre tabindex="0"><code>sochi → (○) Instance
          name: &#34;Sochi&#34;
          food: [&#34;Tuna&#34;]
          energy: 100
          times_fed: 0
          is_very_cute: True
-</code></pre><p>Then, if it does exist, we execute it.</p><h2 id=use-cases>Use Cases
-<a class=anchor href=#use-cases>#</a></h2><p>Explicit examples will not be given here because they should not be necessary. You can imagine the world of possibilities that you can do with classes and inheritance! Try thinking of how you would make a card game using OOP. Doing that will reduce A LOT of redundant code and make writing this card game easy. In fact, you might see this sort of thing show up in lab questions (alongside the Ants project).</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#inheritance>Inheritance</a><ul><li><a href=#example-of-inheritance>Example of Inheritance</a></li><li><a href=#the-super-function>The super() Function</a></li><li><a href=#use-cases>Use Cases</a></li></ul></li></ul></nav></div></aside></main></body></html>
+</code></pre><p>Then, if it does exist, we execute it.</p>
+<h2 id="use-cases">
+  Use Cases
+  <a class="anchor" href="#use-cases">#</a>
+</h2>
+<p>Explicit examples will not be given here because they should not be necessary. You can imagine the world of possibilities that you can do with classes and inheritance! Try thinking of how you would make a card game using OOP. Doing that will reduce A LOT of redundant code and make writing this card game easy. In fact, you might see this sort of thing show up in lab questions (alongside the Ants project).</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#inheritance">Inheritance</a>
+      <ul>
+        <li><a href="#example-of-inheritance">Example of Inheritance</a></li>
+        <li><a href="#the-super-function">The super() Function</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

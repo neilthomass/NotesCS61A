@@ -1,4 +1,9 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   Higher Order Functions
   #
 
@@ -36,62 +41,990 @@
   Don&rsquo;t Repeat Yourself!
   #
 
-When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-2/higher-order-functions/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Higher Order Functions"><meta property="og:description" content="Higher Order Functions # Designing Functions # Describing Functions # Aspect Example The domain of a function is the expected range of inputs (similarly to a domain in mathematics) x is a string The range of a function is the set of output values that could be returned Function square returns a non-negative number The behavior of a (pure) function is the relationship between the input and the output Function square returns the square of an input x Don’t Repeat Yourself! # When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Higher Order Functions | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-2/higher-order-functions/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/ class=active>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Higher Order Functions</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#higher-order-functions>Higher Order Functions</a><ul><li><a href=#designing-functions>Designing Functions</a><ul><li><a href=#describing-functions>Describing Functions</a></li></ul></li><li><a href=#dont-repeat-yourself>Don&rsquo;t Repeat Yourself!</a></li><li><a href=#generalization>Generalization</a></li><li><a href=#higher-order-functions-1>Higher-order Functions</a><ul><li><a href=#functions-as-arguments>Functions as Arguments</a></li><li><a href=#functions-as-return-values>Functions as Return Values</a></li><li><a href=#call-expressions-as-operator-expressions>Call Expressions as operator expressions</a></li></ul></li><li><a href=#lambda-expressions>Lambda Expressions</a></li><li><a href=#conditional-expressions>Conditional Expressions</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=higher-order-functions>Higher Order Functions
-<a class=anchor href=#higher-order-functions>#</a></h1><h2 id=designing-functions>Designing Functions
-<a class=anchor href=#designing-functions>#</a></h2><h3 id=describing-functions>Describing Functions
-<a class=anchor href=#describing-functions>#</a></h3><table><thead><tr><th>Aspect</th><th>Example</th></tr></thead><tbody><tr><td>The domain of a function is the expected range of inputs (similarly to a domain in mathematics)</td><td>x is a string</td></tr><tr><td>The range of a function is the set of output values that could be returned</td><td>Function square returns a non-negative number</td></tr><tr><td>The behavior of a (pure) function is the relationship between the input and the output</td><td>Function square returns the square of an input x</td></tr></tbody></table><h2 id=dont-repeat-yourself>Don&rsquo;t Repeat Yourself!
-<a class=anchor href=#dont-repeat-yourself>#</a></h2><p>When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write.</p><h2 id=generalization>Generalization
-<a class=anchor href=#generalization>#</a></h2><p>If you see a common structure, you can refactor your code to move the redundant code to a function and call that instead.</p><p>For example, if we take this code block below:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>print_ben_if_positive</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;ben&#34;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>print_ben_if_positive</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;tao&#34;</span>)
-</span></span></code></pre></div><p>We can see that the if statement is duplicated, so we can take that logic to another function instead, removing redundant code.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>positive_print</span>(number, message):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> number <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        print(message)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>positive_print(n, <span style=color:#e6db74>&#34;ben&#34;</span>)
-</span></span><span style=display:flex><span>positive_print(n, <span style=color:#e6db74>&#34;tao&#34;</span>)
-</span></span></code></pre></div><h2 id=higher-order-functions-1>Higher-order Functions
-<a class=anchor href=#higher-order-functions-1>#</a></h2><p>A higher-order function is a function that takes another function as an argument, or returns a function as its result.</p><h3 id=functions-as-arguments>Functions as Arguments
-<a class=anchor href=#functions-as-arguments>#</a></h3><p>A function can take another function as an argument.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> operator <span style=color:#f92672>import</span> add, sub
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>function_in_function</span>(adding_function, x, y):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> adding_function(x, y)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>function_in_function(add, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>) <span style=color:#75715e># &gt;&gt;&gt; 5</span>
-</span></span><span style=display:flex><span>function_in_function(sub, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>) <span style=color:#75715e># &gt;&gt;&gt; 1</span>
-</span></span></code></pre></div><p>In the example above, we passed the <code>add</code> and <code>sub</code> functions to the function <code>function_in_function</code>. This is an example of a higher order function.</p><p>Note that in the call functions themselves, <code>add</code> and <code>sub</code> were called rather than <code>add()</code> and <code>sub()</code>. This is because of how call functions are evaluated. Running <code>add()</code> directly will make the Python interpreter try to evaluate the function itself with no parameters, which would not work, while simply typing <code>add</code> will allow <code>function_in_function</code> to evaluate <code>add()</code> with the proper parameters.</p><h3 id=functions-as-return-values>Functions as Return Values
-<a class=anchor href=#functions-as-return-values>#</a></h3><p>Another way to have a higher order function is to return a function.</p><p>Functions created in other functions are bound to names in their local frame, allowing for cleaner naming when creating function calls. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_adder</span>(magnitude):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>adder</span>(n):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> n <span style=color:#f92672>+</span> magnitude
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> adder
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>add_two <span style=color:#f92672>=</span> make_adder(<span style=color:#ae81ff>2</span>)
-</span></span><span style=display:flex><span>add_three <span style=color:#f92672>=</span> make_adder(<span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(add_two(<span style=color:#ae81ff>2</span>), add_three(<span style=color:#ae81ff>2</span>)) <span style=color:#75715e># &gt;&gt;&gt; 4 5</span>
-</span></span></code></pre></div><p>While the example above may not have much practical use, it shows the process of returning a function within a function, making this another higher order function. Take your time to digest how the above two examples work. This will be harder to conceptualize at the beginning.</p><h3 id=call-expressions-as-operator-expressions>Call Expressions as operator expressions
-<a class=anchor href=#call-expressions-as-operator-expressions>#</a></h3><p>You can run a function like <code>make_adder(2)(3)</code> which will return 5. Why is that? Let&rsquo;s look at how the call function order works.</p><ol><li><code>make_adder(2)</code> is first evaluated, which returns a function <code>adder</code> similarly to the function above.</li><li>Due to <code>adder</code> being returned from the operator, the final statement will end up being <code>adder(3)</code>, leading to 5 being the final output</li></ol><h2 id=lambda-expressions>Lambda Expressions
-<a class=anchor href=#lambda-expressions>#</a></h2><p>Lambda expressions pretty much work the same way as regular functions, other than the fact that these functions are anonymous - they do not have a name assigned to it.</p><p>The syntax looks like the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>lambda</span> <span style=color:#f92672>&lt;</span>parameters<span style=color:#f92672>&gt;</span>: <span style=color:#f92672>&lt;</span>expression<span style=color:#f92672>&gt;</span>
-</span></span></code></pre></div><p>For instance:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>double <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> x: y<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>double(<span style=color:#ae81ff>3</span>) <span style=color:#75715e># &gt;&gt;&gt; 6</span>
-</span></span></code></pre></div><p>While this may not seem very useful in this context, there are quite a few uses for it. The main idea is that lambda functions are better suited for functions that you want to access in the short term, or only access once.</p><p>A lambda function does not contain any statements at all, including if statements and return statements.</p><p>For instance, instead of doing:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> operator <span style=color:#f92672>import</span> add
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>square</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>add(<span style=color:#ae81ff>2</span>, square(<span style=color:#ae81ff>2</span>))
-</span></span></code></pre></div><p>You can do the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> operator <span style=color:#f92672>import</span> add
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>add(<span style=color:#ae81ff>2</span>, <span style=color:#66d9ef>lambda</span> x: x<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>)
-</span></span></code></pre></div><h2 id=conditional-expressions>Conditional Expressions
-<a class=anchor href=#conditional-expressions>#</a></h2><p>lambda functions not allowing statements can be quite limiting, but that is where conditional expressions come in.</p><p>A conditional expression has a form that almost reads like English:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&lt;</span>do this (true)<span style=color:#f92672>&gt;</span> <span style=color:#66d9ef>if</span> <span style=color:#f92672>&lt;</span>condition<span style=color:#f92672>&gt;</span> <span style=color:#66d9ef>else</span> <span style=color:#f92672>&lt;</span>do this (false)<span style=color:#f92672>&gt;</span>
-</span></span></code></pre></div><p>This may be strange if you&rsquo;re used to ternary operators in other languages (for example JavaScript) as the order of reading the Python statement may be a bit strange.</p><p>However, the operation order is the following:</p><ol><li>Check the truthiness of <code>&lt;condition></code></li><li>If true, evaluate <code>&lt;do this (true)></code></li><li>Else, evaluate <code>&lt;do this (false)></code></li></ol><p>In conjunction with lambda functions, you can do the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>lambda</span> x: x <span style=color:#66d9ef>if</span> x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> <span style=color:#ae81ff>0</span>
-</span></span></code></pre></div><p>The code block above returns the input if it is positive, else returns 0.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#higher-order-functions>Higher Order Functions</a><ul><li><a href=#designing-functions>Designing Functions</a><ul><li><a href=#describing-functions>Describing Functions</a></li></ul></li><li><a href=#dont-repeat-yourself>Don&rsquo;t Repeat Yourself!</a></li><li><a href=#generalization>Generalization</a></li><li><a href=#higher-order-functions-1>Higher-order Functions</a><ul><li><a href=#functions-as-arguments>Functions as Arguments</a></li><li><a href=#functions-as-return-values>Functions as Return Values</a></li><li><a href=#call-expressions-as-operator-expressions>Call Expressions as operator expressions</a></li></ul></li><li><a href=#lambda-expressions>Lambda Expressions</a></li><li><a href=#conditional-expressions>Conditional Expressions</a></li></ul></li></ul></nav></div></aside></main></body></html>
+When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-2/higher-order-functions/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="Higher Order Functions">
+  <meta property="og:description" content="Higher Order Functions # Designing Functions # Describing Functions # Aspect Example The domain of a function is the expected range of inputs (similarly to a domain in mathematics) x is a string The range of a function is the set of output values that could be returned Function square returns a non-negative number The behavior of a (pure) function is the relationship between the input and the output Function square returns the square of an input x Don’t Repeat Yourself! # When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>Higher Order Functions | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-2/higher-order-functions/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="active">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Higher Order Functions</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#higher-order-functions">Higher Order Functions</a>
+      <ul>
+        <li><a href="#designing-functions">Designing Functions</a>
+          <ul>
+            <li><a href="#describing-functions">Describing Functions</a></li>
+          </ul>
+        </li>
+        <li><a href="#dont-repeat-yourself">Don&rsquo;t Repeat Yourself!</a></li>
+        <li><a href="#generalization">Generalization</a></li>
+        <li><a href="#higher-order-functions-1">Higher-order Functions</a>
+          <ul>
+            <li><a href="#functions-as-arguments">Functions as Arguments</a></li>
+            <li><a href="#functions-as-return-values">Functions as Return Values</a></li>
+            <li><a href="#call-expressions-as-operator-expressions">Call Expressions as operator expressions</a></li>
+          </ul>
+        </li>
+        <li><a href="#lambda-expressions">Lambda Expressions</a></li>
+        <li><a href="#conditional-expressions">Conditional Expressions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="higher-order-functions">
+  Higher Order Functions
+  <a class="anchor" href="#higher-order-functions">#</a>
+</h1>
+<h2 id="designing-functions">
+  Designing Functions
+  <a class="anchor" href="#designing-functions">#</a>
+</h2>
+<h3 id="describing-functions">
+  Describing Functions
+  <a class="anchor" href="#describing-functions">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>The domain of a function is the expected range of inputs (similarly to a domain in mathematics)</td>
+          <td>x is a string</td>
+      </tr>
+      <tr>
+          <td>The range of a function is the set of output values that could be returned</td>
+          <td>Function square returns a non-negative number</td>
+      </tr>
+      <tr>
+          <td>The behavior of a (pure) function is the relationship between the input and the output</td>
+          <td>Function square returns the square of an input x</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="dont-repeat-yourself">
+  Don&rsquo;t Repeat Yourself!
+  <a class="anchor" href="#dont-repeat-yourself">#</a>
+</h2>
+<p>When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write.</p>
+<h2 id="generalization">
+  Generalization
+  <a class="anchor" href="#generalization">#</a>
+</h2>
+<p>If you see a common structure, you can refactor your code to move the redundant code to a function and call that instead.</p>
+<p>For example, if we take this code block below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_ben_if_positive</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;ben&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_ben_if_positive</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;tao&#34;</span>)
+</span></span></code></pre></div><p>We can see that the if statement is duplicated, so we can take that logic to another function instead, removing redundant code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">positive_print</span>(number, message):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> number <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        print(message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>positive_print(n, <span style="color:#e6db74">&#34;ben&#34;</span>)
+</span></span><span style="display:flex;"><span>positive_print(n, <span style="color:#e6db74">&#34;tao&#34;</span>)
+</span></span></code></pre></div><h2 id="higher-order-functions-1">
+  Higher-order Functions
+  <a class="anchor" href="#higher-order-functions-1">#</a>
+</h2>
+<p>A higher-order function is a function that takes another function as an argument, or returns a function as its result.</p>
+<h3 id="functions-as-arguments">
+  Functions as Arguments
+  <a class="anchor" href="#functions-as-arguments">#</a>
+</h3>
+<p>A function can take another function as an argument.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> add, sub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">function_in_function</span>(adding_function, x, y):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> adding_function(x, y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>function_in_function(add, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># &gt;&gt;&gt; 5</span>
+</span></span><span style="display:flex;"><span>function_in_function(sub, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># &gt;&gt;&gt; 1</span>
+</span></span></code></pre></div><p>In the example above, we passed the <code>add</code> and <code>sub</code> functions to the function <code>function_in_function</code>. This is an example of a higher order function.</p>
+<p>Note that in the call functions themselves, <code>add</code> and <code>sub</code> were called rather than <code>add()</code> and <code>sub()</code>. This is because of how call functions are evaluated. Running <code>add()</code> directly will make the Python interpreter try to evaluate the function itself with no parameters, which would not work, while simply typing <code>add</code> will allow <code>function_in_function</code> to evaluate <code>add()</code> with the proper parameters.</p>
+<h3 id="functions-as-return-values">
+  Functions as Return Values
+  <a class="anchor" href="#functions-as-return-values">#</a>
+</h3>
+<p>Another way to have a higher order function is to return a function.</p>
+<p>Functions created in other functions are bound to names in their local frame, allowing for cleaner naming when creating function calls. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_adder</span>(magnitude):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">adder</span>(n):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n <span style="color:#f92672">+</span> magnitude
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> adder
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add_two <span style="color:#f92672">=</span> make_adder(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>add_three <span style="color:#f92672">=</span> make_adder(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(add_two(<span style="color:#ae81ff">2</span>), add_three(<span style="color:#ae81ff">2</span>)) <span style="color:#75715e"># &gt;&gt;&gt; 4 5</span>
+</span></span></code></pre></div><p>While the example above may not have much practical use, it shows the process of returning a function within a function, making this another higher order function. Take your time to digest how the above two examples work. This will be harder to conceptualize at the beginning.</p>
+<h3 id="call-expressions-as-operator-expressions">
+  Call Expressions as operator expressions
+  <a class="anchor" href="#call-expressions-as-operator-expressions">#</a>
+</h3>
+<p>You can run a function like <code>make_adder(2)(3)</code> which will return 5. Why is that? Let&rsquo;s look at how the call function order works.</p>
+<ol>
+<li><code>make_adder(2)</code> is first evaluated, which returns a function <code>adder</code> similarly to the function above.</li>
+<li>Due to <code>adder</code> being returned from the operator, the final statement will end up being <code>adder(3)</code>, leading to 5 being the final output</li>
+</ol>
+<h2 id="lambda-expressions">
+  Lambda Expressions
+  <a class="anchor" href="#lambda-expressions">#</a>
+</h2>
+<p>Lambda expressions pretty much work the same way as regular functions, other than the fact that these functions are anonymous - they do not have a name assigned to it.</p>
+<p>The syntax looks like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">lambda</span> <span style="color:#f92672">&lt;</span>parameters<span style="color:#f92672">&gt;</span>: <span style="color:#f92672">&lt;</span>expression<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>double <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: y<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>double(<span style="color:#ae81ff">3</span>) <span style="color:#75715e"># &gt;&gt;&gt; 6</span>
+</span></span></code></pre></div><p>While this may not seem very useful in this context, there are quite a few uses for it. The main idea is that lambda functions are better suited for functions that you want to access in the short term, or only access once.</p>
+<p>A lambda function does not contain any statements at all, including if statements and return statements.</p>
+<p>For instance, instead of doing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> add
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">square</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add(<span style="color:#ae81ff">2</span>, square(<span style="color:#ae81ff">2</span>))
+</span></span></code></pre></div><p>You can do the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> add
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add(<span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><h2 id="conditional-expressions">
+  Conditional Expressions
+  <a class="anchor" href="#conditional-expressions">#</a>
+</h2>
+<p>lambda functions not allowing statements can be quite limiting, but that is where conditional expressions come in.</p>
+<p>A conditional expression has a form that almost reads like English:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>do this (true)<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">&lt;</span>do this (false)<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>This may be strange if you&rsquo;re used to ternary operators in other languages (for example JavaScript) as the order of reading the Python statement may be a bit strange.</p>
+<p>However, the operation order is the following:</p>
+<ol>
+<li>Check the truthiness of <code>&lt;condition&gt;</code></li>
+<li>If true, evaluate <code>&lt;do this (true)&gt;</code></li>
+<li>Else, evaluate <code>&lt;do this (false)&gt;</code></li>
+</ol>
+<p>In conjunction with lambda functions, you can do the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">lambda</span> x: x <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>The code block above returns the input if it is positive, else returns 0.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#higher-order-functions">Higher Order Functions</a>
+      <ul>
+        <li><a href="#designing-functions">Designing Functions</a>
+          <ul>
+            <li><a href="#describing-functions">Describing Functions</a></li>
+          </ul>
+        </li>
+        <li><a href="#dont-repeat-yourself">Don&rsquo;t Repeat Yourself!</a></li>
+        <li><a href="#generalization">Generalization</a></li>
+        <li><a href="#higher-order-functions-1">Higher-order Functions</a>
+          <ul>
+            <li><a href="#functions-as-arguments">Functions as Arguments</a></li>
+            <li><a href="#functions-as-return-values">Functions as Return Values</a></li>
+            <li><a href="#call-expressions-as-operator-expressions">Call Expressions as operator expressions</a></li>
+          </ul>
+        </li>
+        <li><a href="#lambda-expressions">Lambda Expressions</a></li>
+        <li><a href="#conditional-expressions">Conditional Expressions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

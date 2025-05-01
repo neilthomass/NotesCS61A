@@ -1,4 +1,9 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   Scheme Specification
   #
 
@@ -29,57 +34,1126 @@ Symbols evaluate to their bound values in the environment
   Call Expressions
   #
 
-Most combinations are evaluated as call expressions with three steps:"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-11/scheme/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Scheme Specification"><meta property="og:description" content="Scheme Specification # This document describes the variant of Scheme used in CS61A, which is closest to R5RS with some modifications for educational purposes.
-Overview and Terminology # Expressions and Environments # Every expression evaluates to a value Some expressions are self-evaluating (numbers, booleans, strings, nil) Frames map symbols to values with optional parent frames Environment lookup follows the chain of parent frames Atomic Expressions # Numbers, booleans, strings, and nil are self-evaluating Symbols evaluate to their bound values in the environment Call Expressions # Most combinations are evaluated as call expressions with three steps:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Scheme Specification | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-11/scheme/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/ class=active>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Scheme Specification</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#scheme-specification>Scheme Specification</a><ul><li><a href=#overview-and-terminology>Overview and Terminology</a><ul><li><a href=#expressions-and-environments>Expressions and Environments</a></li><li><a href=#atomic-expressions>Atomic Expressions</a></li><li><a href=#call-expressions>Call Expressions</a></li><li><a href=#special-forms>Special Forms</a></li></ul></li><li><a href=#types-of-values>Types of Values</a><ul><li><a href=#numbers>Numbers</a></li><li><a href=#booleans>Booleans</a></li><li><a href=#symbols>Symbols</a></li><li><a href=#strings>Strings</a></li><li><a href=#pairs-and-lists>Pairs and Lists</a></li><li><a href=#procedures>Procedures</a></li><li><a href=#promises-and-streams>Promises and Streams</a></li></ul></li><li><a href=#special-forms-in-detail>Special Forms in Detail</a><ul><li><a href=#define>define</a></li><li><a href=#if>if</a></li><li><a href=#cond>cond</a></li><li><a href=#let>let</a></li><li><a href=#begin>begin</a></li><li><a href=#lambda>lambda</a></li><li><a href=#quote>quote</a></li><li><a href=#quasiquote>quasiquote</a></li><li><a href=#mu>mu</a></li><li><a href=#define-macro>define-macro</a></li></ul></li><li><a href=#best-practices>Best Practices</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=scheme-specification>Scheme Specification
-<a class=anchor href=#scheme-specification>#</a></h1><p>This document describes the variant of Scheme used in CS61A, which is closest to R5RS with some modifications for educational purposes.</p><h2 id=overview-and-terminology>Overview and Terminology
-<a class=anchor href=#overview-and-terminology>#</a></h2><h3 id=expressions-and-environments>Expressions and Environments
-<a class=anchor href=#expressions-and-environments>#</a></h3><ul><li>Every expression evaluates to a value</li><li>Some expressions are self-evaluating (numbers, booleans, strings, nil)</li><li>Frames map symbols to values with optional parent frames</li><li>Environment lookup follows the chain of parent frames</li></ul><h3 id=atomic-expressions>Atomic Expressions
-<a class=anchor href=#atomic-expressions>#</a></h3><ul><li>Numbers, booleans, strings, and nil are self-evaluating</li><li>Symbols evaluate to their bound values in the environment</li></ul><h3 id=call-expressions>Call Expressions
-<a class=anchor href=#call-expressions>#</a></h3><p>Most combinations are evaluated as call expressions with three steps:</p><ol><li>Evaluate the operator (must be a procedure)</li><li>Evaluate the operands in order</li><li>Apply the procedure to the evaluated arguments</li></ol><h3 id=special-forms>Special Forms
-<a class=anchor href=#special-forms>#</a></h3><p>Special forms have their own evaluation rules and are identified by keywords:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>if </span>&lt;predicate&gt; &lt;consequent&gt; [alternative])
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>cond </span>&lt;clause&gt; <span style=color:#f92672>...</span>)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>and </span>[test] <span style=color:#f92672>...</span>)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>or </span>[test] <span style=color:#f92672>...</span>)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>let </span>([binding] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>begin </span>&lt;expression&gt; <span style=color:#f92672>...</span>)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>lambda </span>([param] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>quote </span>&lt;expression&gt;)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>quasiquote </span>&lt;expression&gt;)
-</span></span><span style=display:flex><span>(<span style=color:#a6e22e>mu</span> ([param] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span><span style=display:flex><span>(<span style=color:#a6e22e>define-macro</span> (<span style=color:#a6e22e>&lt;name&gt;</span> [param] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><h2 id=types-of-values>Types of Values
-<a class=anchor href=#types-of-values>#</a></h2><h3 id=numbers>Numbers
-<a class=anchor href=#numbers>#</a></h3><ul><li>Built on Python&rsquo;s number types</li><li>Supports arbitrarily-large integers and double-precision floats</li><li>Case-insensitive (except in strings)</li></ul><h3 id=booleans>Booleans
-<a class=anchor href=#booleans>#</a></h3><ul><li>Two values: <code>#t</code> and <code>#f</code></li><li>Can be input as <code>true</code> or <code>false</code></li><li>Only <code>#f</code> is false in boolean contexts</li></ul><h3 id=symbols>Symbols
-<a class=anchor href=#symbols>#</a></h3><ul><li>Used as identifiers</li><li>Valid characters: alphanumeric and <code>!$%&*/:&lt;=>?@^_~+-.</code></li><li>Stored internally in lowercase</li><li>Cannot form valid numbers</li></ul><h3 id=strings>Strings
-<a class=anchor href=#strings>#</a></h3><ul><li>Atomic data type (no individual characters)</li><li>Immutable</li><li>Entered as characters inside double quotes</li><li>Limited string manipulation support</li></ul><h3 id=pairs-and-lists>Pairs and Lists
-<a class=anchor href=#pairs-and-lists>#</a></h3><ul><li>Pairs have <code>car</code> and <code>cdr</code> fields</li><li>Lists are either <code>nil</code> or pairs with list <code>cdr</code></li><li>Streams use promises in their <code>cdr</code></li><li>List literals can be constructed with <code>quote</code></li></ul><h3 id=procedures>Procedures
-<a class=anchor href=#procedures>#</a></h3><ul><li>First-class values</li><li>Types:<ul><li>Built-in procedures</li><li>Lambda procedures</li><li>Mu procedures</li><li>Macro procedures</li></ul></li></ul><h3 id=promises-and-streams>Promises and Streams
-<a class=anchor href=#promises-and-streams>#</a></h3><ul><li>Promises represent delayed evaluation</li><li>Created with <code>delay</code></li><li>Evaluated with <code>force</code></li><li>Streams are pairs with promise <code>cdr</code></li><li>Special forms: <code>cons-stream</code>, <code>cdr-stream</code></li></ul><h2 id=special-forms-in-detail>Special Forms in Detail
-<a class=anchor href=#special-forms-in-detail>#</a></h2><h3 id=define>define
-<a class=anchor href=#define>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>define </span>&lt;name&gt; &lt;expression&gt;)
-</span></span><span style=display:flex><span>(<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>&lt;name&gt;</span> [param] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><p>Binds values or creates procedures in the current environment.</p><h3 id=if>if
-<a class=anchor href=#if>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>if </span>&lt;predicate&gt; &lt;consequent&gt; [alternative])
-</span></span></code></pre></div><p>Conditional evaluation based on predicate.</p><h3 id=cond>cond
-<a class=anchor href=#cond>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>cond </span>&lt;clause&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><p>Multiple condition evaluation with optional else clause.</p><h3 id=let>let
-<a class=anchor href=#let>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>let </span>([binding] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><p>Creates new frame with bindings for body evaluation.</p><h3 id=begin>begin
-<a class=anchor href=#begin>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>begin </span>&lt;expression&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><p>Evaluates expressions in sequence, returns last value.</p><h3 id=lambda>lambda
-<a class=anchor href=#lambda>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>lambda </span>([param] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><p>Creates procedure with lexical scoping.</p><h3 id=quote>quote
-<a class=anchor href=#quote>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>quote </span>&lt;expression&gt;)
-</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&lt;expression&gt;</span>
-</span></span></code></pre></div><p>Returns unevaluated expression.</p><h3 id=quasiquote>quasiquote
-<a class=anchor href=#quasiquote>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>quasiquote </span>&lt;expression&gt;)
-</span></span><span style=display:flex><span><span style=color:#f92672>`</span>&lt;expression&gt;
-</span></span></code></pre></div><p>Returns unevaluated expression with selective evaluation.</p><h3 id=mu>mu
-<a class=anchor href=#mu>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#a6e22e>mu</span> ([param] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><p>Creates procedure with dynamic scoping.</p><h3 id=define-macro>define-macro
-<a class=anchor href=#define-macro>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#a6e22e>define-macro</span> (<span style=color:#a6e22e>&lt;name&gt;</span> [param] <span style=color:#f92672>...</span>) &lt;body&gt; <span style=color:#f92672>...</span>)
-</span></span></code></pre></div><p>Creates macro procedure for defining new special forms.</p><h2 id=best-practices>Best Practices
-<a class=anchor href=#best-practices>#</a></h2><ol><li><p><strong>Use proper scoping</strong></p><ul><li>Lambda for lexical scoping</li><li>Mu for dynamic scoping</li><li>Macros for new special forms</li></ul></li><li><p><strong>Handle promises carefully</strong></p><ul><li>Only force once</li><li>Check for proper return types</li><li>Handle errors appropriately</li></ul></li><li><p><strong>Use appropriate data structures</strong></p><ul><li>Lists for sequential data</li><li>Streams for infinite sequences</li><li>Pairs for binary relationships</li></ul></li><li><p><strong>Follow evaluation rules</strong></p><ul><li>Understand special forms</li><li>Know when expressions are evaluated</li><li>Use quote appropriately</li></ul></li><li><p><strong>Write clear code</strong></p><ul><li>Use meaningful names</li><li>Comment complex logic</li><li>Format consistently</li></ul></li></ol></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#scheme-specification>Scheme Specification</a><ul><li><a href=#overview-and-terminology>Overview and Terminology</a><ul><li><a href=#expressions-and-environments>Expressions and Environments</a></li><li><a href=#atomic-expressions>Atomic Expressions</a></li><li><a href=#call-expressions>Call Expressions</a></li><li><a href=#special-forms>Special Forms</a></li></ul></li><li><a href=#types-of-values>Types of Values</a><ul><li><a href=#numbers>Numbers</a></li><li><a href=#booleans>Booleans</a></li><li><a href=#symbols>Symbols</a></li><li><a href=#strings>Strings</a></li><li><a href=#pairs-and-lists>Pairs and Lists</a></li><li><a href=#procedures>Procedures</a></li><li><a href=#promises-and-streams>Promises and Streams</a></li></ul></li><li><a href=#special-forms-in-detail>Special Forms in Detail</a><ul><li><a href=#define>define</a></li><li><a href=#if>if</a></li><li><a href=#cond>cond</a></li><li><a href=#let>let</a></li><li><a href=#begin>begin</a></li><li><a href=#lambda>lambda</a></li><li><a href=#quote>quote</a></li><li><a href=#quasiquote>quasiquote</a></li><li><a href=#mu>mu</a></li><li><a href=#define-macro>define-macro</a></li></ul></li><li><a href=#best-practices>Best Practices</a></li></ul></li></ul></nav></div></aside></main></body></html>
+Most combinations are evaluated as call expressions with three steps:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-11/scheme/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="Scheme Specification">
+  <meta property="og:description" content="Scheme Specification # This document describes the variant of Scheme used in CS61A, which is closest to R5RS with some modifications for educational purposes.
+Overview and Terminology # Expressions and Environments # Every expression evaluates to a value Some expressions are self-evaluating (numbers, booleans, strings, nil) Frames map symbols to values with optional parent frames Environment lookup follows the chain of parent frames Atomic Expressions # Numbers, booleans, strings, and nil are self-evaluating Symbols evaluate to their bound values in the environment Call Expressions # Most combinations are evaluated as call expressions with three steps:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>Scheme Specification | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-11/scheme/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="active">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Scheme Specification</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#scheme-specification">Scheme Specification</a>
+      <ul>
+        <li><a href="#overview-and-terminology">Overview and Terminology</a>
+          <ul>
+            <li><a href="#expressions-and-environments">Expressions and Environments</a></li>
+            <li><a href="#atomic-expressions">Atomic Expressions</a></li>
+            <li><a href="#call-expressions">Call Expressions</a></li>
+            <li><a href="#special-forms">Special Forms</a></li>
+          </ul>
+        </li>
+        <li><a href="#types-of-values">Types of Values</a>
+          <ul>
+            <li><a href="#numbers">Numbers</a></li>
+            <li><a href="#booleans">Booleans</a></li>
+            <li><a href="#symbols">Symbols</a></li>
+            <li><a href="#strings">Strings</a></li>
+            <li><a href="#pairs-and-lists">Pairs and Lists</a></li>
+            <li><a href="#procedures">Procedures</a></li>
+            <li><a href="#promises-and-streams">Promises and Streams</a></li>
+          </ul>
+        </li>
+        <li><a href="#special-forms-in-detail">Special Forms in Detail</a>
+          <ul>
+            <li><a href="#define">define</a></li>
+            <li><a href="#if">if</a></li>
+            <li><a href="#cond">cond</a></li>
+            <li><a href="#let">let</a></li>
+            <li><a href="#begin">begin</a></li>
+            <li><a href="#lambda">lambda</a></li>
+            <li><a href="#quote">quote</a></li>
+            <li><a href="#quasiquote">quasiquote</a></li>
+            <li><a href="#mu">mu</a></li>
+            <li><a href="#define-macro">define-macro</a></li>
+          </ul>
+        </li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="scheme-specification">
+  Scheme Specification
+  <a class="anchor" href="#scheme-specification">#</a>
+</h1>
+<p>This document describes the variant of Scheme used in CS61A, which is closest to R5RS with some modifications for educational purposes.</p>
+<h2 id="overview-and-terminology">
+  Overview and Terminology
+  <a class="anchor" href="#overview-and-terminology">#</a>
+</h2>
+<h3 id="expressions-and-environments">
+  Expressions and Environments
+  <a class="anchor" href="#expressions-and-environments">#</a>
+</h3>
+<ul>
+<li>Every expression evaluates to a value</li>
+<li>Some expressions are self-evaluating (numbers, booleans, strings, nil)</li>
+<li>Frames map symbols to values with optional parent frames</li>
+<li>Environment lookup follows the chain of parent frames</li>
+</ul>
+<h3 id="atomic-expressions">
+  Atomic Expressions
+  <a class="anchor" href="#atomic-expressions">#</a>
+</h3>
+<ul>
+<li>Numbers, booleans, strings, and nil are self-evaluating</li>
+<li>Symbols evaluate to their bound values in the environment</li>
+</ul>
+<h3 id="call-expressions">
+  Call Expressions
+  <a class="anchor" href="#call-expressions">#</a>
+</h3>
+<p>Most combinations are evaluated as call expressions with three steps:</p>
+<ol>
+<li>Evaluate the operator (must be a procedure)</li>
+<li>Evaluate the operands in order</li>
+<li>Apply the procedure to the evaluated arguments</li>
+</ol>
+<h3 id="special-forms">
+  Special Forms
+  <a class="anchor" href="#special-forms">#</a>
+</h3>
+<p>Special forms have their own evaluation rules and are identified by keywords:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">if </span>&lt;predicate&gt; &lt;consequent&gt; [alternative])
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">cond </span>&lt;clause&gt; <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">and </span>[test] <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">or </span>[test] <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">let </span>([binding] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">begin </span>&lt;expression&gt; <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">lambda </span>([param] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">quote </span>&lt;expression&gt;)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">quasiquote </span>&lt;expression&gt;)
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">mu</span> ([param] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">define-macro</span> (<span style="color:#a6e22e">&lt;name&gt;</span> [param] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><h2 id="types-of-values">
+  Types of Values
+  <a class="anchor" href="#types-of-values">#</a>
+</h2>
+<h3 id="numbers">
+  Numbers
+  <a class="anchor" href="#numbers">#</a>
+</h3>
+<ul>
+<li>Built on Python&rsquo;s number types</li>
+<li>Supports arbitrarily-large integers and double-precision floats</li>
+<li>Case-insensitive (except in strings)</li>
+</ul>
+<h3 id="booleans">
+  Booleans
+  <a class="anchor" href="#booleans">#</a>
+</h3>
+<ul>
+<li>Two values: <code>#t</code> and <code>#f</code></li>
+<li>Can be input as <code>true</code> or <code>false</code></li>
+<li>Only <code>#f</code> is false in boolean contexts</li>
+</ul>
+<h3 id="symbols">
+  Symbols
+  <a class="anchor" href="#symbols">#</a>
+</h3>
+<ul>
+<li>Used as identifiers</li>
+<li>Valid characters: alphanumeric and <code>!$%&amp;*/:&lt;=&gt;?@^_~+-.</code></li>
+<li>Stored internally in lowercase</li>
+<li>Cannot form valid numbers</li>
+</ul>
+<h3 id="strings">
+  Strings
+  <a class="anchor" href="#strings">#</a>
+</h3>
+<ul>
+<li>Atomic data type (no individual characters)</li>
+<li>Immutable</li>
+<li>Entered as characters inside double quotes</li>
+<li>Limited string manipulation support</li>
+</ul>
+<h3 id="pairs-and-lists">
+  Pairs and Lists
+  <a class="anchor" href="#pairs-and-lists">#</a>
+</h3>
+<ul>
+<li>Pairs have <code>car</code> and <code>cdr</code> fields</li>
+<li>Lists are either <code>nil</code> or pairs with list <code>cdr</code></li>
+<li>Streams use promises in their <code>cdr</code></li>
+<li>List literals can be constructed with <code>quote</code></li>
+</ul>
+<h3 id="procedures">
+  Procedures
+  <a class="anchor" href="#procedures">#</a>
+</h3>
+<ul>
+<li>First-class values</li>
+<li>Types:
+<ul>
+<li>Built-in procedures</li>
+<li>Lambda procedures</li>
+<li>Mu procedures</li>
+<li>Macro procedures</li>
+</ul>
+</li>
+</ul>
+<h3 id="promises-and-streams">
+  Promises and Streams
+  <a class="anchor" href="#promises-and-streams">#</a>
+</h3>
+<ul>
+<li>Promises represent delayed evaluation</li>
+<li>Created with <code>delay</code></li>
+<li>Evaluated with <code>force</code></li>
+<li>Streams are pairs with promise <code>cdr</code></li>
+<li>Special forms: <code>cons-stream</code>, <code>cdr-stream</code></li>
+</ul>
+<h2 id="special-forms-in-detail">
+  Special Forms in Detail
+  <a class="anchor" href="#special-forms-in-detail">#</a>
+</h2>
+<h3 id="define">
+  define
+  <a class="anchor" href="#define">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">define </span>&lt;name&gt; &lt;expression&gt;)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">define </span>(<span style="color:#a6e22e">&lt;name&gt;</span> [param] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Binds values or creates procedures in the current environment.</p>
+<h3 id="if">
+  if
+  <a class="anchor" href="#if">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">if </span>&lt;predicate&gt; &lt;consequent&gt; [alternative])
+</span></span></code></pre></div><p>Conditional evaluation based on predicate.</p>
+<h3 id="cond">
+  cond
+  <a class="anchor" href="#cond">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">cond </span>&lt;clause&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Multiple condition evaluation with optional else clause.</p>
+<h3 id="let">
+  let
+  <a class="anchor" href="#let">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">let </span>([binding] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Creates new frame with bindings for body evaluation.</p>
+<h3 id="begin">
+  begin
+  <a class="anchor" href="#begin">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">begin </span>&lt;expression&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Evaluates expressions in sequence, returns last value.</p>
+<h3 id="lambda">
+  lambda
+  <a class="anchor" href="#lambda">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">lambda </span>([param] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Creates procedure with lexical scoping.</p>
+<h3 id="quote">
+  quote
+  <a class="anchor" href="#quote">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">quote </span>&lt;expression&gt;)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&lt;expression&gt;</span>
+</span></span></code></pre></div><p>Returns unevaluated expression.</p>
+<h3 id="quasiquote">
+  quasiquote
+  <a class="anchor" href="#quasiquote">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#66d9ef">quasiquote </span>&lt;expression&gt;)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">`</span>&lt;expression&gt;
+</span></span></code></pre></div><p>Returns unevaluated expression with selective evaluation.</p>
+<h3 id="mu">
+  mu
+  <a class="anchor" href="#mu">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#a6e22e">mu</span> ([param] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Creates procedure with dynamic scoping.</p>
+<h3 id="define-macro">
+  define-macro
+  <a class="anchor" href="#define-macro">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scheme" data-lang="scheme"><span style="display:flex;"><span>(<span style="color:#a6e22e">define-macro</span> (<span style="color:#a6e22e">&lt;name&gt;</span> [param] <span style="color:#f92672">...</span>) &lt;body&gt; <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Creates macro procedure for defining new special forms.</p>
+<h2 id="best-practices">
+  Best Practices
+  <a class="anchor" href="#best-practices">#</a>
+</h2>
+<ol>
+<li>
+<p><strong>Use proper scoping</strong></p>
+<ul>
+<li>Lambda for lexical scoping</li>
+<li>Mu for dynamic scoping</li>
+<li>Macros for new special forms</li>
+</ul>
+</li>
+<li>
+<p><strong>Handle promises carefully</strong></p>
+<ul>
+<li>Only force once</li>
+<li>Check for proper return types</li>
+<li>Handle errors appropriately</li>
+</ul>
+</li>
+<li>
+<p><strong>Use appropriate data structures</strong></p>
+<ul>
+<li>Lists for sequential data</li>
+<li>Streams for infinite sequences</li>
+<li>Pairs for binary relationships</li>
+</ul>
+</li>
+<li>
+<p><strong>Follow evaluation rules</strong></p>
+<ul>
+<li>Understand special forms</li>
+<li>Know when expressions are evaluated</li>
+<li>Use quote appropriately</li>
+</ul>
+</li>
+<li>
+<p><strong>Write clear code</strong></p>
+<ul>
+<li>Use meaningful names</li>
+<li>Comment complex logic</li>
+<li>Format consistently</li>
+</ul>
+</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#scheme-specification">Scheme Specification</a>
+      <ul>
+        <li><a href="#overview-and-terminology">Overview and Terminology</a>
+          <ul>
+            <li><a href="#expressions-and-environments">Expressions and Environments</a></li>
+            <li><a href="#atomic-expressions">Atomic Expressions</a></li>
+            <li><a href="#call-expressions">Call Expressions</a></li>
+            <li><a href="#special-forms">Special Forms</a></li>
+          </ul>
+        </li>
+        <li><a href="#types-of-values">Types of Values</a>
+          <ul>
+            <li><a href="#numbers">Numbers</a></li>
+            <li><a href="#booleans">Booleans</a></li>
+            <li><a href="#symbols">Symbols</a></li>
+            <li><a href="#strings">Strings</a></li>
+            <li><a href="#pairs-and-lists">Pairs and Lists</a></li>
+            <li><a href="#procedures">Procedures</a></li>
+            <li><a href="#promises-and-streams">Promises and Streams</a></li>
+          </ul>
+        </li>
+        <li><a href="#special-forms-in-detail">Special Forms in Detail</a>
+          <ul>
+            <li><a href="#define">define</a></li>
+            <li><a href="#if">if</a></li>
+            <li><a href="#cond">cond</a></li>
+            <li><a href="#let">let</a></li>
+            <li><a href="#begin">begin</a></li>
+            <li><a href="#lambda">lambda</a></li>
+            <li><a href="#quote">quote</a></li>
+            <li><a href="#quasiquote">quasiquote</a></li>
+            <li><a href="#mu">mu</a></li>
+            <li><a href="#define-macro">define-macro</a></li>
+          </ul>
+        </li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

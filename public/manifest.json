@@ -1,14 +1,14 @@
 {
   "name": "CS61A NT",
   "short_name": "CS61A NT",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/cs61a/",
+  "scope": "/cs61a/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/cs61a/favicon.svg",
       "sizes": "512x512"
     }
   ]

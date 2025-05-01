@@ -1,4 +1,9 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   Recursion
   #
 
@@ -8,26 +13,802 @@
 
 A function is recursive if the body of the function calls itself (either directly or indirectly).
 Recursive functions pretty much always lead to a base case by operating on increasingly smaller instances of the problem. A base case is the simplest case possible where a calculation can actually be done.
-For example, a recursive function to sum the digits in a number can be written as below:"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-4/recursion/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Recursion"><meta property="og:description" content="Recursion # Recursive Functions # A function is recursive if the body of the function calls itself (either directly or indirectly).
+For example, a recursive function to sum the digits in a number can be written as below:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-4/recursion/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="Recursion">
+  <meta property="og:description" content="Recursion # Recursive Functions # A function is recursive if the body of the function calls itself (either directly or indirectly).
 Recursive functions pretty much always lead to a base case by operating on increasingly smaller instances of the problem. A base case is the simplest case possible where a calculation can actually be done.
-For example, a recursive function to sum the digits in a number can be written as below:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Recursion | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-4/recursion/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/ class=active>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Recursion</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#recursion>Recursion</a><ul><li><a href=#recursive-functions>Recursive Functions</a></li><li><a href=#recursion-in-environment-diagrams>Recursion in Environment Diagrams</a></li><li><a href=#verifying-recursive-functions>Verifying Recursive Functions</a><ul><li><a href=#domino-example>Domino Example</a></li><li><a href=#recursive-leap-of-faith>Recursive Leap of Faith</a></li><li><a href=#recursive-cats-promise>Recursive Cat&rsquo;s Promise</a></li></ul></li><li><a href=#mutual-recursion>Mutual Recursion</a></li><li><a href=#recursion--iteration>Recursion + Iteration</a><ul><li><a href=#converting-recursion-to-iteration>Converting Recursion to Iteration</a></li><li><a href=#converting-iteration-to-recursion>Converting Iteration to Recursion</a></li></ul></li><li><a href=#helper-functions>Helper Functions</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=recursion>Recursion
-<a class=anchor href=#recursion>#</a></h1><h2 id=recursive-functions>Recursive Functions
-<a class=anchor href=#recursive-functions>#</a></h2><p>A function is recursive if the body of the function calls itself (either directly or indirectly).</p><p>Recursive functions pretty much always lead to a base case by operating on increasingly smaller instances of the problem. A base case is the simplest case possible where a calculation can actually be done.</p><p>For example, a recursive function to sum the digits in a number can be written as below:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sum_digits</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>assert</span> n <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>10</span>: <span style=color:#75715e># Base case, only happens when there&#39;s 1 remaining digit</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> n
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> sum_digits(n <span style=color:#f92672>//</span> <span style=color:#ae81ff>10</span>) <span style=color:#f92672>+</span> n <span style=color:#f92672>%</span> <span style=color:#ae81ff>10</span> <span style=color:#75715e># Adds the rest of the number with the final number</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># sum_digits(n // 10) just calls the sum_digits function again but with a simpler case in this case.</span>
-</span></span></code></pre></div><p>Another example is a factorial function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>factorial</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>assert</span> n <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>or</span> n <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>: 
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> n <span style=color:#f92672>*</span> factorial(n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
-</span></span></code></pre></div><p>If you notice how factorial works, it repeatedly multiplies n with a value one lower than itself, which allows the recursive function above to work.</p><p>As a result, the anatomy of a recursive function can be broken down into the following components:</p><ul><li>Base Case: The smallest sub-problem</li><li>Recursive Case: Breaking down a problem into a smaller sub-problem</li><li>Conditional Statement: Decides whether something is a base case or a recursive case.</li></ul><h2 id=recursion-in-environment-diagrams>Recursion in Environment Diagrams
-<a class=anchor href=#recursion-in-environment-diagrams>#</a></h2><p>If we use the same factorial function from above, calling factorial(3) on it, we can visualize the function calls in the environment diagram below in two steps — first reaching the base case, then evaluating the result.</p><pre tabindex=0><code>Global Frame
+For example, a recursive function to sum the digits in a number can be written as below:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>Recursion | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-4/recursion/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="active">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Recursion</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#recursion">Recursion</a>
+      <ul>
+        <li><a href="#recursive-functions">Recursive Functions</a></li>
+        <li><a href="#recursion-in-environment-diagrams">Recursion in Environment Diagrams</a></li>
+        <li><a href="#verifying-recursive-functions">Verifying Recursive Functions</a>
+          <ul>
+            <li><a href="#domino-example">Domino Example</a></li>
+            <li><a href="#recursive-leap-of-faith">Recursive Leap of Faith</a></li>
+            <li><a href="#recursive-cats-promise">Recursive Cat&rsquo;s Promise</a></li>
+          </ul>
+        </li>
+        <li><a href="#mutual-recursion">Mutual Recursion</a></li>
+        <li><a href="#recursion--iteration">Recursion + Iteration</a>
+          <ul>
+            <li><a href="#converting-recursion-to-iteration">Converting Recursion to Iteration</a></li>
+            <li><a href="#converting-iteration-to-recursion">Converting Iteration to Recursion</a></li>
+          </ul>
+        </li>
+        <li><a href="#helper-functions">Helper Functions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="recursion">
+  Recursion
+  <a class="anchor" href="#recursion">#</a>
+</h1>
+<h2 id="recursive-functions">
+  Recursive Functions
+  <a class="anchor" href="#recursive-functions">#</a>
+</h2>
+<p>A function is recursive if the body of the function calls itself (either directly or indirectly).</p>
+<p>Recursive functions pretty much always lead to a base case by operating on increasingly smaller instances of the problem. A base case is the simplest case possible where a calculation can actually be done.</p>
+<p>For example, a recursive function to sum the digits in a number can be written as below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_digits</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> n <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>: <span style="color:#75715e"># Base case, only happens when there&#39;s 1 remaining digit</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum_digits(n <span style="color:#f92672">//</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> n <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e"># Adds the rest of the number with the final number</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sum_digits(n // 10) just calls the sum_digits function again but with a simpler case in this case.</span>
+</span></span></code></pre></div><p>Another example is a factorial function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">factorial</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> n <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">or</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>: 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n <span style="color:#f92672">*</span> factorial(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>If you notice how factorial works, it repeatedly multiplies n with a value one lower than itself, which allows the recursive function above to work.</p>
+<p>As a result, the anatomy of a recursive function can be broken down into the following components:</p>
+<ul>
+<li>Base Case: The smallest sub-problem</li>
+<li>Recursive Case: Breaking down a problem into a smaller sub-problem</li>
+<li>Conditional Statement: Decides whether something is a base case or a recursive case.</li>
+</ul>
+<h2 id="recursion-in-environment-diagrams">
+  Recursion in Environment Diagrams
+  <a class="anchor" href="#recursion-in-environment-diagrams">#</a>
+</h2>
+<p>If we use the same factorial function from above, calling factorial(3) on it, we can visualize the function calls in the environment diagram below in two steps — first reaching the base case, then evaluating the result.</p>
+<pre tabindex="0"><code>Global Frame
 f1: factorial(x) [parent = Global]
 f2: factorial(x) [parent = Global]
 f3: factorial(x) [parent = Global]
@@ -45,7 +826,8 @@ Return Value
 n
 1
 Return Value
-</code></pre><p>After the base case is reached, each return value in the stack can be evaluated:</p><pre tabindex=0><code>Global Frame
+</code></pre><p>After the base case is reached, each return value in the stack can be evaluated:</p>
+<pre tabindex="0"><code>Global Frame
 f1: factorial(x) [parent = Global]
 f2: factorial(x) [parent = Global]
 f3: factorial(x) [parent = Global]
@@ -63,77 +845,218 @@ Return Value
 n
 1
 Return Value
-</code></pre><p>As a result, we can visualize a recursive call almost like that of a stack. The values keep reducing to a simpler case until a base case is reached, and when that happens, the result for each recursive call (starting from the base case) is then evaluated, which then will combine to evaluate to the final result.</p><h2 id=verifying-recursive-functions>Verifying Recursive Functions
-<a class=anchor href=#verifying-recursive-functions>#</a></h2><h3 id=domino-example>Domino Example
-<a class=anchor href=#domino-example>#</a></h3><p>Let&rsquo;s use an example to illustrate how designing/verifying a recursive function can work.</p><p>Take for example that you had a line of a thousand equally spaced dominoes, and you wanted to test whether tipping one would tip all of them, you could just see if 1 domino would fall if tipped, then assume that any domino will tip the next one, then verify that tipping the first domino tips the next one.</p><p>This can be generalized with two different methods:</p><h3 id=recursive-leap-of-faith>Recursive Leap of Faith
-<a class=anchor href=#recursive-leap-of-faith>#</a></h3><p>Steps:</p><ol><li>Verify the base case — make sure it&rsquo;s functional and works properly</li><li>Assume that a simplified case of the function is correct (← leap of faith)</li><li>Verify that the function itself returns the simplified function calls correctly</li></ol><p>For a more concrete example, take the factorial function from above:</p><ol><li>Verify that <code>return 1 if n == 0 or n == 1</code> is the correct base case</li><li>Assume that <code>factorial(n - 1)</code> returns the correct value</li><li>Verify that <code>n * factorial(n - 1)</code> is the correct statement</li></ol><h3 id=recursive-cats-promise>Recursive Cat&rsquo;s Promise
-<a class=anchor href=#recursive-cats-promise>#</a></h3><p>While this usually isn&rsquo;t a cat&rsquo;s promise, but rather an elf, I like cats, so I&rsquo;m going to go with cats.</p><p>With this perspective, the recursive cat handles the simplified recursive call, and promises that they will calculate the smaller recursive call for you while you handle the rest.</p><p>For example, to calculate 3!, you would ask yourself how you could calculate 3! if you knew the value of 2!, which in this case, is simply 3 * 2! — as a result, you do! Then, the recursive cat promises to handle the result of factorial(2) for you. (The recursive cat then calls on itself to find the value of factorial(1), but you do not need to know that to be able to solve factorial(5) — all you need is the value of factorial(4))</p><h2 id=mutual-recursion>Mutual Recursion
-<a class=anchor href=#mutual-recursion>#</a></h2><p>When recursive functions are defined in terms of each other, the functions are mutually recursive.</p><p>For example, we can have this (useless) function that determines whether a number is even or odd in a mutually recursive manner:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>even</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> odd(n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>odd</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> even(n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(even(<span style=color:#ae81ff>4</span>)) <span style=color:#75715e># True</span>
+</code></pre><p>As a result, we can visualize a recursive call almost like that of a stack. The values keep reducing to a simpler case until a base case is reached, and when that happens, the result for each recursive call (starting from the base case) is then evaluated, which then will combine to evaluate to the final result.</p>
+<h2 id="verifying-recursive-functions">
+  Verifying Recursive Functions
+  <a class="anchor" href="#verifying-recursive-functions">#</a>
+</h2>
+<h3 id="domino-example">
+  Domino Example
+  <a class="anchor" href="#domino-example">#</a>
+</h3>
+<p>Let&rsquo;s use an example to illustrate how designing/verifying a recursive function can work.</p>
+<p>Take for example that you had a line of a thousand equally spaced dominoes, and you wanted to test whether tipping one would tip all of them, you could just see if 1 domino would fall if tipped, then assume that any domino will tip the next one, then verify that tipping the first domino tips the next one.</p>
+<p>This can be generalized with two different methods:</p>
+<h3 id="recursive-leap-of-faith">
+  Recursive Leap of Faith
+  <a class="anchor" href="#recursive-leap-of-faith">#</a>
+</h3>
+<p>Steps:</p>
+<ol>
+<li>Verify the base case — make sure it&rsquo;s functional and works properly</li>
+<li>Assume that a simplified case of the function is correct (← leap of faith)</li>
+<li>Verify that the function itself returns the simplified function calls correctly</li>
+</ol>
+<p>For a more concrete example, take the factorial function from above:</p>
+<ol>
+<li>Verify that <code>return 1 if n == 0 or n == 1</code> is the correct base case</li>
+<li>Assume that <code>factorial(n - 1)</code> returns the correct value</li>
+<li>Verify that <code>n * factorial(n - 1)</code> is the correct statement</li>
+</ol>
+<h3 id="recursive-cats-promise">
+  Recursive Cat&rsquo;s Promise
+  <a class="anchor" href="#recursive-cats-promise">#</a>
+</h3>
+<p>While this usually isn&rsquo;t a cat&rsquo;s promise, but rather an elf, I like cats, so I&rsquo;m going to go with cats.</p>
+<p>With this perspective, the recursive cat handles the simplified recursive call, and promises that they will calculate the smaller recursive call for you while you handle the rest.</p>
+<p>For example, to calculate 3!, you would ask yourself how you could calculate 3! if you knew the value of 2!, which in this case, is simply 3 * 2! — as a result, you do! Then, the recursive cat promises to handle the result of factorial(2) for you. (The recursive cat then calls on itself to find the value of factorial(1), but you do not need to know that to be able to solve factorial(5) — all you need is the value of factorial(4))</p>
+<h2 id="mutual-recursion">
+  Mutual Recursion
+  <a class="anchor" href="#mutual-recursion">#</a>
+</h2>
+<p>When recursive functions are defined in terms of each other, the functions are mutually recursive.</p>
+<p>For example, we can have this (useless) function that determines whether a number is even or odd in a mutually recursive manner:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">even</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> odd(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">odd</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> even(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(even(<span style="color:#ae81ff">4</span>)) <span style="color:#75715e"># True</span>
 </span></span></code></pre></div><p>Note:
-Mutually recursive functions can be written as a single recursive function by simply breaking the abstraction boundary between the two functions. For example, the code above can be written in the following manner:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>even</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> even((n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
-</span></span></code></pre></div><p>As you can see, the code checks whether a number is even initially, then checks for the odd case and thus, deals with 2 digits in 1 go. However, this implementation is far more convoluted than the mutually recursive version (and you can imagine how much more complex this would be with more complexity), so using a mutually recursive solution can simply be a mechanism for keeping your code simple; in other words: maintaining abstraction.</p><p>A good indicator of when a mutual recursive solution could be used is when there is a natural recursive solution, but there is more than 1 case that needs to be checked for (in the above example, whether the number was even or odd)</p><h2 id=recursion--iteration>Recursion + Iteration
-<a class=anchor href=#recursion--iteration>#</a></h2><h3 id=converting-recursion-to-iteration>Converting Recursion to Iteration
-<a class=anchor href=#converting-recursion-to-iteration>#</a></h3><p>First, you must figure out what state needs to be maintained by the iterative function that the recursive function would store itself. For example, in the factorial function, the recursive function works by multiplying n with a simpler version of the factorial function, meaning that the iterative version would need something to store n and multiply it with n - 1 until a &lsquo;base case&rsquo; is reached.</p><p>For instance:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>recursive_factorial</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>assert</span> n <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>or</span> n <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> n <span style=color:#f92672>*</span> recursive_factorial(n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>iterative_factorial</span>(n):
-</span></span><span style=display:flex><span>    k <span style=color:#f92672>=</span> n <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> k <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>: <span style=color:#75715e># &#39;Base Case&#39;</span>
-</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> n <span style=color:#f92672>*</span> k <span style=color:#75715e># Does the multiplication</span>
-</span></span><span style=display:flex><span>        k <span style=color:#f92672>=</span> k <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span> <span style=color:#75715e># Decrements n, similar to recursive_factorial(n - 1)</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> k
-</span></span></code></pre></div><h3 id=converting-iteration-to-recursion>Converting Iteration to Recursion
-<a class=anchor href=#converting-iteration-to-recursion>#</a></h3><p>Converting iteration to recursion is sometimes easier than doing it the other way around. Essentially, the state of an iteration can be passed in as arguments to the recursive function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>iterative_sum_digits</span>(n):
-</span></span><span style=display:flex><span>    total <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> n <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>10</span>:
-</span></span><span style=display:flex><span>        digit_sum <span style=color:#f92672>=</span> digit_sum <span style=color:#f92672>+</span> n <span style=color:#f92672>%</span> <span style=color:#ae81ff>10</span> <span style=color:#75715e># </span>
-</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> n <span style=color:#f92672>//</span> <span style=color:#ae81ff>10</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> total
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>recursive_sum_digits</span>(n, total):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> n <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>10</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> n
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span>(n <span style=color:#f92672>//</span> <span style=color:#ae81ff>10</span>, total <span style=color:#f92672>+</span> n <span style=color:#f92672>%</span> <span style=color:#ae81ff>10</span>) <span style=color:#75715e># Iterative variables passed as arguments for the recursive version</span>
-</span></span></code></pre></div><h2 id=helper-functions>Helper Functions
-<a class=anchor href=#helper-functions>#</a></h2><p>If a recursive function ever needs to keep track of more variables than the original function provides, you probably need a helper function for that.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>is_prime</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&#39;&#39;Returns True if n is a prime number, else returns False
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; is_prime(13)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    True
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; is_prime(14)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    False
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; is_prime(2)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    True
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;&#39;&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>assert</span> n <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>helper</span>(i):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> i <span style=color:#f92672>==</span> n:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> n <span style=color:#f92672>%</span> i <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> helper(i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> helper(<span style=color:#ae81ff>2</span>)
-</span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#recursion>Recursion</a><ul><li><a href=#recursive-functions>Recursive Functions</a></li><li><a href=#recursion-in-environment-diagrams>Recursion in Environment Diagrams</a></li><li><a href=#verifying-recursive-functions>Verifying Recursive Functions</a><ul><li><a href=#domino-example>Domino Example</a></li><li><a href=#recursive-leap-of-faith>Recursive Leap of Faith</a></li><li><a href=#recursive-cats-promise>Recursive Cat&rsquo;s Promise</a></li></ul></li><li><a href=#mutual-recursion>Mutual Recursion</a></li><li><a href=#recursion--iteration>Recursion + Iteration</a><ul><li><a href=#converting-recursion-to-iteration>Converting Recursion to Iteration</a></li><li><a href=#converting-iteration-to-recursion>Converting Iteration to Recursion</a></li></ul></li><li><a href=#helper-functions>Helper Functions</a></li></ul></li></ul></nav></div></aside></main></body></html>
+Mutually recursive functions can be written as a single recursive function by simply breaking the abstraction boundary between the two functions. For example, the code above can be written in the following manner:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">even</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> even((n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>As you can see, the code checks whether a number is even initially, then checks for the odd case and thus, deals with 2 digits in 1 go. However, this implementation is far more convoluted than the mutually recursive version (and you can imagine how much more complex this would be with more complexity), so using a mutually recursive solution can simply be a mechanism for keeping your code simple; in other words: maintaining abstraction.</p>
+<p>A good indicator of when a mutual recursive solution could be used is when there is a natural recursive solution, but there is more than 1 case that needs to be checked for (in the above example, whether the number was even or odd)</p>
+<h2 id="recursion--iteration">
+  Recursion + Iteration
+  <a class="anchor" href="#recursion--iteration">#</a>
+</h2>
+<h3 id="converting-recursion-to-iteration">
+  Converting Recursion to Iteration
+  <a class="anchor" href="#converting-recursion-to-iteration">#</a>
+</h3>
+<p>First, you must figure out what state needs to be maintained by the iterative function that the recursive function would store itself. For example, in the factorial function, the recursive function works by multiplying n with a simpler version of the factorial function, meaning that the iterative version would need something to store n and multiply it with n - 1 until a &lsquo;base case&rsquo; is reached.</p>
+<p>For instance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recursive_factorial</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> n <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">or</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n <span style="color:#f92672">*</span> recursive_factorial(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">iterative_factorial</span>(n):
+</span></span><span style="display:flex;"><span>    k <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>: <span style="color:#75715e"># &#39;Base Case&#39;</span>
+</span></span><span style="display:flex;"><span>        n <span style="color:#f92672">=</span> n <span style="color:#f92672">*</span> k <span style="color:#75715e"># Does the multiplication</span>
+</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">=</span> k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># Decrements n, similar to recursive_factorial(n - 1)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> k
+</span></span></code></pre></div><h3 id="converting-iteration-to-recursion">
+  Converting Iteration to Recursion
+  <a class="anchor" href="#converting-iteration-to-recursion">#</a>
+</h3>
+<p>Converting iteration to recursion is sometimes easier than doing it the other way around. Essentially, the state of an iteration can be passed in as arguments to the recursive function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">iterative_sum_digits</span>(n):
+</span></span><span style="display:flex;"><span>    total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> n <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>:
+</span></span><span style="display:flex;"><span>        digit_sum <span style="color:#f92672">=</span> digit_sum <span style="color:#f92672">+</span> n <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>        n <span style="color:#f92672">=</span> n <span style="color:#f92672">//</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> total
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recursive_sum_digits</span>(n, total):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>(n <span style="color:#f92672">//</span> <span style="color:#ae81ff">10</span>, total <span style="color:#f92672">+</span> n <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>) <span style="color:#75715e"># Iterative variables passed as arguments for the recursive version</span>
+</span></span></code></pre></div><h2 id="helper-functions">
+  Helper Functions
+  <a class="anchor" href="#helper-functions">#</a>
+</h2>
+<p>If a recursive function ever needs to keep track of more variables than the original function provides, you probably need a helper function for that.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_prime</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;Returns True if n is a prime number, else returns False
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; is_prime(13)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    True
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; is_prime(14)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    False
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; is_prime(2)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    True
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> n <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">helper</span>(i):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> n:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> n <span style="color:#f92672">%</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> helper(i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> helper(<span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#recursion">Recursion</a>
+      <ul>
+        <li><a href="#recursive-functions">Recursive Functions</a></li>
+        <li><a href="#recursion-in-environment-diagrams">Recursion in Environment Diagrams</a></li>
+        <li><a href="#verifying-recursive-functions">Verifying Recursive Functions</a>
+          <ul>
+            <li><a href="#domino-example">Domino Example</a></li>
+            <li><a href="#recursive-leap-of-faith">Recursive Leap of Faith</a></li>
+            <li><a href="#recursive-cats-promise">Recursive Cat&rsquo;s Promise</a></li>
+          </ul>
+        </li>
+        <li><a href="#mutual-recursion">Mutual Recursion</a></li>
+        <li><a href="#recursion--iteration">Recursion + Iteration</a>
+          <ul>
+            <li><a href="#converting-recursion-to-iteration">Converting Recursion to Iteration</a></li>
+            <li><a href="#converting-iteration-to-recursion">Converting Iteration to Recursion</a></li>
+          </ul>
+        </li>
+        <li><a href="#helper-functions">Helper Functions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

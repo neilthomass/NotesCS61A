@@ -1,4 +1,9 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   Control
   #
 
@@ -6,132 +11,1193 @@
   Side Effects
   #
 
-Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-2/control/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Control"><meta property="og:description" content="Control # Side Effects # Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Control | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-2/control/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/ class=active>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Control</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#control>Control</a><ul><li><a href=#side-effects>Side Effects</a><ul><li><a href=#example-with-no-side-effects>Example With No Side Effects</a></li><li><a href=#example-with-side-effects>Example With Side Effects</a></li></ul></li><li><a href=#the-none-value>The &lsquo;None&rsquo; Value</a></li><li><a href=#nested-print-statements>Nested Print Statements</a></li><li><a href=#default-arguments>Default Arguments</a></li><li><a href=#multiple-return-values>Multiple Return Values</a></li><li><a href=#multiple-variable-assignment>Multiple Variable Assignment</a></li><li><a href=#boolean>Boolean</a><ul><li><a href=#comparison-operators>Comparison Operators</a></li><li><a href=#logical-operators>Logical Operators</a></li><li><a href=#execution-rules-of-logical-operators>Execution rules of logical operators</a></li></ul></li><li><a href=#statements>Statements</a><ul><li><a href=#compound-statements>Compound Statements</a></li></ul></li><li><a href=#while-loop>While Loop</a><ul><li><a href=#break-statement>Break Statement</a></li></ul></li><li><a href=#for-loop>For Loop</a><ul><li><a href=#the-range-function>The range() function</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=control>Control
-<a class=anchor href=#control>#</a></h1><h2 id=side-effects>Side Effects
-<a class=anchor href=#side-effects>#</a></h2><p>Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects.</p><p>A Mathematical function f(x) takes inputs and always provides the same outputs, without doing anything else. As a result, one input will never have two or more different outputs. If a programming function has the same property where certain outputs always provide the same inputs without doing anything else, it has no side effects.</p><h3 id=example-with-no-side-effects>Example With No Side Effects
-<a class=anchor href=#example-with-no-side-effects>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>no_side_effects</span>(x): <span style=color:#75715e># Squares x</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>*</span>x
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>no_side_effects(<span style=color:#ae81ff>2</span>) <span style=color:#75715e># &gt;&gt;&gt; 4</span>
-</span></span><span style=display:flex><span>no_side_effects(<span style=color:#ae81ff>2</span>) <span style=color:#75715e># &gt;&gt;&gt; 4</span>
-</span></span></code></pre></div><p>In this example, every input will always map to the same output as the function does not do anything other than provide an output given an input.</p><h3 id=example-with-side-effects>Example With Side Effects
-<a class=anchor href=#example-with-side-effects>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>ben <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>with_side_effects</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>*</span>ben
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>with_side_effects(<span style=color:#ae81ff>2</span>) <span style=color:#75715e># &gt;&gt;&gt; 2</span>
-</span></span><span style=display:flex><span>ben <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>with_side_effects(<span style=color:#ae81ff>2</span>) <span style=color:#75715e># &gt;&gt;&gt; 4</span>
-</span></span></code></pre></div><p>While this example is not going to be used in a practical setting, it serves as a good example of what a side effect is. As you can see, even though we called the function <code>with_side_effects</code> twice with the same input, the output was different, which goes against the definition of a mathematical function. As a result, there is a side effect in that function.</p><p>A side note:</p><p>While the print function does not change the value of any variables, it does cause a side effect by outputting something to the console, which does go against how a mathematical function works. However, while side effects are usually better to avoid where possible, print could sometimes be useful for debugging.</p><p>An example of a side effect that can&rsquo;t be avoided is writing to a file - this is necessary at times.</p><p>A function without side effects is also known as a pure function, while a function with side effects is also known as an impure function.</p><h2 id=the-none-value>The &lsquo;None&rsquo; Value
-<a class=anchor href=#the-none-value>#</a></h2><p>In Python, any function that does not return a value will return None, which when printed will render None to the console, and when called, will not render anything in the console.</p><p>For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>no_return</span>(x):
-</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(no_return(<span style=color:#ae81ff>2</span>))
-</span></span><span style=display:flex><span><span style=color:#75715e># &gt;&gt;&gt; None</span>
-</span></span></code></pre></div><p>Note that the <code>print()</code> function has no return value, and thus will return None when called.</p><h2 id=nested-print-statements>Nested Print Statements
-<a class=anchor href=#nested-print-statements>#</a></h2><p>A nested print function is somewhat weird, but worth it to learn.</p><p>Take this for example, what do you think will get outputted to the console? Try to think for yourself before opening the answer box below.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>print(print(<span style=color:#ae81ff>1</span>))
-</span></span></code></pre></div><p>For a harder example, try this one:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>print(print(<span style=color:#e6db74>&#34;x&#34;</span>), print(<span style=color:#e6db74>&#34;y&#34;</span>))
-</span></span></code></pre></div><h2 id=default-arguments>Default Arguments
-<a class=anchor href=#default-arguments>#</a></h2><p>In the function signature, one of the inputs can have a default value. This is useful in situations where there is a most likely case for a function, but where it still makes sense for users to have some control.</p><p>For example, the default <code>round()</code> function in Python takes in 1 required parameter, with 1 optional parameter (which defaults to 0).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>round(<span style=color:#ae81ff>2.5342</span>) <span style=color:#75715e># &gt;&gt;&gt; 3</span>
-</span></span><span style=display:flex><span>round(<span style=color:#ae81ff>2.5342</span>, <span style=color:#ae81ff>2</span>) <span style=color:#75715e># &gt;&gt;&gt; 2.53</span>
-</span></span></code></pre></div><p>You can build your own function with default arguments by simply specifying it in the header.</p><p>For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>ben</span>(baron, box<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tao&#34;</span>):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> baron <span style=color:#f92672>+</span> box
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>ben(<span style=color:#e6db74>&#34;baron&#34;</span>) <span style=color:#75715e># &gt;&gt;&gt; &#39;barontao&#39;</span>
-</span></span><span style=display:flex><span>ben(<span style=color:#e6db74>&#34;baron&#34;</span>, <span style=color:#e6db74>&#34;hej&#34;</span>) <span style=color:#75715e># &gt;&gt;&gt; &#39;baronhej&#39;</span>
-</span></span></code></pre></div><p>Without the second optional parameter hej, the function defaulted to the value tao.</p><p>If you have multiple default arguments, you can also override them in this way:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>ben</span>(baron, box<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;tao&#34;</span>, foo<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;baz&#34;</span>):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> baron <span style=color:#f92672>+</span> box <span style=color:#f92672>+</span> foo
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>ben(<span style=color:#e6db74>&#34;baron&#34;</span>, foo<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;yu&#34;</span>) <span style=color:#75715e># &gt;&gt;&gt; barontaoyu</span>
-</span></span><span style=display:flex><span>ben(<span style=color:#e6db74>&#34;baron&#34;</span>, box<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;yu&#34;</span>) <span style=color:#75715e># &gt;&gt;&gt; baronyubaz</span>
-</span></span></code></pre></div><h2 id=multiple-return-values>Multiple Return Values
-<a class=anchor href=#multiple-return-values>#</a></h2><p>One aspect of Python uncommon in other languages is the allowed use of multiple return values in functions. This can be done in a function by using multiple return values separated by a comma.</p><p>Any code that calls the function can either store it in a variable as a tuple (more on this later) or can be unpacked. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>return_two_values</span>():
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>return_two_values() <span style=color:#75715e># &gt;&gt;&gt; (1, 2) in tuple form</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>a, b <span style=color:#f92672>=</span> return_two_values() 
-</span></span><span style=display:flex><span>a <span style=color:#75715e># &gt;&gt;&gt; 1</span>
-</span></span><span style=display:flex><span>b <span style=color:#75715e># &gt;&gt;&gt; 2</span>
-</span></span></code></pre></div><h2 id=multiple-variable-assignment>Multiple Variable Assignment
-<a class=anchor href=#multiple-variable-assignment>#</a></h2><p>The values on the right side are evaluated first before being assigned, so you can swap the values of two variables in one line by simply doing the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x, y <span style=color:#f92672>=</span> y, x
-</span></span></code></pre></div><h2 id=boolean>Boolean
-<a class=anchor href=#boolean>#</a></h2><p>A Boolean is a value that is either True or False, and is used frequently in many applications. For example, your mobile device would likely have a Boolean variable that stores whether your WiFi, flashlight, bluetooth etc. is turned on.</p><p>An expression can evaluate to a Boolean. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>passed_class <span style=color:#f92672>=</span> grade <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>70</span> <span style=color:#75715e># Will evaluate either true or false depending on the condition</span>
-</span></span><span style=display:flex><span>take_shower <span style=color:#f92672>=</span> (<span style=color:#f92672>not</span> eecs_major) <span style=color:#f92672>or</span> did_sports
-</span></span></code></pre></div><h3 id=comparison-operators>Comparison Operators
-<a class=anchor href=#comparison-operators>#</a></h3><table><thead><tr><th>Operator</th><th>Meaning</th></tr></thead><tbody><tr><td>==</td><td>Equality</td></tr><tr><td>!=</td><td>Inequality</td></tr><tr><td>></td><td>Greater Than</td></tr><tr><td>&lt;</td><td>Less Than</td></tr><tr><td>>=</td><td>Greater Than or Equals</td></tr><tr><td>&lt;=</td><td>Less Than or Equals</td></tr></tbody></table><p><strong>Checking for Equality</strong>: It is a common mistake to use = instead of == to check for equality. Please remember that = is for assigning a variable and cannot be used for checking for equality in a conditional statement. Python will throw a syntax error, but other languages may not, so not mixing these up is a good habit to get used to.</p><h3 id=logical-operators>Logical Operators
-<a class=anchor href=#logical-operators>#</a></h3><table><thead><tr><th>Operator</th><th>Meaning</th></tr></thead><tbody><tr><td>and</td><td>Evaluates to True if both values are True</td></tr><tr><td>or</td><td>Evaluates to True if any of the values are True</td></tr><tr><td>not</td><td>Evaluates to True if the value is False, else evaluates to True</td></tr></tbody></table><h3 id=execution-rules-of-logical-operators>Execution rules of logical operators
-<a class=anchor href=#execution-rules-of-logical-operators>#</a></h3><p>The statements are evaluated from left to right, but sometimes, these statements do not all need to be evaluated.</p><p><strong>and statement procedure:</strong></p><ol><li>Evaluate the left statement.</li><li>If it evaluates to a False value x, the expression evaluates to x.</li><li>Else, the expression evaluates to the value of the expression on the right.</li></ol><p><strong>or statement procedure:</strong></p><ol><li>Evaluate the left statement.</li><li>If it evaluates to a True value x the expression evaluates to x.</li><li>Else, the expression evaluates to the value of the expression on the right.</li></ol><p>This procedure functions using just Booleans, but strange things occur when you use other values instead.</p><p>For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#ae81ff>5</span> <span style=color:#f92672>and</span> <span style=color:#ae81ff>2</span> <span style=color:#75715e># &gt;&gt;&gt; 2</span>
-</span></span><span style=display:flex><span><span style=color:#ae81ff>5</span> <span style=color:#f92672>or</span> <span style=color:#ae81ff>2</span> <span style=color:#75715e># &gt;&gt;&gt; 5</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>not</span> <span style=color:#ae81ff>5</span> <span style=color:#75715e># &gt;&gt;&gt; False</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>not</span> <span style=color:#ae81ff>0</span> <span style=color:#75715e># &gt;&gt;&gt; True</span>
-</span></span><span style=display:flex><span><span style=color:#ae81ff>0</span> <span style=color:#f92672>and</span> <span style=color:#66d9ef>False</span> <span style=color:#75715e># &gt;&gt;&gt; 0</span>
-</span></span></code></pre></div><p>For the <code>and</code> and <code>or</code> operators, numbers were returned rather than Booleans due to the procedure of evaluating these logical statements.</p><p>There is an order of operations for Booleans (not → and → or), but generally, use brackets to make your statements clearer.</p><p>You can use these expressions in functions as the return value. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>boolean_example</span>():
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> is_ben <span style=color:#f92672>or</span> is_tao <span style=color:#75715e># This will return either True or False depending on the Boolean expression.</span>
-</span></span></code></pre></div><h2 id=statements>Statements
-<a class=anchor href=#statements>#</a></h2><p>A statement is executed to perform an action.</p><h3 id=compound-statements>Compound Statements
-<a class=anchor href=#compound-statements>#</a></h3><p>A compound statement is a statement that contains groups of other statements.</p><p>One example of which are conditional statements, which give your code a way to execute a different suite of statements based on whether conditions are met:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>&lt;</span>condition<span style=color:#f92672>&gt;</span>:
-</span></span><span style=display:flex><span>    this_may_be_executed(<span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>elif</span> <span style=color:#f92672>&lt;</span>condition_2<span style=color:#f92672>&gt;</span>:
-</span></span><span style=display:flex><span>    this_may_be_executed(<span style=color:#ae81ff>2</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>    this_may_be_executed(<span style=color:#ae81ff>3</span>)
-</span></span></code></pre></div><p>An if statement looks like the code above. The block indented after the if, elif, and else statements only get executed if the code directs it to.</p><p>For instance, if <code>&lt;condition></code> were True, then <code>this_may_be_executed(1)</code> is the only statement that gets evaluated, and the ones in the other blocks are skipped over.</p><p>If <code>&lt;condition_2></code> were True, then <code>this_may_be_executed(2)</code> is the only statement that gets evaluated.</p><p>If both <code>&lt;condition></code> and <code>&lt;condition_2></code> are False, then <code>this_may_be_executed(3)</code> is evaluated.</p><p>This means that the code does not get executed unless certain conditions are met, which is different from call expressions where every operand gets evaluated. (This property is important for some questions)</p><p>Additionally, this also allows for multiple return statements in functions because only that specific block gets executed, rather than every block.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>returning_conditional</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;positive&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;negative&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;neutral&#34;</span>
-</span></span></code></pre></div><h2 id=while-loop>While Loop
-<a class=anchor href=#while-loop>#</a></h2><p>A while loop in Python executes a block of code as long as a condition is true. This loop keeps on getting checked after each iteration.</p><p>One problem of a while loop is that an infinite loop can easily occur if you aren&rsquo;t careful.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>counter <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> counter <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>5</span>:
-</span></span><span style=display:flex><span>    print(counter)
-</span></span><span style=display:flex><span>    counter <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&#39;&#39;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt; 1
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt; 2
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt; 3
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt; 4
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;&#39;&#39;</span>
-</span></span></code></pre></div><p>In the example above, 5 does not get printed because during that iteration, the counter variable is already 5, and the conditional 5 &lt; 5 returns False.</p><p>A while loop is very useful if you do not know how many repeats of the code you need to do, while a for loop (explained on another page) is better if you know how many loops to do.</p><h3 id=break-statement>Break Statement
-<a class=anchor href=#break-statement>#</a></h3><p>If you ever want to prematurely leave a code block, you can use the break keyword.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>while</span> <span style=color:#66d9ef>True</span>:
-</span></span><span style=display:flex><span>    print(<span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>break</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># &gt;&gt;&gt; 1</span>
-</span></span></code></pre></div><p>The above code would usually give an infinite loop, but the break statement prevents that from happening.</p><h2 id=for-loop>For Loop
-<a class=anchor href=#for-loop>#</a></h2><p>A for loop in Python executes a block of code for a set number of times. It provides a cleaner way to write while loops as long as they are iterating over some sort of sequence, for instance, the <code>range()</code> function.</p><p>The for loop syntax is as follows:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>for</span> <span style=color:#f92672>&lt;</span>name<span style=color:#f92672>&gt;</span> <span style=color:#f92672>in</span> <span style=color:#f92672>&lt;</span>expression<span style=color:#f92672>&gt;</span>:
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;</span>suite<span style=color:#f92672>&gt;</span>
-</span></span></code></pre></div><ol><li>Evaluate <code>&lt;expression></code> — this must evaluate to an iterable value (strings, lists (more on this later), range()) etc</li><li>For each element in that <code>&lt;expression></code> (in order), bind <code>&lt;name></code> to the element in the current frame</li><li>Execute the suite, with <code>&lt;name></code> bound to a new value.</li></ol><p>That might be slightly confusing for now, but just know that you can do everything a for loop can do with a while loop. So, if you see an example that uses a for loop, you can re-imagine it as a while loop, and it would still act the same.</p><h3 id=the-range-function>The range() function
-<a class=anchor href=#the-range-function>#</a></h3><p>The <code>range()</code> function is used quite often in conjunction with the for loop. It represents a sequence of integers. There are 3 arguments that <code>range()</code> takes, each of which will be explained, then demonstrated below:</p><ol><li>If there is just one argument x, <code>range(x)</code> will start on 0, then keep increasing the number by 1 until x - 1 (0 &lt;= i &lt; x where i is the current value)</li><li>If there are two arguments x, y, <code>range(x, y)</code> will start on x, then keep increasing the number by 1 until y - 1.</li><li>If there are three arguments x, y, z, <code>range(x, y, z)</code> will start on x, then keep incrementing the number by z (this can be negative), and then end on y - z.</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>5</span>): <span style=color:#75715e># equivalent to range(0, 5)</span>
-</span></span><span style=display:flex><span>    print(n)
-</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;&#39;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 0
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 1
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 2
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 3
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 4
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;&#39;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>5</span>):
-</span></span><span style=display:flex><span>    print(n)
-</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;&#39;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 1
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 2
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 3
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 4
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;&#39;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>0</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>):
-</span></span><span style=display:flex><span>    print(n)
-</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;&#39;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 5
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 4
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 3
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 2
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&gt; 1
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#39;&#39;&#39;</span>
-</span></span></code></pre></div><p>As can be seen in the 3 examples above, the <code>range()</code> function works well with the for loop.</p><p>When <code>range()</code> is passed only 1 parameter in a for loop, it starts off at 0, then ends off at the integer before n. With 2 parameters, the for loop&rsquo;s value starts off at the first parameter&rsquo;s value, then ends off at the integer before the second parameter&rsquo;s value. The last parameter specifies the amount n should be changed by each loop, whether it be negative or a value other than 1.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#control>Control</a><ul><li><a href=#side-effects>Side Effects</a><ul><li><a href=#example-with-no-side-effects>Example With No Side Effects</a></li><li><a href=#example-with-side-effects>Example With Side Effects</a></li></ul></li><li><a href=#the-none-value>The &lsquo;None&rsquo; Value</a></li><li><a href=#nested-print-statements>Nested Print Statements</a></li><li><a href=#default-arguments>Default Arguments</a></li><li><a href=#multiple-return-values>Multiple Return Values</a></li><li><a href=#multiple-variable-assignment>Multiple Variable Assignment</a></li><li><a href=#boolean>Boolean</a><ul><li><a href=#comparison-operators>Comparison Operators</a></li><li><a href=#logical-operators>Logical Operators</a></li><li><a href=#execution-rules-of-logical-operators>Execution rules of logical operators</a></li></ul></li><li><a href=#statements>Statements</a><ul><li><a href=#compound-statements>Compound Statements</a></li></ul></li><li><a href=#while-loop>While Loop</a><ul><li><a href=#break-statement>Break Statement</a></li></ul></li><li><a href=#for-loop>For Loop</a><ul><li><a href=#the-range-function>The range() function</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
+Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-2/control/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="Control">
+  <meta property="og:description" content="Control # Side Effects # Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>Control | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-2/control/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="active">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Control</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#control">Control</a>
+      <ul>
+        <li><a href="#side-effects">Side Effects</a>
+          <ul>
+            <li><a href="#example-with-no-side-effects">Example With No Side Effects</a></li>
+            <li><a href="#example-with-side-effects">Example With Side Effects</a></li>
+          </ul>
+        </li>
+        <li><a href="#the-none-value">The &lsquo;None&rsquo; Value</a></li>
+        <li><a href="#nested-print-statements">Nested Print Statements</a></li>
+        <li><a href="#default-arguments">Default Arguments</a></li>
+        <li><a href="#multiple-return-values">Multiple Return Values</a></li>
+        <li><a href="#multiple-variable-assignment">Multiple Variable Assignment</a></li>
+        <li><a href="#boolean">Boolean</a>
+          <ul>
+            <li><a href="#comparison-operators">Comparison Operators</a></li>
+            <li><a href="#logical-operators">Logical Operators</a></li>
+            <li><a href="#execution-rules-of-logical-operators">Execution rules of logical operators</a></li>
+          </ul>
+        </li>
+        <li><a href="#statements">Statements</a>
+          <ul>
+            <li><a href="#compound-statements">Compound Statements</a></li>
+          </ul>
+        </li>
+        <li><a href="#while-loop">While Loop</a>
+          <ul>
+            <li><a href="#break-statement">Break Statement</a></li>
+          </ul>
+        </li>
+        <li><a href="#for-loop">For Loop</a>
+          <ul>
+            <li><a href="#the-range-function">The range() function</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="control">
+  Control
+  <a class="anchor" href="#control">#</a>
+</h1>
+<h2 id="side-effects">
+  Side Effects
+  <a class="anchor" href="#side-effects">#</a>
+</h2>
+<p>Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects.</p>
+<p>A Mathematical function f(x) takes inputs and always provides the same outputs, without doing anything else. As a result, one input will never have two or more different outputs. If a programming function has the same property where certain outputs always provide the same inputs without doing anything else, it has no side effects.</p>
+<h3 id="example-with-no-side-effects">
+  Example With No Side Effects
+  <a class="anchor" href="#example-with-no-side-effects">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">no_side_effects</span>(x): <span style="color:#75715e"># Squares x</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>no_side_effects(<span style="color:#ae81ff">2</span>) <span style="color:#75715e"># &gt;&gt;&gt; 4</span>
+</span></span><span style="display:flex;"><span>no_side_effects(<span style="color:#ae81ff">2</span>) <span style="color:#75715e"># &gt;&gt;&gt; 4</span>
+</span></span></code></pre></div><p>In this example, every input will always map to the same output as the function does not do anything other than provide an output given an input.</p>
+<h3 id="example-with-side-effects">
+  Example With Side Effects
+  <a class="anchor" href="#example-with-side-effects">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ben <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">with_side_effects</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>ben
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>with_side_effects(<span style="color:#ae81ff">2</span>) <span style="color:#75715e"># &gt;&gt;&gt; 2</span>
+</span></span><span style="display:flex;"><span>ben <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>with_side_effects(<span style="color:#ae81ff">2</span>) <span style="color:#75715e"># &gt;&gt;&gt; 4</span>
+</span></span></code></pre></div><p>While this example is not going to be used in a practical setting, it serves as a good example of what a side effect is. As you can see, even though we called the function <code>with_side_effects</code> twice with the same input, the output was different, which goes against the definition of a mathematical function. As a result, there is a side effect in that function.</p>
+<p>A side note:</p>
+<p>While the print function does not change the value of any variables, it does cause a side effect by outputting something to the console, which does go against how a mathematical function works. However, while side effects are usually better to avoid where possible, print could sometimes be useful for debugging.</p>
+<p>An example of a side effect that can&rsquo;t be avoided is writing to a file - this is necessary at times.</p>
+<p>A function without side effects is also known as a pure function, while a function with side effects is also known as an impure function.</p>
+<h2 id="the-none-value">
+  The &lsquo;None&rsquo; Value
+  <a class="anchor" href="#the-none-value">#</a>
+</h2>
+<p>In Python, any function that does not return a value will return None, which when printed will render None to the console, and when called, will not render anything in the console.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">no_return</span>(x):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(no_return(<span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &gt;&gt;&gt; None</span>
+</span></span></code></pre></div><p>Note that the <code>print()</code> function has no return value, and thus will return None when called.</p>
+<h2 id="nested-print-statements">
+  Nested Print Statements
+  <a class="anchor" href="#nested-print-statements">#</a>
+</h2>
+<p>A nested print function is somewhat weird, but worth it to learn.</p>
+<p>Take this for example, what do you think will get outputted to the console? Try to think for yourself before opening the answer box below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(print(<span style="color:#ae81ff">1</span>))
+</span></span></code></pre></div><p>For a harder example, try this one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(print(<span style="color:#e6db74">&#34;x&#34;</span>), print(<span style="color:#e6db74">&#34;y&#34;</span>))
+</span></span></code></pre></div><h2 id="default-arguments">
+  Default Arguments
+  <a class="anchor" href="#default-arguments">#</a>
+</h2>
+<p>In the function signature, one of the inputs can have a default value. This is useful in situations where there is a most likely case for a function, but where it still makes sense for users to have some control.</p>
+<p>For example, the default <code>round()</code> function in Python takes in 1 required parameter, with 1 optional parameter (which defaults to 0).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>round(<span style="color:#ae81ff">2.5342</span>) <span style="color:#75715e"># &gt;&gt;&gt; 3</span>
+</span></span><span style="display:flex;"><span>round(<span style="color:#ae81ff">2.5342</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># &gt;&gt;&gt; 2.53</span>
+</span></span></code></pre></div><p>You can build your own function with default arguments by simply specifying it in the header.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ben</span>(baron, box<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tao&#34;</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> baron <span style="color:#f92672">+</span> box
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ben(<span style="color:#e6db74">&#34;baron&#34;</span>) <span style="color:#75715e"># &gt;&gt;&gt; &#39;barontao&#39;</span>
+</span></span><span style="display:flex;"><span>ben(<span style="color:#e6db74">&#34;baron&#34;</span>, <span style="color:#e6db74">&#34;hej&#34;</span>) <span style="color:#75715e"># &gt;&gt;&gt; &#39;baronhej&#39;</span>
+</span></span></code></pre></div><p>Without the second optional parameter hej, the function defaulted to the value tao.</p>
+<p>If you have multiple default arguments, you can also override them in this way:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ben</span>(baron, box<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tao&#34;</span>, foo<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;baz&#34;</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> baron <span style="color:#f92672">+</span> box <span style="color:#f92672">+</span> foo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ben(<span style="color:#e6db74">&#34;baron&#34;</span>, foo<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yu&#34;</span>) <span style="color:#75715e"># &gt;&gt;&gt; barontaoyu</span>
+</span></span><span style="display:flex;"><span>ben(<span style="color:#e6db74">&#34;baron&#34;</span>, box<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yu&#34;</span>) <span style="color:#75715e"># &gt;&gt;&gt; baronyubaz</span>
+</span></span></code></pre></div><h2 id="multiple-return-values">
+  Multiple Return Values
+  <a class="anchor" href="#multiple-return-values">#</a>
+</h2>
+<p>One aspect of Python uncommon in other languages is the allowed use of multiple return values in functions. This can be done in a function by using multiple return values separated by a comma.</p>
+<p>Any code that calls the function can either store it in a variable as a tuple (more on this later) or can be unpacked. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">return_two_values</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>return_two_values() <span style="color:#75715e"># &gt;&gt;&gt; (1, 2) in tuple form</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> return_two_values() 
+</span></span><span style="display:flex;"><span>a <span style="color:#75715e"># &gt;&gt;&gt; 1</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#75715e"># &gt;&gt;&gt; 2</span>
+</span></span></code></pre></div><h2 id="multiple-variable-assignment">
+  Multiple Variable Assignment
+  <a class="anchor" href="#multiple-variable-assignment">#</a>
+</h2>
+<p>The values on the right side are evaluated first before being assigned, so you can swap the values of two variables in one line by simply doing the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x, y <span style="color:#f92672">=</span> y, x
+</span></span></code></pre></div><h2 id="boolean">
+  Boolean
+  <a class="anchor" href="#boolean">#</a>
+</h2>
+<p>A Boolean is a value that is either True or False, and is used frequently in many applications. For example, your mobile device would likely have a Boolean variable that stores whether your WiFi, flashlight, bluetooth etc. is turned on.</p>
+<p>An expression can evaluate to a Boolean. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>passed_class <span style="color:#f92672">=</span> grade <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">70</span> <span style="color:#75715e"># Will evaluate either true or false depending on the condition</span>
+</span></span><span style="display:flex;"><span>take_shower <span style="color:#f92672">=</span> (<span style="color:#f92672">not</span> eecs_major) <span style="color:#f92672">or</span> did_sports
+</span></span></code></pre></div><h3 id="comparison-operators">
+  Comparison Operators
+  <a class="anchor" href="#comparison-operators">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>==</td>
+          <td>Equality</td>
+      </tr>
+      <tr>
+          <td>!=</td>
+          <td>Inequality</td>
+      </tr>
+      <tr>
+          <td>&gt;</td>
+          <td>Greater Than</td>
+      </tr>
+      <tr>
+          <td>&lt;</td>
+          <td>Less Than</td>
+      </tr>
+      <tr>
+          <td>&gt;=</td>
+          <td>Greater Than or Equals</td>
+      </tr>
+      <tr>
+          <td>&lt;=</td>
+          <td>Less Than or Equals</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Checking for Equality</strong>: It is a common mistake to use = instead of == to check for equality. Please remember that = is for assigning a variable and cannot be used for checking for equality in a conditional statement. Python will throw a syntax error, but other languages may not, so not mixing these up is a good habit to get used to.</p>
+<h3 id="logical-operators">
+  Logical Operators
+  <a class="anchor" href="#logical-operators">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>and</td>
+          <td>Evaluates to True if both values are True</td>
+      </tr>
+      <tr>
+          <td>or</td>
+          <td>Evaluates to True if any of the values are True</td>
+      </tr>
+      <tr>
+          <td>not</td>
+          <td>Evaluates to True if the value is False, else evaluates to True</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="execution-rules-of-logical-operators">
+  Execution rules of logical operators
+  <a class="anchor" href="#execution-rules-of-logical-operators">#</a>
+</h3>
+<p>The statements are evaluated from left to right, but sometimes, these statements do not all need to be evaluated.</p>
+<p><strong>and statement procedure:</strong></p>
+<ol>
+<li>Evaluate the left statement.</li>
+<li>If it evaluates to a False value x, the expression evaluates to x.</li>
+<li>Else, the expression evaluates to the value of the expression on the right.</li>
+</ol>
+<p><strong>or statement procedure:</strong></p>
+<ol>
+<li>Evaluate the left statement.</li>
+<li>If it evaluates to a True value x the expression evaluates to x.</li>
+<li>Else, the expression evaluates to the value of the expression on the right.</li>
+</ol>
+<p>This procedure functions using just Booleans, but strange things occur when you use other values instead.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">and</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># &gt;&gt;&gt; 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># &gt;&gt;&gt; 5</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">not</span> <span style="color:#ae81ff">5</span> <span style="color:#75715e"># &gt;&gt;&gt; False</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">not</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e"># &gt;&gt;&gt; True</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> <span style="color:#66d9ef">False</span> <span style="color:#75715e"># &gt;&gt;&gt; 0</span>
+</span></span></code></pre></div><p>For the <code>and</code> and <code>or</code> operators, numbers were returned rather than Booleans due to the procedure of evaluating these logical statements.</p>
+<p>There is an order of operations for Booleans (not → and → or), but generally, use brackets to make your statements clearer.</p>
+<p>You can use these expressions in functions as the return value. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">boolean_example</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> is_ben <span style="color:#f92672">or</span> is_tao <span style="color:#75715e"># This will return either True or False depending on the Boolean expression.</span>
+</span></span></code></pre></div><h2 id="statements">
+  Statements
+  <a class="anchor" href="#statements">#</a>
+</h2>
+<p>A statement is executed to perform an action.</p>
+<h3 id="compound-statements">
+  Compound Statements
+  <a class="anchor" href="#compound-statements">#</a>
+</h3>
+<p>A compound statement is a statement that contains groups of other statements.</p>
+<p>One example of which are conditional statements, which give your code a way to execute a different suite of statements based on whether conditions are met:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">&lt;</span>condition<span style="color:#f92672">&gt;</span>:
+</span></span><span style="display:flex;"><span>    this_may_be_executed(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">&lt;</span>condition_2<span style="color:#f92672">&gt;</span>:
+</span></span><span style="display:flex;"><span>    this_may_be_executed(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    this_may_be_executed(<span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p>An if statement looks like the code above. The block indented after the if, elif, and else statements only get executed if the code directs it to.</p>
+<p>For instance, if <code>&lt;condition&gt;</code> were True, then <code>this_may_be_executed(1)</code> is the only statement that gets evaluated, and the ones in the other blocks are skipped over.</p>
+<p>If <code>&lt;condition_2&gt;</code> were True, then <code>this_may_be_executed(2)</code> is the only statement that gets evaluated.</p>
+<p>If both <code>&lt;condition&gt;</code> and <code>&lt;condition_2&gt;</code> are False, then <code>this_may_be_executed(3)</code> is evaluated.</p>
+<p>This means that the code does not get executed unless certain conditions are met, which is different from call expressions where every operand gets evaluated. (This property is important for some questions)</p>
+<p>Additionally, this also allows for multiple return statements in functions because only that specific block gets executed, rather than every block.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">returning_conditional</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;positive&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;negative&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;neutral&#34;</span>
+</span></span></code></pre></div><h2 id="while-loop">
+  While Loop
+  <a class="anchor" href="#while-loop">#</a>
+</h2>
+<p>A while loop in Python executes a block of code as long as a condition is true. This loop keeps on getting checked after each iteration.</p>
+<p>One problem of a while loop is that an infinite loop can easily occur if you aren&rsquo;t careful.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> counter <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>    print(counter)
+</span></span><span style="display:flex;"><span>    counter <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt; 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt; 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt; 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt; 4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>In the example above, 5 does not get printed because during that iteration, the counter variable is already 5, and the conditional 5 &lt; 5 returns False.</p>
+<p>A while loop is very useful if you do not know how many repeats of the code you need to do, while a for loop (explained on another page) is better if you know how many loops to do.</p>
+<h3 id="break-statement">
+  Break Statement
+  <a class="anchor" href="#break-statement">#</a>
+</h3>
+<p>If you ever want to prematurely leave a code block, you can use the break keyword.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &gt;&gt;&gt; 1</span>
+</span></span></code></pre></div><p>The above code would usually give an infinite loop, but the break statement prevents that from happening.</p>
+<h2 id="for-loop">
+  For Loop
+  <a class="anchor" href="#for-loop">#</a>
+</h2>
+<p>A for loop in Python executes a block of code for a set number of times. It provides a cleaner way to write while loops as long as they are iterating over some sort of sequence, for instance, the <code>range()</code> function.</p>
+<p>The for loop syntax is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#f92672">&lt;</span>name<span style="color:#f92672">&gt;</span> <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>expression<span style="color:#f92672">&gt;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>suite<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><ol>
+<li>Evaluate <code>&lt;expression&gt;</code> — this must evaluate to an iterable value (strings, lists (more on this later), range()) etc</li>
+<li>For each element in that <code>&lt;expression&gt;</code> (in order), bind <code>&lt;name&gt;</code> to the element in the current frame</li>
+<li>Execute the suite, with <code>&lt;name&gt;</code> bound to a new value.</li>
+</ol>
+<p>That might be slightly confusing for now, but just know that you can do everything a for loop can do with a while loop. So, if you see an example that uses a for loop, you can re-imagine it as a while loop, and it would still act the same.</p>
+<h3 id="the-range-function">
+  The range() function
+  <a class="anchor" href="#the-range-function">#</a>
+</h3>
+<p>The <code>range()</code> function is used quite often in conjunction with the for loop. It represents a sequence of integers. There are 3 arguments that <code>range()</code> takes, each of which will be explained, then demonstrated below:</p>
+<ol>
+<li>If there is just one argument x, <code>range(x)</code> will start on 0, then keep increasing the number by 1 until x - 1 (0 &lt;= i &lt; x where i is the current value)</li>
+<li>If there are two arguments x, y, <code>range(x, y)</code> will start on x, then keep increasing the number by 1 until y - 1.</li>
+<li>If there are three arguments x, y, z, <code>range(x, y, z)</code> will start on x, then keep incrementing the number by z (this can be negative), and then end on y - z.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>): <span style="color:#75715e"># equivalent to range(0, 5)</span>
+</span></span><span style="display:flex;"><span>    print(n)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>    print(n)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    print(n)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 5
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&gt; 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>As can be seen in the 3 examples above, the <code>range()</code> function works well with the for loop.</p>
+<p>When <code>range()</code> is passed only 1 parameter in a for loop, it starts off at 0, then ends off at the integer before n. With 2 parameters, the for loop&rsquo;s value starts off at the first parameter&rsquo;s value, then ends off at the integer before the second parameter&rsquo;s value. The last parameter specifies the amount n should be changed by each loop, whether it be negative or a value other than 1.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#control">Control</a>
+      <ul>
+        <li><a href="#side-effects">Side Effects</a>
+          <ul>
+            <li><a href="#example-with-no-side-effects">Example With No Side Effects</a></li>
+            <li><a href="#example-with-side-effects">Example With Side Effects</a></li>
+          </ul>
+        </li>
+        <li><a href="#the-none-value">The &lsquo;None&rsquo; Value</a></li>
+        <li><a href="#nested-print-statements">Nested Print Statements</a></li>
+        <li><a href="#default-arguments">Default Arguments</a></li>
+        <li><a href="#multiple-return-values">Multiple Return Values</a></li>
+        <li><a href="#multiple-variable-assignment">Multiple Variable Assignment</a></li>
+        <li><a href="#boolean">Boolean</a>
+          <ul>
+            <li><a href="#comparison-operators">Comparison Operators</a></li>
+            <li><a href="#logical-operators">Logical Operators</a></li>
+            <li><a href="#execution-rules-of-logical-operators">Execution rules of logical operators</a></li>
+          </ul>
+        </li>
+        <li><a href="#statements">Statements</a>
+          <ul>
+            <li><a href="#compound-statements">Compound Statements</a></li>
+          </ul>
+        </li>
+        <li><a href="#while-loop">While Loop</a>
+          <ul>
+            <li><a href="#break-statement">Break Statement</a></li>
+          </ul>
+        </li>
+        <li><a href="#for-loop">For Loop</a>
+          <ul>
+            <li><a href="#the-range-function">The range() function</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

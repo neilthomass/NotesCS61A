@@ -30,7 +30,7 @@ enableGitInfo = true
   [[menu.before]]
   [[menu.after]]
     name = "About Me"
-    url = "https://neilthomass.github.io"
+    url = "https://neilthomass.github.io/author"
     weight = 10
 
 [params]

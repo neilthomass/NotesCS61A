@@ -1,27 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-6/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-6/index.xml" rel="self" type="application/rss+xml"/><item><title>Mutability</title><link>http://localhost:1313/docs/week-6/mutability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-6/mutability/</guid><description>&lt;h1 id="mutability">
- Mutability
- &lt;a class="anchor" href="#mutability">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="objects">
- Objects
- &lt;a class="anchor" href="#objects">#&lt;/a>
-&lt;/h2>
-&lt;p>An object is a bundle of data and behaviour, with each type of object called a class.&lt;/p>
-&lt;p>Every value in Python is an object.&lt;/p>
-&lt;p>All objects have attributes, and objects often have associated methods.&lt;/p>
-&lt;h3 id="example-strings">
- Example (Strings)
- &lt;a class="anchor" href="#example-strings">#&lt;/a>
-&lt;/h3>
-&lt;p>A string is an object — try running &lt;code>type(&amp;quot;&amp;quot;)&lt;/code> in Python console and seeing what it outputs.&lt;/p>
-&lt;p>Strings have attributes (for example the data inside it) and also has methods such as &lt;code>string.upper()&lt;/code>.&lt;/p></description></item><item><title>Trees</title><link>http://localhost:1313/docs/week-6/trees/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-6/trees/</guid><description>&lt;h1 id="trees">
- Trees
- &lt;a class="anchor" href="#trees">#&lt;/a>
-&lt;/h1>
-&lt;p>A tree is an abstract data structure (basically not implemented by default in Python), which means we need to use data abstractions in order to implement this structure.&lt;/p>
-&lt;h2 id="what-does-a-tree-look-like">
- What does a tree look like?
- &lt;a class="anchor" href="#what-does-a-tree-look-like">#&lt;/a>
-&lt;/h2>
-&lt;p>A tree has a root and a list of branches, where each branch is a tree itself.&lt;/p>
-&lt;p>A tree with zero branches (the white circles in the drawing above) is called a leaf. A tree also starts at the root, which in the drawing above, is the blue circle.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS61A NT</title>
+    <link>http://localhost:1313/cs61a/docs/week-6/</link>
+    <description>Recent content on CS61A NT</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/cs61a/docs/week-6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mutability</title>
+      <link>http://localhost:1313/cs61a/docs/week-6/mutability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-6/mutability/</guid>
+      <description>&lt;h1 id=&#34;mutability&#34;&gt;&#xA;  Mutability&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#mutability&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;objects&#34;&gt;&#xA;  Objects&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#objects&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;An object is a bundle of data and behaviour, with each type of object called a class.&lt;/p&gt;&#xA;&lt;p&gt;Every value in Python is an object.&lt;/p&gt;&#xA;&lt;p&gt;All objects have attributes, and objects often have associated methods.&lt;/p&gt;&#xA;&lt;h3 id=&#34;example-strings&#34;&gt;&#xA;  Example (Strings)&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example-strings&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;A string is an object — try running &lt;code&gt;type(&amp;quot;&amp;quot;)&lt;/code&gt; in Python console and seeing what it outputs.&lt;/p&gt;&#xA;&lt;p&gt;Strings have attributes (for example the data inside it) and also has methods such as &lt;code&gt;string.upper()&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Trees</title>
+      <link>http://localhost:1313/cs61a/docs/week-6/trees/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-6/trees/</guid>
+      <description>&lt;h1 id=&#34;trees&#34;&gt;&#xA;  Trees&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#trees&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;A tree is an abstract data structure (basically not implemented by default in Python), which means we need to use data abstractions in order to implement this structure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-does-a-tree-look-like&#34;&gt;&#xA;  What does a tree look like?&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-does-a-tree-look-like&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A tree has a root and a list of branches, where each branch is a tree itself.&lt;/p&gt;&#xA;&lt;p&gt;A tree with zero branches (the white circles in the drawing above) is called a leaf. A tree also starts at the root, which in the drawing above, is the blue circle.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

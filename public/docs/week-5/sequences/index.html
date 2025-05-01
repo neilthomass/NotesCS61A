@@ -1,4 +1,9 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   Sequences
   #
 
@@ -7,70 +12,967 @@
   #
 
 Lists can represented with box and pointer notation (similarly to functions); however, unlike functions, each element in the array has its own box, and is index labelled.
-What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-5/sequences/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Sequences"><meta property="og:description" content="Sequences # Lists in Environment Diagrams # Lists can represented with box and pointer notation (similarly to functions); however, unlike functions, each element in the array has its own box, and is index labelled.
-What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Sequences | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-5/sequences/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/ class=active>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Sequences</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#sequences>Sequences</a><ul><li><a href=#lists-in-environment-diagrams>Lists in Environment Diagrams</a></li><li><a href=#list-slicing>List Slicing</a></li><li><a href=#small-practice-problems>Small Practice Problems</a><ul><li><a href=#recursion-in-lists>Recursion in Lists</a></li><li><a href=#reversing-a-string-recursively>Reversing a String (Recursively)</a></li></ul></li><li><a href=#built-in-functions-for-iterables>Built-in functions for Iterables</a><ul><li><a href=#examples-of-the-built-in-functions>Examples of the built-in functions</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=sequences>Sequences
-<a class=anchor href=#sequences>#</a></h1><h2 id=lists-in-environment-diagrams>Lists in Environment Diagrams
-<a class=anchor href=#lists-in-environment-diagrams>#</a></h2><p>Lists can represented with box and pointer notation (similarly to functions); however, unlike functions, each element in the array has its own box, and is index labelled.</p><p>What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make.</p><p>Each box can either hold a value (for example a number or a string), or an object (for example, a function, another list, or a Class).</p><h2 id=list-slicing>List Slicing
-<a class=anchor href=#list-slicing>#</a></h2><p>Slicing a list creates a new list (as in it points to a separate list). The behaviour is very similar to the range() function — it starts on the first &lsquo;argument&rsquo; provided, ends on the number right before the second &lsquo;argument&rsquo;, with step of the third &lsquo;argument&rsquo;. In this case however, the separator is : rather than ,. If there is no argument provided next to the :, it defaults to 0.</p><p>The syntax is <code>lst[&lt;start>:&lt;end>:&lt;step_size>]</code></p><p>Below are some examples:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#e6db74>&#34;bananas&#34;</span>]
-</span></span><span style=display:flex><span>lst[<span style=color:#ae81ff>0</span>:] <span style=color:#75715e># [1, 2, &#34;bananas&#34;]</span>
-</span></span><span style=display:flex><span>lst[:<span style=color:#ae81ff>2</span>] <span style=color:#75715e># [1, 2]</span>
-</span></span><span style=display:flex><span>lst[<span style=color:#ae81ff>1</span>:] <span style=color:#75715e># [2, &#34;bananas&#34;]</span>
-</span></span><span style=display:flex><span>lst[::<span style=color:#ae81ff>2</span>] <span style=color:#75715e># [1, &#34;bananas&#34;]</span>
-</span></span></code></pre></div><p>This behaviour also works with strings:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>string <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;benbaron&#34;</span>
-</span></span><span style=display:flex><span>string[<span style=color:#ae81ff>3</span>:] <span style=color:#75715e># &#34;baron&#34;</span>
-</span></span><span style=display:flex><span>string[:<span style=color:#ae81ff>3</span>] <span style=color:#75715e># &#34;ben&#34;</span>
-</span></span></code></pre></div><h2 id=small-practice-problems>Small Practice Problems
-<a class=anchor href=#small-practice-problems>#</a></h2><h3 id=recursion-in-lists>Recursion in Lists
-<a class=anchor href=#recursion-in-lists>#</a></h3><p>Imagine summing the numbers in a list but using recursion rather than iteration or the sum() function.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sum_numbers</span>(lst):
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&#39;&#39;Returns the sum of the numbers in lst
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; sum_numbers([2, 3, 4])
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    9
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;&#39;&#39;</span>
-</span></span></code></pre></div><p>We could implement the function above using list comprehension:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sum_numbers</span>(lst):
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&#39;&#39;Returns the sum of the numbers in lst
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; sum_numbers([2, 3, 4])
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    9
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;&#39;&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> lst <span style=color:#f92672>==</span> []: <span style=color:#75715e># base case</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> lst[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>+</span> sum_numbers(lst[<span style=color:#ae81ff>1</span>:]) 
-</span></span><span style=display:flex><span>        <span style=color:#75715e># takes the first number and </span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># recursively calls the function on a smaller list.</span>
-</span></span></code></pre></div><h3 id=reversing-a-string-recursively>Reversing a String (Recursively)
-<a class=anchor href=#reversing-a-string-recursively>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>reverse_string</span>(word):
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&#39;&#39;Reverse the string provided in word
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; reverse_string(&#34;ben&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    neb
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;&#39;&#39;</span>
-</span></span></code></pre></div><p>Our base case here would be when the word provided is an empty string.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>reverse_string</span>(word):
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&#39;&#39;Reverse the string provided in word
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; reverse_string(&#34;ben&#34;)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    neb
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;&#39;&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> word <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;&#34;</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> reverse_string(word[<span style=color:#ae81ff>1</span>:]) <span style=color:#f92672>+</span> word[<span style=color:#ae81ff>0</span>]
-</span></span><span style=display:flex><span>        <span style=color:#75715e># keep in mind the order of the operation above matters</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># word[0] is put afterwards because</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># that should be added up later</span>
-</span></span></code></pre></div><h2 id=built-in-functions-for-iterables>Built-in functions for Iterables
-<a class=anchor href=#built-in-functions-for-iterables>#</a></h2><table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody><tr><td><code>sum(iterable, start)</code></td><td>Returns the sum of the values in iterable, with a starting sum of start (defaults to 0)</td></tr><tr><td><code>all(iterable)</code></td><td>Returns True if all the values of iterable are Truthy values (or if the iterable is empty), else returns False</td></tr><tr><td><code>any(iterable)</code></td><td>Returns True if any of the values of iterable are Truthy, else returns False</td></tr><tr><td><code>max(iterable, key=None)</code></td><td>Returns the maximum value in iterable</td></tr><tr><td><code>min(iterable, key=None)</code></td><td>Returns the minimum value in iterable</td></tr></tbody></table><h3 id=examples-of-the-built-in-functions>Examples of the built-in functions
-<a class=anchor href=#examples-of-the-built-in-functions>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>sum([<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>], <span style=color:#ae81ff>50</span>) <span style=color:#75715e># 56</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>any([<span style=color:#66d9ef>True</span>, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>False</span>]) <span style=color:#75715e># True</span>
-</span></span><span style=display:flex><span>any([<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>]) <span style=color:#75715e># True</span>
-</span></span><span style=display:flex><span>all([<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>]) <span style=color:#75715e># True</span>
-</span></span><span style=display:flex><span>all([<span style=color:#66d9ef>True</span>, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>False</span>]) <span style=color:#75715e># False</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>max([<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>1</span>]) <span style=color:#75715e># 3</span>
-</span></span><span style=display:flex><span>max([<span style=color:#e6db74>&#34;a&#34;</span>, <span style=color:#e6db74>&#34;b&#34;</span>, <span style=color:#e6db74>&#34;c&#34;</span>]) <span style=color:#75715e># &#34;c&#34;</span>
-</span></span><span style=display:flex><span>max(range(<span style=color:#ae81ff>10</span>)) <span style=color:#75715e># 9</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># the &#39;key&#39; parameter can be used to compare certain elements in an array:</span>
-</span></span><span style=display:flex><span>coords <span style=color:#f92672>=</span> [[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>], [<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>3</span>], [<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>90</span>]]
-</span></span><span style=display:flex><span>max(coords, key <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> x: x[<span style=color:#ae81ff>0</span>]) <span style=color:#75715e># [4, 3] (x iterates through coords and then checks the max value of the first element)</span>
-</span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#sequences>Sequences</a><ul><li><a href=#lists-in-environment-diagrams>Lists in Environment Diagrams</a></li><li><a href=#list-slicing>List Slicing</a></li><li><a href=#small-practice-problems>Small Practice Problems</a><ul><li><a href=#recursion-in-lists>Recursion in Lists</a></li><li><a href=#reversing-a-string-recursively>Reversing a String (Recursively)</a></li></ul></li><li><a href=#built-in-functions-for-iterables>Built-in functions for Iterables</a><ul><li><a href=#examples-of-the-built-in-functions>Examples of the built-in functions</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
+What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-5/sequences/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="Sequences">
+  <meta property="og:description" content="Sequences # Lists in Environment Diagrams # Lists can represented with box and pointer notation (similarly to functions); however, unlike functions, each element in the array has its own box, and is index labelled.
+What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>Sequences | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-5/sequences/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="active">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Sequences</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#sequences">Sequences</a>
+      <ul>
+        <li><a href="#lists-in-environment-diagrams">Lists in Environment Diagrams</a></li>
+        <li><a href="#list-slicing">List Slicing</a></li>
+        <li><a href="#small-practice-problems">Small Practice Problems</a>
+          <ul>
+            <li><a href="#recursion-in-lists">Recursion in Lists</a></li>
+            <li><a href="#reversing-a-string-recursively">Reversing a String (Recursively)</a></li>
+          </ul>
+        </li>
+        <li><a href="#built-in-functions-for-iterables">Built-in functions for Iterables</a>
+          <ul>
+            <li><a href="#examples-of-the-built-in-functions">Examples of the built-in functions</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="sequences">
+  Sequences
+  <a class="anchor" href="#sequences">#</a>
+</h1>
+<h2 id="lists-in-environment-diagrams">
+  Lists in Environment Diagrams
+  <a class="anchor" href="#lists-in-environment-diagrams">#</a>
+</h2>
+<p>Lists can represented with box and pointer notation (similarly to functions); however, unlike functions, each element in the array has its own box, and is index labelled.</p>
+<p>What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make.</p>
+<p>Each box can either hold a value (for example a number or a string), or an object (for example, a function, another list, or a Class).</p>
+<h2 id="list-slicing">
+  List Slicing
+  <a class="anchor" href="#list-slicing">#</a>
+</h2>
+<p>Slicing a list creates a new list (as in it points to a separate list). The behaviour is very similar to the range() function — it starts on the first &lsquo;argument&rsquo; provided, ends on the number right before the second &lsquo;argument&rsquo;, with step of the third &lsquo;argument&rsquo;. In this case however, the separator is : rather than ,. If there is no argument provided next to the :, it defaults to 0.</p>
+<p>The syntax is <code>lst[&lt;start&gt;:&lt;end&gt;:&lt;step_size&gt;]</code></p>
+<p>Below are some examples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lst <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;bananas&#34;</span>]
+</span></span><span style="display:flex;"><span>lst[<span style="color:#ae81ff">0</span>:] <span style="color:#75715e"># [1, 2, &#34;bananas&#34;]</span>
+</span></span><span style="display:flex;"><span>lst[:<span style="color:#ae81ff">2</span>] <span style="color:#75715e"># [1, 2]</span>
+</span></span><span style="display:flex;"><span>lst[<span style="color:#ae81ff">1</span>:] <span style="color:#75715e"># [2, &#34;bananas&#34;]</span>
+</span></span><span style="display:flex;"><span>lst[::<span style="color:#ae81ff">2</span>] <span style="color:#75715e"># [1, &#34;bananas&#34;]</span>
+</span></span></code></pre></div><p>This behaviour also works with strings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;benbaron&#34;</span>
+</span></span><span style="display:flex;"><span>string[<span style="color:#ae81ff">3</span>:] <span style="color:#75715e"># &#34;baron&#34;</span>
+</span></span><span style="display:flex;"><span>string[:<span style="color:#ae81ff">3</span>] <span style="color:#75715e"># &#34;ben&#34;</span>
+</span></span></code></pre></div><h2 id="small-practice-problems">
+  Small Practice Problems
+  <a class="anchor" href="#small-practice-problems">#</a>
+</h2>
+<h3 id="recursion-in-lists">
+  Recursion in Lists
+  <a class="anchor" href="#recursion-in-lists">#</a>
+</h3>
+<p>Imagine summing the numbers in a list but using recursion rather than iteration or the sum() function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_numbers</span>(lst):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;Returns the sum of the numbers in lst
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; sum_numbers([2, 3, 4])
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    9
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>We could implement the function above using list comprehension:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_numbers</span>(lst):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;Returns the sum of the numbers in lst
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; sum_numbers([2, 3, 4])
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    9
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> lst <span style="color:#f92672">==</span> []: <span style="color:#75715e"># base case</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> lst[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> sum_numbers(lst[<span style="color:#ae81ff">1</span>:]) 
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># takes the first number and </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># recursively calls the function on a smaller list.</span>
+</span></span></code></pre></div><h3 id="reversing-a-string-recursively">
+  Reversing a String (Recursively)
+  <a class="anchor" href="#reversing-a-string-recursively">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_string</span>(word):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;Reverse the string provided in word
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; reverse_string(&#34;ben&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    neb
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>Our base case here would be when the word provided is an empty string.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_string</span>(word):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;Reverse the string provided in word
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; reverse_string(&#34;ben&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    neb
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> word <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> reverse_string(word[<span style="color:#ae81ff">1</span>:]) <span style="color:#f92672">+</span> word[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># keep in mind the order of the operation above matters</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># word[0] is put afterwards because</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># that should be added up later</span>
+</span></span></code></pre></div><h2 id="built-in-functions-for-iterables">
+  Built-in functions for Iterables
+  <a class="anchor" href="#built-in-functions-for-iterables">#</a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Function</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>sum(iterable, start)</code></td>
+          <td>Returns the sum of the values in iterable, with a starting sum of start (defaults to 0)</td>
+      </tr>
+      <tr>
+          <td><code>all(iterable)</code></td>
+          <td>Returns True if all the values of iterable are Truthy values (or if the iterable is empty), else returns False</td>
+      </tr>
+      <tr>
+          <td><code>any(iterable)</code></td>
+          <td>Returns True if any of the values of iterable are Truthy, else returns False</td>
+      </tr>
+      <tr>
+          <td><code>max(iterable, key=None)</code></td>
+          <td>Returns the maximum value in iterable</td>
+      </tr>
+      <tr>
+          <td><code>min(iterable, key=None)</code></td>
+          <td>Returns the minimum value in iterable</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="examples-of-the-built-in-functions">
+  Examples of the built-in functions
+  <a class="anchor" href="#examples-of-the-built-in-functions">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sum([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>], <span style="color:#ae81ff">50</span>) <span style="color:#75715e"># 56</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>any([<span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>]) <span style="color:#75715e"># True</span>
+</span></span><span style="display:flex;"><span>any([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># True</span>
+</span></span><span style="display:flex;"><span>all([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]) <span style="color:#75715e"># True</span>
+</span></span><span style="display:flex;"><span>all([<span style="color:#66d9ef">True</span>, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>, <span style="color:#66d9ef">False</span>]) <span style="color:#75715e"># False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>max([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]) <span style="color:#75715e"># 3</span>
+</span></span><span style="display:flex;"><span>max([<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>]) <span style="color:#75715e"># &#34;c&#34;</span>
+</span></span><span style="display:flex;"><span>max(range(<span style="color:#ae81ff">10</span>)) <span style="color:#75715e"># 9</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the &#39;key&#39; parameter can be used to compare certain elements in an array:</span>
+</span></span><span style="display:flex;"><span>coords <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">90</span>]]
+</span></span><span style="display:flex;"><span>max(coords, key <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># [4, 3] (x iterates through coords and then checks the max value of the first element)</span>
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#sequences">Sequences</a>
+      <ul>
+        <li><a href="#lists-in-environment-diagrams">Lists in Environment Diagrams</a></li>
+        <li><a href="#list-slicing">List Slicing</a></li>
+        <li><a href="#small-practice-problems">Small Practice Problems</a>
+          <ul>
+            <li><a href="#recursion-in-lists">Recursion in Lists</a></li>
+            <li><a href="#reversing-a-string-recursively">Reversing a String (Recursively)</a></li>
+          </ul>
+        </li>
+        <li><a href="#built-in-functions-for-iterables">Built-in functions for Iterables</a>
+          <ul>
+            <li><a href="#examples-of-the-built-in-functions">Examples of the built-in functions</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

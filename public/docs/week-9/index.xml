@@ -1,6 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-9/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-9/index.xml" rel="self" type="application/rss+xml"/><item><title>Efficiency</title><link>http://localhost:1313/docs/week-9/efficiency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-9/efficiency/</guid><description>&lt;h1 id="efficiency">
- Efficiency
- &lt;a class="anchor" href="#efficiency">#&lt;/a>
-&lt;/h1>
-&lt;p>The efficiency of an algorithm is very important. While it isn&amp;rsquo;t too important in CS 61A due to the (relatively) small data set and number of computations needed, in big sets of data or some extremely computer taxing computations, efficiency makes a world of a difference in terms of actually being able to make computations.&lt;/p>
-&lt;p>However, CS 61A still wants you to understand how to calculate efficiency in a broad sense.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS61A NT</title>
+    <link>http://localhost:1313/cs61a/docs/week-9/</link>
+    <description>Recent content on CS61A NT</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/cs61a/docs/week-9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Efficiency</title>
+      <link>http://localhost:1313/cs61a/docs/week-9/efficiency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-9/efficiency/</guid>
+      <description>&lt;h1 id=&#34;efficiency&#34;&gt;&#xA;  Efficiency&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#efficiency&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;The efficiency of an algorithm is very important. While it isn&amp;rsquo;t too important in CS 61A due to the (relatively) small data set and number of computations needed, in big sets of data or some extremely computer taxing computations, efficiency makes a world of a difference in terms of actually being able to make computations.&lt;/p&gt;&#xA;&lt;p&gt;However, CS 61A still wants you to understand how to calculate efficiency in a broad sense.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

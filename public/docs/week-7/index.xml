@@ -1,34 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-7/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-7/index.xml" rel="self" type="application/rss+xml"/><item><title>Generators</title><link>http://localhost:1313/docs/week-7/generators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-7/generators/</guid><description>&lt;h1 id="what-is-a-generator">
- What is a Generator
- &lt;a class="anchor" href="#what-is-a-generator">#&lt;/a>
-&lt;/h1>
-&lt;p>Generators can be used to create your own iterators with custom values. This is useful when you want to create an iterator with unpredictable results (for example numbers with irregular intervals, possibly based on different arguments in a given function).&lt;/p>
-&lt;p>The way you define a generator function is through the yield keyword (instead of return in a function). In this sense, a generator is a type of iterator that yields results from a generator function.&lt;/p></description></item><item><title>Iterators</title><link>http://localhost:1313/docs/week-7/iterators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-7/iterators/</guid><description>&lt;h1 id="what-is-an-iterator">
- What is an Iterator
- &lt;a class="anchor" href="#what-is-an-iterator">#&lt;/a>
-&lt;/h1>
-&lt;p>An iterator is an object that provides sequential access to values in an iterable one by one.&lt;/p>
-&lt;p>While you may not see the use of them at the moment, the benefits of using them will be explained a bit later in these sets of notes.&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>iter(iterable)&lt;/code> returns an iterator over the elements of iterable.&lt;/li>
-&lt;li>&lt;code>next(&amp;lt;iter&amp;gt;)&lt;/code> returns the next element in an iterator.&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>numbers &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iter_numbers &lt;span style="color:#f92672">=&lt;/span> iter(numbers)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># 1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># 2&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># 3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># Error (StopIterator exception)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In CS61A, questions will never get to the point where handling the StopIterator error will need to happen, but a try &amp;hellip; except code block can handle that error. If you ever get a StopIterator error in your HW or Lab questions, you can just assume you did something wrong.&lt;/p></description></item><item><title>Objects</title><link>http://localhost:1313/docs/week-7/objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-7/objects/</guid><description>&lt;h1 id="object-oriented-programming-oop">
- Object Oriented Programming (OOP)
- &lt;a class="anchor" href="#object-oriented-programming-oop">#&lt;/a>
-&lt;/h1>
-&lt;p>OOP is a method for organizing programs. It includes:&lt;/p>
-&lt;ul>
-&lt;li>Data Abstraction&lt;/li>
-&lt;li>Bundling together related programs/information/behaviour&lt;/li>
-&lt;li>Each object can have its own local state (meaning its own variables), and also knows how to manage its own state.&lt;/li>
-&lt;/ul>
-&lt;p>OOP is particularly useful when you have many similar things that can be further generalized to avoid repeating redundant code. For example, you could have an Animal object, with other sub-classes of the Animal (for example, Turtle, Cat, Bear, etc.) - this (inheritance) will be covered in the next page.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS61A NT</title>
+    <link>http://localhost:1313/cs61a/docs/week-7/</link>
+    <description>Recent content on CS61A NT</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/cs61a/docs/week-7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generators</title>
+      <link>http://localhost:1313/cs61a/docs/week-7/generators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-7/generators/</guid>
+      <description>&lt;h1 id=&#34;what-is-a-generator&#34;&gt;&#xA;  What is a Generator&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-a-generator&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Generators can be used to create your own iterators with custom values. This is useful when you want to create an iterator with unpredictable results (for example numbers with irregular intervals, possibly based on different arguments in a given function).&lt;/p&gt;&#xA;&lt;p&gt;The way you define a generator function is through the yield keyword (instead of return in a function). In this sense, a generator is a type of iterator that yields results from a generator function.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Iterators</title>
+      <link>http://localhost:1313/cs61a/docs/week-7/iterators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-7/iterators/</guid>
+      <description>&lt;h1 id=&#34;what-is-an-iterator&#34;&gt;&#xA;  What is an Iterator&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-an-iterator&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;An iterator is an object that provides sequential access to values in an iterable one by one.&lt;/p&gt;&#xA;&lt;p&gt;While you may not see the use of them at the moment, the benefits of using them will be explained a bit later in these sets of notes.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;iter(iterable)&lt;/code&gt; returns an iterator over the elements of iterable.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;next(&amp;lt;iter&amp;gt;)&lt;/code&gt; returns the next element in an iterator.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;numbers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iter_numbers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; iter(numbers)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;next(iter_numbers) &lt;span style=&#34;color:#75715e&#34;&gt;# 1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;next(iter_numbers) &lt;span style=&#34;color:#75715e&#34;&gt;# 2&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;next(iter_numbers) &lt;span style=&#34;color:#75715e&#34;&gt;# 3&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;next(iter_numbers) &lt;span style=&#34;color:#75715e&#34;&gt;# Error (StopIterator exception)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In CS61A, questions will never get to the point where handling the StopIterator error will need to happen, but a try &amp;hellip; except code block can handle that error. If you ever get a StopIterator error in your HW or Lab questions, you can just assume you did something wrong.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Objects</title>
+      <link>http://localhost:1313/cs61a/docs/week-7/objects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-7/objects/</guid>
+      <description>&lt;h1 id=&#34;object-oriented-programming-oop&#34;&gt;&#xA;  Object Oriented Programming (OOP)&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#object-oriented-programming-oop&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;OOP is a method for organizing programs. It includes:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Data Abstraction&lt;/li&gt;&#xA;&lt;li&gt;Bundling together related programs/information/behaviour&lt;/li&gt;&#xA;&lt;li&gt;Each object can have its own local state (meaning its own variables), and also knows how to manage its own state.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;OOP is particularly useful when you have many similar things that can be further generalized to avoid repeating redundant code. For example, you could have an Animal object, with other sub-classes of the Animal (for example, Turtle, Cat, Bear, etc.) - this (inheritance) will be covered in the next page.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

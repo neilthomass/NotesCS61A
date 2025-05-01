@@ -1,33 +1,807 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   Environment Diagrams
   #
 
 Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.
-PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-2/environment-diagrams/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Environment Diagrams"><meta property="og:description" content="Environment Diagrams # Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.
-PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Environment Diagrams | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-2/environment-diagrams/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/ class=active>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Environment Diagrams</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#environment-diagrams>Environment Diagrams</a><ul><li><a href=#variable-assignment>Variable Assignment</a></li><li><a href=#function-assignment>Function Assignment</a></li><li><a href=#confusing-function-assignment-example>Confusing Function Assignment Example</a></li><li><a href=#call-expressions>Call Expressions</a></li><li><a href=#nested-call-expression>Nested Call Expression</a></li><li><a href=#names-in-environments>Names in Environments</a></li><li><a href=#environment-diagrams-for-higher-order-functions>Environment Diagrams for Higher-order Functions</a><ul><li><a href=#hof-takes-a-function-as-an-argument>HOF: Takes a function as an argument</a></li><li><a href=#hof-nested-environment-diagrams>HOF: Nested Environment Diagrams</a></li><li><a href=#variable-finding-procedure>Variable Finding Procedure</a></li></ul></li><li><a href=#self-referencing-functions>Self-Referencing Functions</a></li><li><a href=#currying>Currying</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=environment-diagrams>Environment Diagrams
-<a class=anchor href=#environment-diagrams>#</a></h1><p>Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.</p><p>PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible.</p><h2 id=variable-assignment>Variable Assignment
-<a class=anchor href=#variable-assignment>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>x <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>y <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>
-</span></span></code></pre></div><p>When the code block above is run, the value 2 will be assigned to the name x, and afterwards, the value 5 will be assigned to the name y, which can be seen in an environment diagram like the one below:</p><pre tabindex=0><code>Global Frame
+PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-2/environment-diagrams/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="Environment Diagrams">
+  <meta property="og:description" content="Environment Diagrams # Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.
+PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>Environment Diagrams | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-2/environment-diagrams/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="active">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Environment Diagrams</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#environment-diagrams">Environment Diagrams</a>
+      <ul>
+        <li><a href="#variable-assignment">Variable Assignment</a></li>
+        <li><a href="#function-assignment">Function Assignment</a></li>
+        <li><a href="#confusing-function-assignment-example">Confusing Function Assignment Example</a></li>
+        <li><a href="#call-expressions">Call Expressions</a></li>
+        <li><a href="#nested-call-expression">Nested Call Expression</a></li>
+        <li><a href="#names-in-environments">Names in Environments</a></li>
+        <li><a href="#environment-diagrams-for-higher-order-functions">Environment Diagrams for Higher-order Functions</a>
+          <ul>
+            <li><a href="#hof-takes-a-function-as-an-argument">HOF: Takes a function as an argument</a></li>
+            <li><a href="#hof-nested-environment-diagrams">HOF: Nested Environment Diagrams</a></li>
+            <li><a href="#variable-finding-procedure">Variable Finding Procedure</a></li>
+          </ul>
+        </li>
+        <li><a href="#self-referencing-functions">Self-Referencing Functions</a></li>
+        <li><a href="#currying">Currying</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="environment-diagrams">
+  Environment Diagrams
+  <a class="anchor" href="#environment-diagrams">#</a>
+</h1>
+<p>Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.</p>
+<p>PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible.</p>
+<h2 id="variable-assignment">
+  Variable Assignment
+  <a class="anchor" href="#variable-assignment">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>When the code block above is run, the value 2 will be assigned to the name x, and afterwards, the value 5 will be assigned to the name y, which can be seen in an environment diagram like the one below:</p>
+<pre tabindex="0"><code>Global Frame
 2
 x
 5
 y
-</code></pre><p>In each frame, there can only be one name bound to one value - it is not possible to have one name point to two different values.</p><h2 id=function-assignment>Function Assignment
-<a class=anchor href=#function-assignment>#</a></h2><p>Functions are notated differently to variables due to the potential need to overwrite a binding without losing the value of a function somewhere else (will make sense later).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>square</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> n<span style=color:#f92672>*</span>n
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>square(<span style=color:#ae81ff>3</span>)
-</span></span></code></pre></div><p>This will be executed in two different steps: creating the function, then executing the function.</p><pre tabindex=0><code>def square(n):
+</code></pre><p>In each frame, there can only be one name bound to one value - it is not possible to have one name point to two different values.</p>
+<h2 id="function-assignment">
+  Function Assignment
+  <a class="anchor" href="#function-assignment">#</a>
+</h2>
+<p>Functions are notated differently to variables due to the potential need to overwrite a binding without losing the value of a function somewhere else (will make sense later).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">square</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> n<span style="color:#f92672">*</span>n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>square(<span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p>This will be executed in two different steps: creating the function, then executing the function.</p>
+<pre tabindex="0"><code>def square(n):
     return n*n
 Global Frame
 func square(x) [parent = Global]
 square
 
 square(3)
-</code></pre><p>When a function is called, a new frame is created, leading to another environment for Python to execute code from. Note that an environment variable only needs the function name, parameter(s), and parent frame in the environment diagram.</p><pre tabindex=0><code>f1: square(x) [parent = Global]
+</code></pre><p>When a function is called, a new frame is created, leading to another environment for Python to execute code from. Note that an environment variable only needs the function name, parameter(s), and parent frame in the environment diagram.</p>
+<pre tabindex="0"><code>f1: square(x) [parent = Global]
 Global Frame
 3
 n
@@ -35,44 +809,74 @@ n
 Return Value
 func square(x) [parent = Global]
 square
-</code></pre><p>As can be seen in the environment diagram above, a new unique frame f1 is created, which has all the passed in parameters (in this case, just n = 3) stored. Then, when the return statement is reached, it simply evaluates the right side of the return statement (in this case n*n), then returns that value (9)</p><h2 id=confusing-function-assignment-example>Confusing Function Assignment Example
-<a class=anchor href=#confusing-function-assignment-example>#</a></h2><p>(Taken from Fall 2021 Discussion 1)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>double</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>triple</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>*</span> <span style=color:#ae81ff>3</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>hat <span style=color:#f92672>=</span> double
-</span></span><span style=display:flex><span>double <span style=color:#f92672>=</span> triple
-</span></span></code></pre></div><p>The functions double and triple&rsquo;s environment diagrams are pretty self-explanatory, but the next two statements <code>hat = double</code> and <code>double = triple</code> are slightly more confusing. Let&rsquo;s break it down:</p><pre tabindex=0><code>Global Frame
+</code></pre><p>As can be seen in the environment diagram above, a new unique frame f1 is created, which has all the passed in parameters (in this case, just n = 3) stored. Then, when the return statement is reached, it simply evaluates the right side of the return statement (in this case n*n), then returns that value (9)</p>
+<h2 id="confusing-function-assignment-example">
+  Confusing Function Assignment Example
+  <a class="anchor" href="#confusing-function-assignment-example">#</a>
+</h2>
+<p>(Taken from Fall 2021 Discussion 1)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">double</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triple</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hat <span style="color:#f92672">=</span> double
+</span></span><span style="display:flex;"><span>double <span style="color:#f92672">=</span> triple
+</span></span></code></pre></div><p>The functions double and triple&rsquo;s environment diagrams are pretty self-explanatory, but the next two statements <code>hat = double</code> and <code>double = triple</code> are slightly more confusing. Let&rsquo;s break it down:</p>
+<pre tabindex="0"><code>Global Frame
 func double(x) [parent = Global]
 double
 func triple(x) [parent = Global]
 triple
-</code></pre><p>What would happen with hat? In this case, it points to the function double(x) rather than the name double itself. This means that hat becomes a copy of double rather than acting as double. Take a look at the environment diagram below:</p><pre tabindex=0><code>Global Frame
+</code></pre><p>What would happen with hat? In this case, it points to the function double(x) rather than the name double itself. This means that hat becomes a copy of double rather than acting as double. Take a look at the environment diagram below:</p>
+<pre tabindex="0"><code>Global Frame
 func double(x) [parent = Global]
 double
 func triple(x) [parent = Global]
 triple
 hat
-</code></pre><p>Both double and hat point to the same function double(x)!</p><p>Now, what would happen with <code>double = triple</code>? You can simply extrapolate the actions above, but quite simply, the pointers change.</p><pre tabindex=0><code>Global Frame
+</code></pre><p>Both double and hat point to the same function double(x)!</p>
+<p>Now, what would happen with <code>double = triple</code>? You can simply extrapolate the actions above, but quite simply, the pointers change.</p>
+<pre tabindex="0"><code>Global Frame
 func triple(x) [parent = Global]
 double
 triple
 func double(x) [parent = Global]
 hat
-</code></pre><p>This means that you can still call the double(x) function through hat, but you can no longer call it through double. Additionally, even when double was overwritten, the function double(x) itself was not deleted!</p><h2 id=call-expressions>Call Expressions
-<a class=anchor href=#call-expressions>#</a></h2><p>The important thing to note is that when executing call expressions, a new frame is created to keep track of local variables. The order of operations is as follows:</p><ol><li>Evaluate the operator - this should evaluate to a function.</li><li>Evaluate the operands from left to right.</li><li>Make a new frame with:<ul><li>A unique index</li><li>The real name of the function (not the name of the variable pointing to it) (for example, for double(n))</li><li>The parent frame</li></ul></li><li>Bind values to names in this new frame.</li><li>Evaluate the function in this new frame until a return value is obtained.</li></ol><p>Example from Fall 2021 Discussion 1:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>double</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>*</span> <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>hmmm <span style=color:#f92672>=</span> double
-</span></span><span style=display:flex><span>wow <span style=color:#f92672>=</span> double(<span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span>hmmm(wow)
-</span></span></code></pre></div><pre tabindex=0><code>Global Frame
+</code></pre><p>This means that you can still call the double(x) function through hat, but you can no longer call it through double. Additionally, even when double was overwritten, the function double(x) itself was not deleted!</p>
+<h2 id="call-expressions">
+  Call Expressions
+  <a class="anchor" href="#call-expressions">#</a>
+</h2>
+<p>The important thing to note is that when executing call expressions, a new frame is created to keep track of local variables. The order of operations is as follows:</p>
+<ol>
+<li>Evaluate the operator - this should evaluate to a function.</li>
+<li>Evaluate the operands from left to right.</li>
+<li>Make a new frame with:
+<ul>
+<li>A unique index</li>
+<li>The real name of the function (not the name of the variable pointing to it) (for example, for double(n))</li>
+<li>The parent frame</li>
+</ul>
+</li>
+<li>Bind values to names in this new frame.</li>
+<li>Evaluate the function in this new frame until a return value is obtained.</li>
+</ol>
+<p>Example from Fall 2021 Discussion 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">double</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hmmm <span style="color:#f92672">=</span> double
+</span></span><span style="display:flex;"><span>wow <span style="color:#f92672">=</span> double(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>hmmm(wow)
+</span></span></code></pre></div><pre tabindex="0"><code>Global Frame
 func double(x) [parent = Global]
 double
 hmm
-</code></pre><p>After the function double(x) is bound to a name, and hmm is bound to that function, we create a new frame to evaluate <code>wow = double(3)</code>.</p><p>When evaluating that statement, the right side is evaluated before being assigned to the name on the left side. As a result, wow will not appear in the environment diagram until after the return value is created.</p><pre tabindex=0><code>f1: double(x) [parent = Global]
+</code></pre><p>After the function double(x) is bound to a name, and hmm is bound to that function, we create a new frame to evaluate <code>wow = double(3)</code>.</p>
+<p>When evaluating that statement, the right side is evaluated before being assigned to the name on the left side. As a result, wow will not appear in the environment diagram until after the return value is created.</p>
+<pre tabindex="0"><code>f1: double(x) [parent = Global]
 Global Frame
 (After the return value below is evaluated)
 3
@@ -84,7 +888,8 @@ double
 hmm
 6
 wow
-</code></pre><p>Afterwards, <code>hmmm(wow)</code> is called, which is essentially the same thing as doing <code>hmmm(6)</code>. As hmmm is pointing to <code>func double(x) [parent = Global]</code>, it will run that function, passing in the parameter 6. However, because this is a new function, a new frame will be created.</p><pre tabindex=0><code>f2: double(x) [parent = Global]
+</code></pre><p>Afterwards, <code>hmmm(wow)</code> is called, which is essentially the same thing as doing <code>hmmm(6)</code>. As hmmm is pointing to <code>func double(x) [parent = Global]</code>, it will run that function, passing in the parameter 6. However, because this is a new function, a new frame will be created.</p>
+<pre tabindex="0"><code>f2: double(x) [parent = Global]
 f1: double(x) [parent = Global]
 Global Frame
 (After the return value below is evaluated)
@@ -101,12 +906,19 @@ double
 hmm
 6
 wow
-</code></pre><h2 id=nested-call-expression>Nested Call Expression
-<a class=anchor href=#nested-call-expression>#</a></h2><p>Environment diagrams can also help visualize how to deal with nested call expressions.</p><p>For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>double</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> double(double(<span style=color:#ae81ff>2</span>))
-</span></span></code></pre></div><p>How would this look in an environment diagram?</p><p>First, the inner double(2) gets evaluated, so a frame is created for that, then the return value from that is used in the outer function, so another frame is created for that.</p><pre tabindex=0><code>f1: double(x) [parent = Global]
+</code></pre><h2 id="nested-call-expression">
+  Nested Call Expression
+  <a class="anchor" href="#nested-call-expression">#</a>
+</h2>
+<p>Environment diagrams can also help visualize how to deal with nested call expressions.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">double</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> double(double(<span style="color:#ae81ff">2</span>))
+</span></span></code></pre></div><p>How would this look in an environment diagram?</p>
+<p>First, the inner double(2) gets evaluated, so a frame is created for that, then the return value from that is used in the outer function, so another frame is created for that.</p>
+<pre tabindex="0"><code>f1: double(x) [parent = Global]
 Global Frame
 2
 x
@@ -114,7 +926,8 @@ x
 Return Value
 func double(x) [parent = Global]
 double
-</code></pre><p>After the inner function is evaluated, the return value is then passed into the function to be run again in another frame:</p><pre tabindex=0><code>f2: double(x) [parent = Global]
+</code></pre><p>After the inner function is evaluated, the return value is then passed into the function to be run again in another frame:</p>
+<pre tabindex="0"><code>f2: double(x) [parent = Global]
 f1: double(x) [parent = Global]
 Global Frame
 4
@@ -127,12 +940,18 @@ x
 Return Value
 func double(x) [parent = Global]
 double
-</code></pre><p>Note: Both of the parents of the function are the global frame because the function itself is called, and that is located inside the parent frame.</p><h2 id=names-in-environments>Names in Environments
-<a class=anchor href=#names-in-environments>#</a></h2><p>Names have different meanings in different environments!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>double</span>(double):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> double <span style=color:#f92672>+</span> double
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>double(<span style=color:#ae81ff>2</span>)
-</span></span></code></pre></div><p>Please do not write code like this. It is merely a demonstration of how names and environments interact.</p><pre tabindex=0><code>f1: double(double) [parent = Global]
+</code></pre><p>Note: Both of the parents of the function are the global frame because the function itself is called, and that is located inside the parent frame.</p>
+<h2 id="names-in-environments">
+  Names in Environments
+  <a class="anchor" href="#names-in-environments">#</a>
+</h2>
+<p>Names have different meanings in different environments!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">double</span>(double):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> double <span style="color:#f92672">+</span> double
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>double(<span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>Please do not write code like this. It is merely a demonstration of how names and environments interact.</p>
+<pre tabindex="0"><code>f1: double(double) [parent = Global]
 Global Frame
 2
 double
@@ -140,21 +959,32 @@ double
 Return Value
 func double(double) [parent = Global]
 double
-</code></pre><p>Notice how the different environment frames allow for the name double to exist twice with different assignments.</p><h2 id=environment-diagrams-for-higher-order-functions>Environment Diagrams for Higher-order Functions
-<a class=anchor href=#environment-diagrams-for-higher-order-functions>#</a></h2><p>Note that functions are first class in Python - they act the same as values.</p><h3 id=hof-takes-a-function-as-an-argument>HOF: Takes a function as an argument
-<a class=anchor href=#hof-takes-a-function-as-an-argument>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>run_twice</span>(func, <span style=color:#f92672>*</span>args):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> func(func(<span style=color:#f92672>*</span>args))
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>double</span>(x):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>double_double <span style=color:#f92672>=</span> run_twice(double(<span style=color:#ae81ff>2</span>))
-</span></span></code></pre></div><p>What <code>*args</code> does here is simply allow for a flexible number of arguments to be passed in rather than a set number - allows for more flexibility even though it doesn&rsquo;t do much here.</p><pre tabindex=0><code>Global Frame
+</code></pre><p>Notice how the different environment frames allow for the name double to exist twice with different assignments.</p>
+<h2 id="environment-diagrams-for-higher-order-functions">
+  Environment Diagrams for Higher-order Functions
+  <a class="anchor" href="#environment-diagrams-for-higher-order-functions">#</a>
+</h2>
+<p>Note that functions are first class in Python - they act the same as values.</p>
+<h3 id="hof-takes-a-function-as-an-argument">
+  HOF: Takes a function as an argument
+  <a class="anchor" href="#hof-takes-a-function-as-an-argument">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_twice</span>(func, <span style="color:#f92672">*</span>args):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> func(func(<span style="color:#f92672">*</span>args))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">double</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>double_double <span style="color:#f92672">=</span> run_twice(double(<span style="color:#ae81ff">2</span>))
+</span></span></code></pre></div><p>What <code>*args</code> does here is simply allow for a flexible number of arguments to be passed in rather than a set number - allows for more flexibility even though it doesn&rsquo;t do much here.</p>
+<pre tabindex="0"><code>Global Frame
 func run_twice(func, *args) [parent = Global]
 run_twice
 func double(x) [parent = Global]
 double
-</code></pre><p>After assigning the functions to the names, we get the environment diagram seen above. To evaluate <code>double_double = run_twice(double(2))</code>, you have to remember the order of operations for call functions. First, evaluate the operators (make sure it exists/is not a higher order function), then evaluate the operands, then apply the operator to the operands.</p><p>In this context it means that run_twice is evaluated first with the proper pointers, then double is run after that is done.</p><pre tabindex=0><code>f2: double(x) [parent = Global]
+</code></pre><p>After assigning the functions to the names, we get the environment diagram seen above. To evaluate <code>double_double = run_twice(double(2))</code>, you have to remember the order of operations for call functions. First, evaluate the operators (make sure it exists/is not a higher order function), then evaluate the operands, then apply the operator to the operands.</p>
+<p>In this context it means that run_twice is evaluated first with the proper pointers, then double is run after that is done.</p>
+<pre tabindex="0"><code>f2: double(x) [parent = Global]
 f1: run_twice(func, *args) [parent = Global]
 Global Frame
 3
@@ -168,7 +998,8 @@ func run_twice(func, *args) [parent = Global]
 run_twice
 func double(x) [parent = Global]
 double
-</code></pre><p>Afterwards, we get the following:</p><pre tabindex=0><code>f3: double(x) [parent = Global]
+</code></pre><p>Afterwards, we get the following:</p>
+<pre tabindex="0"><code>f3: double(x) [parent = Global]
 f2: double(x) [parent = Global]
 f1: run_twice(func, *args) [parent = Global]
 Global Frame
@@ -192,15 +1023,20 @@ func double(x) [parent = Global]
 double
 12
 double_double
-</code></pre><p>These environment diagrams do get somewhat complicated.</p><h3 id=hof-nested-environment-diagrams>HOF: Nested Environment Diagrams
-<a class=anchor href=#hof-nested-environment-diagrams>#</a></h3><p>Notice how the parent for functions was always Global? Well with nested environment diagrams, you&rsquo;ll finally see a situation where the parent isn&rsquo;t always Global!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_adder</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>adder</span>(x):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> x <span style=color:#f92672>+</span> n
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> adder
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>add_3 <span style=color:#f92672>=</span> make_adder(<span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span>add_3(<span style=color:#ae81ff>2</span>)
-</span></span></code></pre></div><pre tabindex=0><code>Global Frame
+</code></pre><p>These environment diagrams do get somewhat complicated.</p>
+<h3 id="hof-nested-environment-diagrams">
+  HOF: Nested Environment Diagrams
+  <a class="anchor" href="#hof-nested-environment-diagrams">#</a>
+</h3>
+<p>Notice how the parent for functions was always Global? Well with nested environment diagrams, you&rsquo;ll finally see a situation where the parent isn&rsquo;t always Global!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_adder</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">adder</span>(x):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> n
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> adder
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add_3 <span style="color:#f92672">=</span> make_adder(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>add_3(<span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><pre tabindex="0"><code>Global Frame
 f1: make_adder(n) [parent = Global]
 f2: adder(x) [parent = f1]
 func make_adder(n) [parent = Global]
@@ -215,19 +1051,34 @@ Return Value
 x
 5
 Return Value
-</code></pre><p>After the code has finished executing, we can see that the environment diagram. There are some points to take note of.</p><h3 id=variable-finding-procedure>Variable Finding Procedure
-<a class=anchor href=#variable-finding-procedure>#</a></h3><p>This was briefly mentioned in an earlier post, but the order is as follows:</p><ol><li>Find name in local frame</li><li>If that could not be found, search one parent up and see if they have the name in that frame.</li><li>Repeat until there are no more parent frames. If nothing could be found, throw an error</li></ol><p>Why is this important?</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_adder</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>adder</span>(x):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> x <span style=color:#f92672>+</span> n <span style=color:#75715e># Important on this line</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> adder
-</span></span></code></pre></div><p>As you can see, the variable n is not located within the actual code body of adder, meaning that the program would not be able to execute the function if it were only allowed to search from its local frame. adder&rsquo;s parent is make_adder (and its parent frame is Global), meaning that when adder is run as a function, it can search for a specific variable in its own frame, its parent frame after that (make_adder), and the parent of its parent (Global)</p><p>Here&rsquo;s a good exercise to test your understanding (Taken from lecture 5 of Fall 2021):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>thingy</span>(x, y):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> bobber(y)
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>bobber</span>(a):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> a <span style=color:#f92672>+</span> y
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>result <span style=color:#f92672>=</span> thingy(<span style=color:#e6db74>&#34;ma&#34;</span>, <span style=color:#e6db74>&#34;jig&#34;</span>)
-</span></span></code></pre></div><p>What would be returned here?</p><p>Spoiler: It&rsquo;s an error. Why? Let&rsquo;s make an environment diagram.</p><pre tabindex=0><code>f2: bobber(a) [parent = Global]
+</code></pre><p>After the code has finished executing, we can see that the environment diagram. There are some points to take note of.</p>
+<h3 id="variable-finding-procedure">
+  Variable Finding Procedure
+  <a class="anchor" href="#variable-finding-procedure">#</a>
+</h3>
+<p>This was briefly mentioned in an earlier post, but the order is as follows:</p>
+<ol>
+<li>Find name in local frame</li>
+<li>If that could not be found, search one parent up and see if they have the name in that frame.</li>
+<li>Repeat until there are no more parent frames. If nothing could be found, throw an error</li>
+</ol>
+<p>Why is this important?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_adder</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">adder</span>(x):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> n <span style="color:#75715e"># Important on this line</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> adder
+</span></span></code></pre></div><p>As you can see, the variable n is not located within the actual code body of adder, meaning that the program would not be able to execute the function if it were only allowed to search from its local frame. adder&rsquo;s parent is make_adder (and its parent frame is Global), meaning that when adder is run as a function, it can search for a specific variable in its own frame, its parent frame after that (make_adder), and the parent of its parent (Global)</p>
+<p>Here&rsquo;s a good exercise to test your understanding (Taken from lecture 5 of Fall 2021):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">thingy</span>(x, y):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bobber(y)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bobber</span>(a):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> thingy(<span style="color:#e6db74">&#34;ma&#34;</span>, <span style="color:#e6db74">&#34;jig&#34;</span>)
+</span></span></code></pre></div><p>What would be returned here?</p>
+<p>Spoiler: It&rsquo;s an error. Why? Let&rsquo;s make an environment diagram.</p>
+<pre tabindex="0"><code>f2: bobber(a) [parent = Global]
 f1: thingy(x, y) [parent = Global]
 Global Frame
 jig
@@ -240,15 +1091,23 @@ func thingy(x, y) [parent = Global]
 thingy
 func bobber(a) [parent = Global]
 bobber
-</code></pre><p>Notice how f2 only has the variable a that it can access in its environment, and the variable y cannot be found within its own environment, nor can it be found in any parent after that (which in this case would just be Global Frame). As a result, this throws an error because a name could not be found.</p><h2 id=self-referencing-functions>Self-Referencing Functions
-<a class=anchor href=#self-referencing-functions>#</a></h2><p>A higher order function could return a function that references its own name. Take this for example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>print_sums</span>(n):
-</span></span><span style=display:flex><span>    print(n)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>next_sum</span>(k):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> print_sums(n <span style=color:#f92672>+</span> k)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> next_sum
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print_sums(<span style=color:#ae81ff>1</span>)(<span style=color:#ae81ff>3</span>)
-</span></span></code></pre></div><p>This is quite complicated to read but understanding it is well worth the cost.</p><p>As you can see above, the next_sum function with parent print_sums returns print_sums itself, meaning that it&rsquo;s a function that references itself, hence being self-referential.</p><p>Let&rsquo;s try to make an environment diagram for that:</p><pre tabindex=0><code>f1: print_sums(n) [parent = Global]
+</code></pre><p>Notice how f2 only has the variable a that it can access in its environment, and the variable y cannot be found within its own environment, nor can it be found in any parent after that (which in this case would just be Global Frame). As a result, this throws an error because a name could not be found.</p>
+<h2 id="self-referencing-functions">
+  Self-Referencing Functions
+  <a class="anchor" href="#self-referencing-functions">#</a>
+</h2>
+<p>A higher order function could return a function that references its own name. Take this for example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_sums</span>(n):
+</span></span><span style="display:flex;"><span>    print(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">next_sum</span>(k):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> print_sums(n <span style="color:#f92672">+</span> k)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> next_sum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print_sums(<span style="color:#ae81ff">1</span>)(<span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><p>This is quite complicated to read but understanding it is well worth the cost.</p>
+<p>As you can see above, the next_sum function with parent print_sums returns print_sums itself, meaning that it&rsquo;s a function that references itself, hence being self-referential.</p>
+<p>Let&rsquo;s try to make an environment diagram for that:</p>
+<pre tabindex="0"><code>f1: print_sums(n) [parent = Global]
 Global Frame
 1
 n
@@ -257,7 +1116,8 @@ next_sum
 Return Value
 func print_sums(n) [parent = Global]
 print_sums
-</code></pre><p>After f1 has been evaluated, we can see that the return value of f1 returns a function. Now looking at the <code>print_sums(1)(3)</code> statement, we can see that <code>print_sums(1)</code> evaluated to a function, meaning that you now have something equivalent to <code>next_sum(3)</code>, and the value of n in that function can be found by looking at its parent frame.</p><pre tabindex=0><code>f2: next_sum(k) [parent = f1]
+</code></pre><p>After f1 has been evaluated, we can see that the return value of f1 returns a function. Now looking at the <code>print_sums(1)(3)</code> statement, we can see that <code>print_sums(1)</code> evaluated to a function, meaning that you now have something equivalent to <code>next_sum(3)</code>, and the value of n in that function can be found by looking at its parent frame.</p>
+<pre tabindex="0"><code>f2: next_sum(k) [parent = f1]
 f1: print_sums(n) [parent = Global]
 Global Frame
 3
@@ -269,7 +1129,8 @@ next_sum
 Return Value
 func print_sums(n) [parent = Global]
 print_sums
-</code></pre><p>At that point, the function print_sums is called again, leading to this:</p><pre tabindex=0><code>f3: print_sums(n) [parent = Global]
+</code></pre><p>At that point, the function print_sums is called again, leading to this:</p>
+<pre tabindex="0"><code>f3: print_sums(n) [parent = Global]
 f2: next_sum(k) [parent = f1]
 f1: print_sums(n) [parent = Global]
 Global Frame
@@ -289,20 +1150,115 @@ next_sum
 Return Value
 func print_sums(n) [parent = Global]
 print_sums
-</code></pre><p>As there are print statements in the function, there will also be something output to the console, which in this case is the following:</p><pre tabindex=0><code>1
+</code></pre><p>As there are print statements in the function, there will also be something output to the console, which in this case is the following:</p>
+<pre tabindex="0"><code>1
 4
-</code></pre><p>Confusing? Sure, but it&rsquo;s important to be able to draw these environment diagrams to help visualize certain parts of code.</p><p>It&rsquo;s important to note that if another call were to be made after this function call, the parent of the next frame would be f3 as there is updated information in the outer function.</p><h2 id=currying>Currying
-<a class=anchor href=#currying>#</a></h2><p>Currying takes a single function that takes multiple arguments and turns it into a higher-order function with single arguments.</p><p>Let&rsquo;s take a look at the differences between the following functions:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> operator <span style=color:#f92672>import</span> add
-</span></span><span style=display:flex><span>add(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>) <span style=color:#75715e># two arguments</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_adder</span>(n):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>lambda</span> x: n <span style=color:#f92672>+</span> x
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>make_adder(<span style=color:#ae81ff>2</span>)(<span style=color:#ae81ff>3</span>) <span style=color:#75715e># higher order function with one argument in each</span>
-</span></span></code></pre></div><p>Above, make_adder is an example of currying add(2, 3).</p><p>A way to curry a function with any two arguments can be done like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>curryer</span>(f):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>g</span>(x):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>h</span>(y):
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> f(x, y)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> h
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> g
-</span></span></code></pre></div><p>What this does allows only a single argument to be passed into the function each time (similarly to make_adder), but because of the rules of name lookup in Python, the variables x, y, and f can still be accessible from the innermost function. You can try inputting it into PyTutor, but for this one, it&rsquo;s a good exercise to try and draw it yourself before checking the answers.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#environment-diagrams>Environment Diagrams</a><ul><li><a href=#variable-assignment>Variable Assignment</a></li><li><a href=#function-assignment>Function Assignment</a></li><li><a href=#confusing-function-assignment-example>Confusing Function Assignment Example</a></li><li><a href=#call-expressions>Call Expressions</a></li><li><a href=#nested-call-expression>Nested Call Expression</a></li><li><a href=#names-in-environments>Names in Environments</a></li><li><a href=#environment-diagrams-for-higher-order-functions>Environment Diagrams for Higher-order Functions</a><ul><li><a href=#hof-takes-a-function-as-an-argument>HOF: Takes a function as an argument</a></li><li><a href=#hof-nested-environment-diagrams>HOF: Nested Environment Diagrams</a></li><li><a href=#variable-finding-procedure>Variable Finding Procedure</a></li></ul></li><li><a href=#self-referencing-functions>Self-Referencing Functions</a></li><li><a href=#currying>Currying</a></li></ul></li></ul></nav></div></aside></main></body></html>
+</code></pre><p>Confusing? Sure, but it&rsquo;s important to be able to draw these environment diagrams to help visualize certain parts of code.</p>
+<p>It&rsquo;s important to note that if another call were to be made after this function call, the parent of the next frame would be f3 as there is updated information in the outer function.</p>
+<h2 id="currying">
+  Currying
+  <a class="anchor" href="#currying">#</a>
+</h2>
+<p>Currying takes a single function that takes multiple arguments and turns it into a higher-order function with single arguments.</p>
+<p>Let&rsquo;s take a look at the differences between the following functions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> add
+</span></span><span style="display:flex;"><span>add(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>) <span style="color:#75715e"># two arguments</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_adder</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">lambda</span> x: n <span style="color:#f92672">+</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>make_adder(<span style="color:#ae81ff">2</span>)(<span style="color:#ae81ff">3</span>) <span style="color:#75715e"># higher order function with one argument in each</span>
+</span></span></code></pre></div><p>Above, make_adder is an example of currying add(2, 3).</p>
+<p>A way to curry a function with any two arguments can be done like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">curryer</span>(f):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">g</span>(x):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">h</span>(y):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> f(x, y)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> h
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> g
+</span></span></code></pre></div><p>What this does allows only a single argument to be passed into the function each time (similarly to make_adder), but because of the rules of name lookup in Python, the variables x, y, and f can still be accessible from the innermost function. You can try inputting it into PyTutor, but for this one, it&rsquo;s a good exercise to try and draw it yourself before checking the answers.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#environment-diagrams">Environment Diagrams</a>
+      <ul>
+        <li><a href="#variable-assignment">Variable Assignment</a></li>
+        <li><a href="#function-assignment">Function Assignment</a></li>
+        <li><a href="#confusing-function-assignment-example">Confusing Function Assignment Example</a></li>
+        <li><a href="#call-expressions">Call Expressions</a></li>
+        <li><a href="#nested-call-expression">Nested Call Expression</a></li>
+        <li><a href="#names-in-environments">Names in Environments</a></li>
+        <li><a href="#environment-diagrams-for-higher-order-functions">Environment Diagrams for Higher-order Functions</a>
+          <ul>
+            <li><a href="#hof-takes-a-function-as-an-argument">HOF: Takes a function as an argument</a></li>
+            <li><a href="#hof-nested-environment-diagrams">HOF: Nested Environment Diagrams</a></li>
+            <li><a href="#variable-finding-procedure">Variable Finding Procedure</a></li>
+          </ul>
+        </li>
+        <li><a href="#self-referencing-functions">Self-Referencing Functions</a></li>
+        <li><a href="#currying">Currying</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

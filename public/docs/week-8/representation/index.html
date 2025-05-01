@@ -1,4 +1,9 @@
-<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/cs61a/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=cs61a/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
   String Interpolation and Representation
   #
 
@@ -8,94 +13,1003 @@
 
 This is not part of representation, but is instead an extremely useful tool to make writing strings with multiple variables far cleaner. You may have already seen me use string interpolation earlier on in the course.
 In Python, the cleanest way to use string interpolation is with an f-string, where the letter f is appended before quotation marks.
-f""
-You can see the syntax highlighting sees the f in a different colour! With this notation, we can then put expressions in our string itself and have them evaluate to &lsquo;proper&rsquo; values. Different languages deal with string interpolation in different manners.'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-8/representation/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="String Interpolation and Representation"><meta property="og:description" content='String Interpolation and Representation # String Interpolation # This is not part of representation, but is instead an extremely useful tool to make writing strings with multiple variables far cleaner. You may have already seen me use string interpolation earlier on in the course.
+f&#34;&#34;
+You can see the syntax highlighting sees the f in a different colour! With this notation, we can then put expressions in our string itself and have them evaluate to &lsquo;proper&rsquo; values. Different languages deal with string interpolation in different manners.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/cs61a/docs/week-8/representation/">
+  <meta property="og:site_name" content="CS61A NT">
+  <meta property="og:title" content="String Interpolation and Representation">
+  <meta property="og:description" content="String Interpolation and Representation # String Interpolation # This is not part of representation, but is instead an extremely useful tool to make writing strings with multiple variables far cleaner. You may have already seen me use string interpolation earlier on in the course.
 In Python, the cleanest way to use string interpolation is with an f-string, where the letter f is appended before quotation marks.
-f"" You can see the syntax highlighting sees the f in a different colour! With this notation, we can then put expressions in our string itself and have them evaluate to ‘proper’ values. Different languages deal with string interpolation in different manners.'><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>String Interpolation and Representation | CS61A NT</title>
-<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-8/representation/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/ class=active>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>String Interpolation and Representation</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#string-interpolation-and-representation>String Interpolation and Representation</a><ul><li><a href=#string-interpolation>String Interpolation</a></li><li><a href=#representation>Representation</a><ul><li><a href=#built-in-object-attributes>Built-in Object Attributes</a></li><li><a href=#string-representation>String Representation</a></li><li><a href=#machine-representation>Machine Representation</a></li><li><a href=#implicit-calling-of-print>Implicit calling of print()</a></li></ul></li><li><a href=#special-methods>Special Methods</a></li><li><a href=#weird-behaviour-of-str-and-repr>Weird behaviour of str and repr</a><ul><li><a href=#repr>repr()</a></li><li><a href=#str>str()</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=string-interpolation-and-representation>String Interpolation and Representation
-<a class=anchor href=#string-interpolation-and-representation>#</a></h1><h2 id=string-interpolation>String Interpolation
-<a class=anchor href=#string-interpolation>#</a></h2><p>This is not part of representation, but is instead an extremely useful tool to make writing strings with multiple variables far cleaner. You may have already seen me use string interpolation earlier on in the course.</p><p>In Python, the cleanest way to use string interpolation is with an f-string, where the letter f is appended before quotation marks.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;&#34;</span>
-</span></span></code></pre></div><p>You can see the syntax highlighting sees the f in a different colour! With this notation, we can then put expressions in our string itself and have them evaluate to &lsquo;proper&rsquo; values. Different languages deal with string interpolation in different manners.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>one <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>two <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;two&#34;</span>
-</span></span><span style=display:flex><span>five <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;five&#34;</span>
-</span></span><span style=display:flex><span><span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>one <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span><span style=color:#e6db74>}</span><span style=color:#e6db74> </span><span style=color:#e6db74>{</span>two<span style=color:#e6db74>}</span><span style=color:#e6db74>, </span><span style=color:#e6db74>{</span>five<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> <span style=color:#75715e># will return &#34;2 two, five&#34;</span>
-</span></span></code></pre></div><h2 id=representation>Representation
-<a class=anchor href=#representation>#</a></h2><h3 id=built-in-object-attributes>Built-in Object Attributes
-<a class=anchor href=#built-in-object-attributes>#</a></h3><p>In Python, every built in type inherits from object. Everything in Python is an object of some sort. As a result, they all have their own dunder methods that are different for every object.</p><p>If you run dir() on an object (which could be a string, list, or something else), you will see a list of its methods. Behind the scenes, Python runs these dunder methods, so we don&rsquo;t really need to worry about those (kind of like data abstraction if you think about it)</p><h3 id=string-representation>String Representation
-<a class=anchor href=#string-representation>#</a></h3><p>The <code>__str__</code> method returns a string representation made to be human readable.</p><p>The use of this method is most likely better with a concrete example, so let&rsquo;s define our own class for Rational numbers (similarly to the data abstraction we were using earlier).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> math <span style=color:#f92672>import</span> gcd
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Rational</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, numerator: int, denominator: int): 
-</span></span><span style=display:flex><span>        g <span style=color:#f92672>=</span> gcd(numerator, denominator)
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>numerator <span style=color:#f92672>=</span> numerator <span style=color:#f92672>//</span> g
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>denominator <span style=color:#f92672>=</span> denominator <span style=color:#f92672>//</span> g
-</span></span></code></pre></div><p>So far, if we make an instance of the class and then print that instance, we get a non-useful output:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> my_rational <span style=color:#f92672>=</span> Rational(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> print(my_rational)
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span>__main__<span style=color:#f92672>.</span>Rational object<span style=color:#f92672>&gt;</span>
-</span></span></code></pre></div><p>When we define our own <code>__str__</code> method, calling print() on the instance will look for the <code>__str__</code> method and return the value. However, the print method removes quotes, while calling str() on the same thing will not remove quotes (an example will be given in the doctests).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Rational</span>:
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; my_rational = Rational(2, 3)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; print(my_rational)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    2 / 3
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; str(my_rational)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;2 / 3&#39;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, numerator: int, denominator: int): 
-</span></span><span style=display:flex><span>        g <span style=color:#f92672>=</span> gcd(numerator, denominator)
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>numerator <span style=color:#f92672>=</span> numerator <span style=color:#f92672>//</span> g
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>denominator <span style=color:#f92672>=</span> denominator <span style=color:#f92672>//</span> g
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __str__(self):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>numerator<span style=color:#e6db74>}</span><span style=color:#e6db74> / </span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>denominator<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> <span style=color:#75715e># We define how our class will look in the console here</span>
-</span></span></code></pre></div><h3 id=machine-representation>Machine Representation
-<a class=anchor href=#machine-representation>#</a></h3><p>On the other hand, the <code>__repr__</code> method is used to return a string that would evaluate to an object with the same values (in a traditional sense - when you override the <code>__repr__</code> method, you can set it to anything you want)</p><p>The goal is to make it such that when you call eval() on the result, it should return the same valued object (but not the same pointer).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Rational</span>:
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; my_rational = Rational(2, 3)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; my_rational
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Rational(2, 3)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; eval(Rational.__repr__(my_rational))
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Rational(2, 3)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &gt;&gt;&gt; repr(my_rational)
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#39;Rational(2, 3)&#39;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, numerator: int, denominator: int): 
-</span></span><span style=display:flex><span>        g <span style=color:#f92672>=</span> gcd(numerator, denominator)
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>numerator <span style=color:#f92672>=</span> numerator <span style=color:#f92672>//</span> g
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>denominator <span style=color:#f92672>=</span> denominator <span style=color:#f92672>//</span> g
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __str__(self):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>numerator<span style=color:#e6db74>}</span><span style=color:#e6db74> / </span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>denominator<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __repr__(self):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Rational(</span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>numerator<span style=color:#e6db74>}</span><span style=color:#e6db74>, </span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>denominator<span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>
-</span></span></code></pre></div><p>Notice how calling repr(my_rational) returned what you would expect but in quotation marks.</p><h3 id=implicit-calling-of-print>Implicit calling of print()
-<a class=anchor href=#implicit-calling-of-print>#</a></h3><table><thead><tr><th>Type</th><th>Methods of Calling</th></tr></thead><tbody><tr><td>Implicitly calls print()</td><td>Directly calling in interactive environment; print()</td></tr><tr><td>Does not implicitly call print()</td><td>repr(), str()</td></tr></tbody></table><p>Doing print(&ldquo;Ben&rdquo;) to the console will output Ben (without the quote marks). In other words, calling print() on something removes a set of quote marks. However, calling str(&ldquo;Ben&rdquo;) in the console will output &lsquo;Ben&rsquo; instead, suggesting that it doesn&rsquo;t call print() to remove the set of quotes. If we directly output something to the console, it first calls repr() on it, then prints it to the console. So overall, when we just call something, it does the equivalent of print(repr(&ldquo;Ben&rdquo;)), which is the same as print("&lsquo;Ben&rsquo;"), which will remove the outside set of quotes and then return &lsquo;Ben&rsquo; to the console.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Ben&#34;</span>) <span style=color:#75715e># Ben</span>
-</span></span><span style=display:flex><span><span style=color:#e6db74>&#34;Ben&#34;</span> <span style=color:#75715e># &#39;Ben&#39; (comes from print(repr(&#34;Ben&#34;)))</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>repr(<span style=color:#e6db74>&#34;Ben&#34;</span>) <span style=color:#75715e># &#34;&#39;Ben&#39;&#34;</span>
-</span></span><span style=display:flex><span>str(<span style=color:#e6db74>&#34;Ben&#34;</span>) <span style=color:#75715e># &#39;Ben&#39;</span>
-</span></span></code></pre></div><h2 id=special-methods>Special Methods
-<a class=anchor href=#special-methods>#</a></h2><p>There are other special dunder methods that map to built-in behaviour. For example, the <code>__add__</code> method is called when two objects are added together:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>3</span> <span style=color:#75715e># is the same as 2.__add__(3)</span>
-</span></span></code></pre></div><p>If we wanted to add two of our Rational classes together, it would error because there is currently no <code>__add__</code> method defined. However, if we were to define our own <code>__add__</code> method, we could make it such that Python would know how to deal with addition!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Rational</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, numerator: int, denominator: int): 
-</span></span><span style=display:flex><span>        g <span style=color:#f92672>=</span> gcd(numerator, denominator)
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>numerator <span style=color:#f92672>=</span> numerator <span style=color:#f92672>//</span> g
-</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>denominator <span style=color:#f92672>=</span> denominator <span style=color:#f92672>//</span> g
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __add__(self, other):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>assert</span> isinstance(other, Rational) <span style=color:#75715e># Will require that the other thing passed in was a rational</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        new_numerator <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>numerator <span style=color:#f92672>*</span> other<span style=color:#f92672>.</span>denominator <span style=color:#f92672>+</span> other<span style=color:#f92672>.</span>numerator <span style=color:#f92672>*</span> self<span style=color:#f92672>.</span>denominator
-</span></span><span style=display:flex><span>        new_denominator <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>denominator <span style=color:#f92672>*</span> other<span style=color:#f92672>.</span>denominator
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> Rational(new_numerator, new_denominator)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __str__(self):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>numerator<span style=color:#e6db74>}</span><span style=color:#e6db74> / </span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>denominator<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __repr__(self):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Rational(</span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>numerator<span style=color:#e6db74>}</span><span style=color:#e6db74>, </span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>denominator<span style=color:#e6db74>}</span><span style=color:#e6db74>)&#34;</span>
-</span></span></code></pre></div><p>This can be done for other methods like <code>__mul__</code> - you just have to implement them yourselves.</p><h2 id=weird-behaviour-of-str-and-repr>Weird behaviour of str and repr
-<a class=anchor href=#weird-behaviour-of-str-and-repr>#</a></h2><h3 id=repr>repr()
-<a class=anchor href=#repr>#</a></h3><p>Will ignore any instance variables created called <code>__repr__</code>. Only looks for this instance variable in the class.</p><h3 id=str>str()
-<a class=anchor href=#str>#</a></h3><p>Will ignore any instance variables created called <code>__str__</code>. Only looks for this instance variable in the class.</p><p>If no <code>__str__</code> is found (in the whole lookup order), it defaults to the first <code>__repr__</code> it can find.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#string-interpolation-and-representation>String Interpolation and Representation</a><ul><li><a href=#string-interpolation>String Interpolation</a></li><li><a href=#representation>Representation</a><ul><li><a href=#built-in-object-attributes>Built-in Object Attributes</a></li><li><a href=#string-representation>String Representation</a></li><li><a href=#machine-representation>Machine Representation</a></li><li><a href=#implicit-calling-of-print>Implicit calling of print()</a></li></ul></li><li><a href=#special-methods>Special Methods</a></li><li><a href=#weird-behaviour-of-str-and-repr>Weird behaviour of str and repr</a><ul><li><a href=#repr>repr()</a></li><li><a href=#str>str()</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
+f&#34;&#34; You can see the syntax highlighting sees the f in a different colour! With this notation, we can then put expressions in our string itself and have them evaluate to ‘proper’ values. Different languages deal with string interpolation in different manners.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-30T17:44:57-07:00">
+<title>String Interpolation and Representation | CS61A NT</title>
+<link rel="icon" href="/cs61a/favicon.png" >
+<link rel="manifest" href="/cs61a/manifest.json">
+<link rel="canonical" href="http://localhost:1313/cs61a/docs/week-8/representation/">
+<link rel="stylesheet" href="/cs61a/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css" integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5&#43;NfY=" crossorigin="anonymous">
+  <script defer src="/cs61a/fuse.min.js"></script>
+  <script defer src="/cs61a/en.search.min.820683db81da223492db71e6068c669e834fb9c9924e1c409a37c6678184cbe1.js" integrity="sha256-ggaD24HaIjSS23HmBoxmnoNPucmSThxAmjfGZ4GEy&#43;E=" crossorigin="anonymous"></script>
+
+  <script defer src="/cs61a/sw.min.c5426bb5f67ff745bd2ede683f7c618cbc0ab00dc6f62c6d83d8a711babe222a.js" integrity="sha256-xUJrtfZ/90W9Lt5oP3xhjLwKsA3G9ixtg9inEbq&#43;Iio=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/cs61a/"><span>CS61A NT</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 1</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-1/basics-of-python/" class="">Basics of Python</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 2</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/control/" class="">Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/higher-order-functions/" class="">Higher Order Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-2/environment-diagrams/" class="">Environment Diagrams</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 3</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/decorators/" class="">Decorators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-3/design/" class="">Design</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 4</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/recursion/" class="">Recursion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-4/tree-recursion/" class="">Tree Recursion</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 5</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/containers/" class="">Containers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/data-abstraction/" class="">Data Abstraction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-5/sequences/" class="">Sequences</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 6</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/mutability/" class="">Mutability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-6/trees/" class="">Trees</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 7</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/generators/" class="">Generators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/iterators/" class="">Iterators</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-7/objects/" class="">Objects</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 8</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/inheritance/" class="">Inheritance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/recursive-data/" class="">Recursive Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-8/representation/" class="active">String Interpolation and Representation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 9</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-9/efficiency/" class="">Efficiency</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 10</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-10/break/" class="">No Content This Week</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 11</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme-lists/" class="">Scheme Lists</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-11/scheme/" class="">Scheme Specification</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 12</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/calculator-language/" class="">Calculator Language</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/interpreting-scheme/" class="">Interpreting Scheme</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-12/macros-exceptions/" class="">Macros and Exceptions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Week 13</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/cs61a/docs/week-13/sql-intro/" class="">SQL</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://neilthomass.github.io/author"  target="_blank" rel="noopener">
+        About Me
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/cs61a/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>String Interpolation and Representation</h3>
+
+  <label for="toc-control">
+    
+    <img src="/cs61a/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#string-interpolation-and-representation">String Interpolation and Representation</a>
+      <ul>
+        <li><a href="#string-interpolation">String Interpolation</a></li>
+        <li><a href="#representation">Representation</a>
+          <ul>
+            <li><a href="#built-in-object-attributes">Built-in Object Attributes</a></li>
+            <li><a href="#string-representation">String Representation</a></li>
+            <li><a href="#machine-representation">Machine Representation</a></li>
+            <li><a href="#implicit-calling-of-print">Implicit calling of print()</a></li>
+          </ul>
+        </li>
+        <li><a href="#special-methods">Special Methods</a></li>
+        <li><a href="#weird-behaviour-of-str-and-repr">Weird behaviour of str and repr</a>
+          <ul>
+            <li><a href="#repr">repr()</a></li>
+            <li><a href="#str">str()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="string-interpolation-and-representation">
+  String Interpolation and Representation
+  <a class="anchor" href="#string-interpolation-and-representation">#</a>
+</h1>
+<h2 id="string-interpolation">
+  String Interpolation
+  <a class="anchor" href="#string-interpolation">#</a>
+</h2>
+<p>This is not part of representation, but is instead an extremely useful tool to make writing strings with multiple variables far cleaner. You may have already seen me use string interpolation earlier on in the course.</p>
+<p>In Python, the cleanest way to use string interpolation is with an f-string, where the letter f is appended before quotation marks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span></code></pre></div><p>You can see the syntax highlighting sees the f in a different colour! With this notation, we can then put expressions in our string itself and have them evaluate to &lsquo;proper&rsquo; values. Different languages deal with string interpolation in different manners.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>one <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>two <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;two&#34;</span>
+</span></span><span style="display:flex;"><span>five <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;five&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>one <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>two<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{</span>five<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#75715e"># will return &#34;2 two, five&#34;</span>
+</span></span></code></pre></div><h2 id="representation">
+  Representation
+  <a class="anchor" href="#representation">#</a>
+</h2>
+<h3 id="built-in-object-attributes">
+  Built-in Object Attributes
+  <a class="anchor" href="#built-in-object-attributes">#</a>
+</h3>
+<p>In Python, every built in type inherits from object. Everything in Python is an object of some sort. As a result, they all have their own dunder methods that are different for every object.</p>
+<p>If you run dir() on an object (which could be a string, list, or something else), you will see a list of its methods. Behind the scenes, Python runs these dunder methods, so we don&rsquo;t really need to worry about those (kind of like data abstraction if you think about it)</p>
+<h3 id="string-representation">
+  String Representation
+  <a class="anchor" href="#string-representation">#</a>
+</h3>
+<p>The <code>__str__</code> method returns a string representation made to be human readable.</p>
+<p>The use of this method is most likely better with a concrete example, so let&rsquo;s define our own class for Rational numbers (similarly to the data abstraction we were using earlier).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> gcd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Rational</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, numerator: int, denominator: int): 
+</span></span><span style="display:flex;"><span>        g <span style="color:#f92672">=</span> gcd(numerator, denominator)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>numerator <span style="color:#f92672">=</span> numerator <span style="color:#f92672">//</span> g
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>denominator <span style="color:#f92672">=</span> denominator <span style="color:#f92672">//</span> g
+</span></span></code></pre></div><p>So far, if we make an instance of the class and then print that instance, we get a non-useful output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> my_rational <span style="color:#f92672">=</span> Rational(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> print(my_rational)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>__main__<span style="color:#f92672">.</span>Rational object<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p>When we define our own <code>__str__</code> method, calling print() on the instance will look for the <code>__str__</code> method and return the value. However, the print method removes quotes, while calling str() on the same thing will not remove quotes (an example will be given in the doctests).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Rational</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; my_rational = Rational(2, 3)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; print(my_rational)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    2 / 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; str(my_rational)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;2 / 3&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, numerator: int, denominator: int): 
+</span></span><span style="display:flex;"><span>        g <span style="color:#f92672">=</span> gcd(numerator, denominator)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>numerator <span style="color:#f92672">=</span> numerator <span style="color:#f92672">//</span> g
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>denominator <span style="color:#f92672">=</span> denominator <span style="color:#f92672">//</span> g
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>numerator<span style="color:#e6db74">}</span><span style="color:#e6db74"> / </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>denominator<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#75715e"># We define how our class will look in the console here</span>
+</span></span></code></pre></div><h3 id="machine-representation">
+  Machine Representation
+  <a class="anchor" href="#machine-representation">#</a>
+</h3>
+<p>On the other hand, the <code>__repr__</code> method is used to return a string that would evaluate to an object with the same values (in a traditional sense - when you override the <code>__repr__</code> method, you can set it to anything you want)</p>
+<p>The goal is to make it such that when you call eval() on the result, it should return the same valued object (but not the same pointer).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Rational</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; my_rational = Rational(2, 3)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; my_rational
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Rational(2, 3)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; eval(Rational.__repr__(my_rational))
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Rational(2, 3)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; repr(my_rational)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;Rational(2, 3)&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, numerator: int, denominator: int): 
+</span></span><span style="display:flex;"><span>        g <span style="color:#f92672">=</span> gcd(numerator, denominator)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>numerator <span style="color:#f92672">=</span> numerator <span style="color:#f92672">//</span> g
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>denominator <span style="color:#f92672">=</span> denominator <span style="color:#f92672">//</span> g
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>numerator<span style="color:#e6db74">}</span><span style="color:#e6db74"> / </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>denominator<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Rational(</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>numerator<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>denominator<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span></code></pre></div><p>Notice how calling repr(my_rational) returned what you would expect but in quotation marks.</p>
+<h3 id="implicit-calling-of-print">
+  Implicit calling of print()
+  <a class="anchor" href="#implicit-calling-of-print">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Methods of Calling</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Implicitly calls print()</td>
+          <td>Directly calling in interactive environment; print()</td>
+      </tr>
+      <tr>
+          <td>Does not implicitly call print()</td>
+          <td>repr(), str()</td>
+      </tr>
+  </tbody>
+</table>
+<p>Doing print(&ldquo;Ben&rdquo;) to the console will output Ben (without the quote marks). In other words, calling print() on something removes a set of quote marks. However, calling str(&ldquo;Ben&rdquo;) in the console will output &lsquo;Ben&rsquo; instead, suggesting that it doesn&rsquo;t call print() to remove the set of quotes. If we directly output something to the console, it first calls repr() on it, then prints it to the console. So overall, when we just call something, it does the equivalent of print(repr(&ldquo;Ben&rdquo;)), which is the same as print(&quot;&lsquo;Ben&rsquo;&quot;), which will remove the outside set of quotes and then return &lsquo;Ben&rsquo; to the console.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Ben&#34;</span>) <span style="color:#75715e"># Ben</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;Ben&#34;</span> <span style="color:#75715e"># &#39;Ben&#39; (comes from print(repr(&#34;Ben&#34;)))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>repr(<span style="color:#e6db74">&#34;Ben&#34;</span>) <span style="color:#75715e"># &#34;&#39;Ben&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>str(<span style="color:#e6db74">&#34;Ben&#34;</span>) <span style="color:#75715e"># &#39;Ben&#39;</span>
+</span></span></code></pre></div><h2 id="special-methods">
+  Special Methods
+  <a class="anchor" href="#special-methods">#</a>
+</h2>
+<p>There are other special dunder methods that map to built-in behaviour. For example, the <code>__add__</code> method is called when two objects are added together:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span> <span style="color:#75715e"># is the same as 2.__add__(3)</span>
+</span></span></code></pre></div><p>If we wanted to add two of our Rational classes together, it would error because there is currently no <code>__add__</code> method defined. However, if we were to define our own <code>__add__</code> method, we could make it such that Python would know how to deal with addition!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Rational</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, numerator: int, denominator: int): 
+</span></span><span style="display:flex;"><span>        g <span style="color:#f92672">=</span> gcd(numerator, denominator)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>numerator <span style="color:#f92672">=</span> numerator <span style="color:#f92672">//</span> g
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>denominator <span style="color:#f92672">=</span> denominator <span style="color:#f92672">//</span> g
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __add__(self, other):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> isinstance(other, Rational) <span style="color:#75715e"># Will require that the other thing passed in was a rational</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        new_numerator <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>numerator <span style="color:#f92672">*</span> other<span style="color:#f92672">.</span>denominator <span style="color:#f92672">+</span> other<span style="color:#f92672">.</span>numerator <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>denominator
+</span></span><span style="display:flex;"><span>        new_denominator <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>denominator <span style="color:#f92672">*</span> other<span style="color:#f92672">.</span>denominator
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Rational(new_numerator, new_denominator)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>numerator<span style="color:#e6db74">}</span><span style="color:#e6db74"> / </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>denominator<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Rational(</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>numerator<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>denominator<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span></code></pre></div><p>This can be done for other methods like <code>__mul__</code> - you just have to implement them yourselves.</p>
+<h2 id="weird-behaviour-of-str-and-repr">
+  Weird behaviour of str and repr
+  <a class="anchor" href="#weird-behaviour-of-str-and-repr">#</a>
+</h2>
+<h3 id="repr">
+  repr()
+  <a class="anchor" href="#repr">#</a>
+</h3>
+<p>Will ignore any instance variables created called <code>__repr__</code>. Only looks for this instance variable in the class.</p>
+<h3 id="str">
+  str()
+  <a class="anchor" href="#str">#</a>
+</h3>
+<p>Will ignore any instance variables created called <code>__str__</code>. Only looks for this instance variable in the class.</p>
+<p>If no <code>__str__</code> is found (in the whole lookup order), it defaults to the first <code>__repr__</code> it can find.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#string-interpolation-and-representation">String Interpolation and Representation</a>
+      <ul>
+        <li><a href="#string-interpolation">String Interpolation</a></li>
+        <li><a href="#representation">Representation</a>
+          <ul>
+            <li><a href="#built-in-object-attributes">Built-in Object Attributes</a></li>
+            <li><a href="#string-representation">String Representation</a></li>
+            <li><a href="#machine-representation">Machine Representation</a></li>
+            <li><a href="#implicit-calling-of-print">Implicit calling of print()</a></li>
+          </ul>
+        </li>
+        <li><a href="#special-methods">Special Methods</a></li>
+        <li><a href="#weird-behaviour-of-str-and-repr">Weird behaviour of str and repr</a>
+          <ul>
+            <li><a href="#repr">repr()</a></li>
+            <li><a href="#str">str()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+navigator.serviceWorker&&navigator.serviceWorker.register("/cs61a/sw.js",{scope:"/cs61a/"})

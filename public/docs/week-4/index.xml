@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-4/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-4/index.xml" rel="self" type="application/rss+xml"/><item><title>Recursion</title><link>http://localhost:1313/docs/week-4/recursion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-4/recursion/</guid><description>&lt;h1 id="recursion">
- Recursion
- &lt;a class="anchor" href="#recursion">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="recursive-functions">
- Recursive Functions
- &lt;a class="anchor" href="#recursive-functions">#&lt;/a>
-&lt;/h2>
-&lt;p>A function is recursive if the body of the function calls itself (either directly or indirectly).&lt;/p>
-&lt;p>Recursive functions pretty much always lead to a base case by operating on increasingly smaller instances of the problem. A base case is the simplest case possible where a calculation can actually be done.&lt;/p>
-&lt;p>For example, a recursive function to sum the digits in a number can be written as below:&lt;/p></description></item><item><title>Tree Recursion</title><link>http://localhost:1313/docs/week-4/tree-recursion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-4/tree-recursion/</guid><description>&lt;h1 id="tree-recursion">
- Tree Recursion
- &lt;a class="anchor" href="#tree-recursion">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="order-of-recursive-calls">
- Order of Recursive Calls
- &lt;a class="anchor" href="#order-of-recursive-calls">#&lt;/a>
-&lt;/h2>
-&lt;p>If you know the behaviour of environment diagrams, you could derive the behaviour of recursive calls.&lt;/p>
-&lt;p>Recaling how environment diagrams behave, a new frame is opened when a user-defined function call occurs, meaning that whenever a recursive function is called on a non-base case scenario, a new frame is opened, and that frame will be evaluated.&lt;/p>
-&lt;p>As a result, in a tree recursive return value (more on that later), for example &lt;code>recursive(3) + recursive(4)&lt;/code>, the whole value of &lt;code>recursive(3)&lt;/code> is evaluated first before &lt;code>recursive(4)&lt;/code> is evaluated (due to the order of operations of Python).&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS61A NT</title>
+    <link>http://localhost:1313/cs61a/docs/week-4/</link>
+    <description>Recent content on CS61A NT</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/cs61a/docs/week-4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recursion</title>
+      <link>http://localhost:1313/cs61a/docs/week-4/recursion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-4/recursion/</guid>
+      <description>&lt;h1 id=&#34;recursion&#34;&gt;&#xA;  Recursion&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#recursion&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;recursive-functions&#34;&gt;&#xA;  Recursive Functions&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#recursive-functions&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A function is recursive if the body of the function calls itself (either directly or indirectly).&lt;/p&gt;&#xA;&lt;p&gt;Recursive functions pretty much always lead to a base case by operating on increasingly smaller instances of the problem. A base case is the simplest case possible where a calculation can actually be done.&lt;/p&gt;&#xA;&lt;p&gt;For example, a recursive function to sum the digits in a number can be written as below:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tree Recursion</title>
+      <link>http://localhost:1313/cs61a/docs/week-4/tree-recursion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cs61a/docs/week-4/tree-recursion/</guid>
+      <description>&lt;h1 id=&#34;tree-recursion&#34;&gt;&#xA;  Tree Recursion&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tree-recursion&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;order-of-recursive-calls&#34;&gt;&#xA;  Order of Recursive Calls&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#order-of-recursive-calls&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;If you know the behaviour of environment diagrams, you could derive the behaviour of recursive calls.&lt;/p&gt;&#xA;&lt;p&gt;Recaling how environment diagrams behave, a new frame is opened when a user-defined function call occurs, meaning that whenever a recursive function is called on a non-base case scenario, a new frame is opened, and that frame will be evaluated.&lt;/p&gt;&#xA;&lt;p&gt;As a result, in a tree recursive return value (more on that later), for example &lt;code&gt;recursive(3) + recursive(4)&lt;/code&gt;, the whole value of &lt;code&gt;recursive(3)&lt;/code&gt; is evaluated first before &lt;code&gt;recursive(4)&lt;/code&gt; is evaluated (due to the order of operations of Python).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
