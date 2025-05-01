@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on CS61A NT</title>
+    <title>Welcome to CS61A Notes on CS61A NT</title>
     <link>https://neilthomass.github.io:1313/cs61a/</link>
-    <description>Recent content in Home on CS61A NT</description>
+    <description>Recent content in Welcome to CS61A Notes on CS61A NT</description>
     <generator>Hugo</generator>
     <language>en</language>
     <atom:link href="https://neilthomass.github.io:1313/cs61a/index.xml" rel="self" type="application/rss+xml" />
