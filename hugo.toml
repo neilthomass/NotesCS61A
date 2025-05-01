@@ -30,7 +30,7 @@ enableGitInfo = true
   [[menu.before]]
   [[menu.after]]
     name = "About Me"
-    url = "https://linkedin.com/in/neiltthomas"
+    url = "https://neilthomass.github.io"
     weight = 10
 
 
