@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CS61A NT</title>
-    <link>https://neilthomass.github.io/cs61a/docs/week-2/</link>
+    <link>https://neilthomass.github.io:1313/cs61a/docs/week-2/</link>
     <description>Recent content on CS61A NT</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://neilthomass.github.io/cs61a/docs/week-2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://neilthomass.github.io:1313/cs61a/docs/week-2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Control</title>
-      <link>https://neilthomass.github.io/cs61a/docs/week-2/control/</link>
+      <link>https://neilthomass.github.io:1313/cs61a/docs/week-2/control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://neilthomass.github.io/cs61a/docs/week-2/control/</guid>
+      <guid>https://neilthomass.github.io:1313/cs61a/docs/week-2/control/</guid>
       <description>&lt;h1 id=&#34;control&#34;&gt;&#xA;  Control&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#control&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;side-effects&#34;&gt;&#xA;  Side Effects&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#side-effects&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Higher Order Functions</title>
-      <link>https://neilthomass.github.io/cs61a/docs/week-2/higher-order-functions/</link>
+      <link>https://neilthomass.github.io:1313/cs61a/docs/week-2/higher-order-functions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://neilthomass.github.io/cs61a/docs/week-2/higher-order-functions/</guid>
+      <guid>https://neilthomass.github.io:1313/cs61a/docs/week-2/higher-order-functions/</guid>
       <description>&lt;h1 id=&#34;higher-order-functions&#34;&gt;&#xA;  Higher Order Functions&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#higher-order-functions&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;designing-functions&#34;&gt;&#xA;  Designing Functions&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#designing-functions&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;describing-functions&#34;&gt;&#xA;  Describing Functions&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#describing-functions&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Aspect&lt;/th&gt;&#xA;          &lt;th&gt;Example&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;The domain of a function is the expected range of inputs (similarly to a domain in mathematics)&lt;/td&gt;&#xA;          &lt;td&gt;x is a string&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;The range of a function is the set of output values that could be returned&lt;/td&gt;&#xA;          &lt;td&gt;Function square returns a non-negative number&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;The behavior of a (pure) function is the relationship between the input and the output&lt;/td&gt;&#xA;          &lt;td&gt;Function square returns the square of an input x&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;dont-repeat-yourself&#34;&gt;&#xA;  Don&amp;rsquo;t Repeat Yourself!&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#dont-repeat-yourself&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Environment Diagrams</title>
-      <link>https://neilthomass.github.io/cs61a/docs/week-2/environment-diagrams/</link>
+      <link>https://neilthomass.github.io:1313/cs61a/docs/week-2/environment-diagrams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://neilthomass.github.io/cs61a/docs/week-2/environment-diagrams/</guid>
+      <guid>https://neilthomass.github.io:1313/cs61a/docs/week-2/environment-diagrams/</guid>
       <description>&lt;h1 id=&#34;environment-diagrams&#34;&gt;&#xA;  Environment Diagrams&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#environment-diagrams&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.&lt;/p&gt;&#xA;&lt;p&gt;PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible.&lt;/p&gt;</description>
     </item>
   </channel>
