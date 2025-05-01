@@ -54,7 +54,7 @@ jobs:
           git submodule update --init --recursive
           hugo \
             --minify \
-            --baseURL "/"
+            --baseURL "https://neilthomass.github.io/cs61a/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
