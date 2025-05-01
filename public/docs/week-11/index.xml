@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-11/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-11/index.xml" rel="self" type="application/rss+xml"/><item><title>Scheme Lists</title><link>http://localhost:1313/docs/week-11/scheme-lists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-11/scheme-lists/</guid><description>&lt;h1 id="scheme-lists">
+ Scheme Lists
+ &lt;a class="anchor" href="#scheme-lists">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="special-forms">
+ Special Forms
+ &lt;a class="anchor" href="#special-forms">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="cond--begin">
+ Cond &amp;amp; Begin
+ &lt;a class="anchor" href="#cond--begin">#&lt;/a>
+&lt;/h3>
+&lt;p>The &lt;code>cond&lt;/code> special form behaves like if-elif-else statements in Python:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> x &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;big&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">elif&lt;/span> x &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;medium&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;small&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In Scheme:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scheme" data-lang="scheme">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#66d9ef">cond &lt;/span>((&amp;gt; x &lt;span style="color:#ae81ff">10&lt;/span>) (&lt;span style="color:#a6e22e">print&lt;/span> &lt;span style="color:#e6db74">&amp;#39;big&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ((&amp;gt; x &lt;span style="color:#ae81ff">5&lt;/span>) (&lt;span style="color:#a6e22e">print&lt;/span> &lt;span style="color:#e6db74">&amp;#39;medium&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">else &lt;/span>(&lt;span style="color:#a6e22e">print&lt;/span> &lt;span style="color:#e6db74">&amp;#39;small&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#66d9ef">cond &lt;/span>((&amp;gt; x &lt;span style="color:#ae81ff">10&lt;/span>) &lt;span style="color:#e6db74">&amp;#39;big&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ((&amp;gt; x &lt;span style="color:#ae81ff">5&lt;/span>) &lt;span style="color:#e6db74">&amp;#39;medium&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">else &lt;/span>&lt;span style="color:#e6db74">&amp;#39;small&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>begin&lt;/code> special form combines multiple expressions into one expression:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> x &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;big&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;guy&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;small&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;fry&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In Scheme:&lt;/p></description></item><item><title>Scheme Specification</title><link>http://localhost:1313/docs/week-11/scheme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-11/scheme/</guid><description>&lt;h1 id="scheme-specification">
+ Scheme Specification
+ &lt;a class="anchor" href="#scheme-specification">#&lt;/a>
+&lt;/h1>
+&lt;p>This document describes the variant of Scheme used in CS61A, which is closest to R5RS with some modifications for educational purposes.&lt;/p>
+&lt;h2 id="overview-and-terminology">
+ Overview and Terminology
+ &lt;a class="anchor" href="#overview-and-terminology">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="expressions-and-environments">
+ Expressions and Environments
+ &lt;a class="anchor" href="#expressions-and-environments">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Every expression evaluates to a value&lt;/li>
+&lt;li>Some expressions are self-evaluating (numbers, booleans, strings, nil)&lt;/li>
+&lt;li>Frames map symbols to values with optional parent frames&lt;/li>
+&lt;li>Environment lookup follows the chain of parent frames&lt;/li>
+&lt;/ul>
+&lt;h3 id="atomic-expressions">
+ Atomic Expressions
+ &lt;a class="anchor" href="#atomic-expressions">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Numbers, booleans, strings, and nil are self-evaluating&lt;/li>
+&lt;li>Symbols evaluate to their bound values in the environment&lt;/li>
+&lt;/ul>
+&lt;h3 id="call-expressions">
+ Call Expressions
+ &lt;a class="anchor" href="#call-expressions">#&lt;/a>
+&lt;/h3>
+&lt;p>Most combinations are evaluated as call expressions with three steps:&lt;/p></description></item></channel></rss>

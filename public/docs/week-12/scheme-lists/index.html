@@ -1,0 +1,142 @@
+<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  Scheme Lists
+  #
+
+
+  Special Forms
+  #
+
+
+  Cond & Begin
+  #
+
+The cond special form behaves like if-elif-else statements in Python:
+if x > 10:
+    print('big')
+elif x > 5:
+    print('medium')
+else:
+    print('small')
+In Scheme:
+(cond ((> x 10) (print 'big))
+      ((> x 5) (print 'medium))
+      (else (print 'small)))
+
+(cond ((> x 10) 'big)
+      ((> x 5) 'medium)
+      (else 'small))
+The begin special form combines multiple expressions into one expression:
+if x > 10:
+    print('big')
+    print('guy')
+else:
+    print('small')
+    print('fry')
+In Scheme:"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-12/scheme-lists/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Scheme Lists"><meta property="og:description" content="Scheme Lists # Special Forms # Cond & Begin # The cond special form behaves like if-elif-else statements in Python:
+if x > 10: print('big') elif x > 5: print('medium') else: print('small') In Scheme:
+(cond ((> x 10) (print 'big)) ((> x 5) (print 'medium)) (else (print 'small))) (cond ((> x 10) 'big) ((> x 5) 'medium) (else 'small)) The begin special form combines multiple expressions into one expression:
+if x > 10: print('big') print('guy') else: print('small') print('fry') In Scheme:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Scheme Lists | CS61A NT</title>
+<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-12/scheme-lists/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.9607d639059ea2596830e2eb9612e18d814493fc4a464e5b52a0c060069ea3ff.js integrity="sha256-lgfWOQWeolloMOLrlhLhjYFEk/xKRk5bUqDAYAaeo/8=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme/>Scheme</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li><li><a href=/docs/week-12/scheme-lists/ class=active>Scheme Lists</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>Linkedin</a></li><li><a href=neilthomas@berkeley.edu target=_blank rel=noopener>Email</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Scheme Lists</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#scheme-lists>Scheme Lists</a><ul><li><a href=#special-forms>Special Forms</a><ul><li><a href=#cond--begin>Cond & Begin</a></li><li><a href=#let-expressions>Let Expressions</a></li></ul></li><li><a href=#turtle-graphics>Turtle Graphics</a><ul><li><a href=#drawing-stars>Drawing Stars</a></li></ul></li><li><a href=#scheme-lists-1>Scheme Lists</a><ul><li><a href=#list-construction>List Construction</a></li><li><a href=#recursive-construction>Recursive Construction</a></li></ul></li><li><a href=#symbolic-programming>Symbolic Programming</a></li><li><a href=#list-processing>List Processing</a><ul><li><a href=#built-in-list-processing-procedures>Built-in List Processing Procedures</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=scheme-lists>Scheme Lists
+<a class=anchor href=#scheme-lists>#</a></h1><h2 id=special-forms>Special Forms
+<a class=anchor href=#special-forms>#</a></h2><h3 id=cond--begin>Cond & Begin
+<a class=anchor href=#cond--begin>#</a></h3><p>The <code>cond</code> special form behaves like if-elif-else statements in Python:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>if</span> x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10</span>:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;big&#39;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>elif</span> x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>5</span>:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;medium&#39;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;small&#39;</span>)
+</span></span></code></pre></div><p>In Scheme:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>cond </span>((&gt; x <span style=color:#ae81ff>10</span>) (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;big</span>))
+</span></span><span style=display:flex><span>      ((&gt; x <span style=color:#ae81ff>5</span>) (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;medium</span>))
+</span></span><span style=display:flex><span>      (<span style=color:#66d9ef>else </span>(<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;small</span>)))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>(<span style=color:#66d9ef>cond </span>((&gt; x <span style=color:#ae81ff>10</span>) <span style=color:#e6db74>&#39;big</span>)
+</span></span><span style=display:flex><span>      ((&gt; x <span style=color:#ae81ff>5</span>) <span style=color:#e6db74>&#39;medium</span>)
+</span></span><span style=display:flex><span>      (<span style=color:#66d9ef>else </span><span style=color:#e6db74>&#39;small</span>))
+</span></span></code></pre></div><p>The <code>begin</code> special form combines multiple expressions into one expression:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>if</span> x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10</span>:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;big&#39;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;guy&#39;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;small&#39;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;fry&#39;</span>)
+</span></span></code></pre></div><p>In Scheme:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>cond </span>((&gt; x <span style=color:#ae81ff>10</span>) (<span style=color:#66d9ef>begin </span>(<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;big</span>) (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;guy</span>)))
+</span></span><span style=display:flex><span>      (<span style=color:#66d9ef>else </span>(<span style=color:#66d9ef>begin </span>(<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;small</span>) (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;fry</span>))))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>(<span style=color:#66d9ef>if </span>(&gt; x <span style=color:#ae81ff>10</span>) 
+</span></span><span style=display:flex><span>    (<span style=color:#a6e22e>begin</span>
+</span></span><span style=display:flex><span>      (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;big</span>)
+</span></span><span style=display:flex><span>      (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;guy</span>))
+</span></span><span style=display:flex><span>    (<span style=color:#a6e22e>begin</span>
+</span></span><span style=display:flex><span>      (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;small</span>)
+</span></span><span style=display:flex><span>      (<span style=color:#a6e22e>print</span> <span style=color:#e6db74>&#39;fry</span>)))
+</span></span></code></pre></div><h3 id=let-expressions>Let Expressions
+<a class=anchor href=#let-expressions>#</a></h3><p>The <code>let</code> special form binds symbols to values temporarily; just for one expression:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>a <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>b <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>c <span style=color:#f92672>=</span> math<span style=color:#f92672>.</span>sqrt(a <span style=color:#f92672>*</span> a <span style=color:#f92672>+</span> b <span style=color:#f92672>*</span> b)
+</span></span><span style=display:flex><span><span style=color:#75715e># a and b are still bound down here</span>
+</span></span></code></pre></div><p>In Scheme:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>define </span>c (<span style=color:#66d9ef>let </span>((<span style=color:#a6e22e>a</span> <span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>                (<span style=color:#a6e22e>b</span> (+ <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>2</span>)))
+</span></span><span style=display:flex><span>           (sqrt (+ (* a a) (* b b)))))
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span> a <span style=color:#66d9ef>and </span>b are not bound down here
+</span></span></code></pre></div><h2 id=turtle-graphics>Turtle Graphics
+<a class=anchor href=#turtle-graphics>#</a></h2><h3 id=drawing-stars>Drawing Stars
+<a class=anchor href=#drawing-stars>#</a></h3><p>Basic turtle commands:</p><ul><li><code>(forward 100)</code> or <code>(fd 100)</code> draws a line</li><li><code>(right 90)</code> or <code>(rt 90)</code> turns 90 degrees</li></ul><p>Example of drawing a star:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>star</span> n m)
+</span></span><span style=display:flex><span>  (<span style=color:#66d9ef>let </span>((<span style=color:#a6e22e>a</span> (/ (* <span style=color:#ae81ff>360</span> m) n)))
+</span></span><span style=display:flex><span>    (<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>side</span> k)
+</span></span><span style=display:flex><span>      (<span style=color:#66d9ef>if </span>(&lt; k n) 
+</span></span><span style=display:flex><span>          (<span style=color:#66d9ef>begin </span>
+</span></span><span style=display:flex><span>            (<span style=color:#a6e22e>fd</span> <span style=color:#ae81ff>100</span>) 
+</span></span><span style=display:flex><span>            (<span style=color:#a6e22e>rt</span> a) 
+</span></span><span style=display:flex><span>            (<span style=color:#a6e22e>side</span> (+ k <span style=color:#ae81ff>1</span>)))))
+</span></span><span style=display:flex><span>    (<span style=color:#a6e22e>side</span> <span style=color:#ae81ff>0</span>)))
+</span></span></code></pre></div><h2 id=scheme-lists-1>Scheme Lists
+<a class=anchor href=#scheme-lists-1>#</a></h2><p>In the late 1950s, computer scientists used some confusing names for list operations:</p><ul><li><code>cons</code>: Two-argument procedure that creates a linked list</li><li><code>car</code>: Procedure that returns the first element of a list</li><li><code>cdr</code>: Procedure that returns the rest of a list</li><li><code>nil</code>: The empty list</li></ul><p>Important! Scheme lists are written in parentheses with elements separated by spaces:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>&gt; (cons <span style=color:#ae81ff>1</span> (cons <span style=color:#ae81ff>2</span> nil))
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>&gt; (<span style=color:#66d9ef>define </span>x (cons <span style=color:#ae81ff>1</span> (cons <span style=color:#ae81ff>2</span> nil)))
+</span></span><span style=display:flex><span>&gt; x
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>&gt; (car x)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>&gt; (cdr x)
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>&gt; (cons <span style=color:#ae81ff>1</span> (cons <span style=color:#ae81ff>2</span> (cons <span style=color:#ae81ff>3</span> (cons <span style=color:#ae81ff>4</span> nil))))
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>4</span>)
+</span></span></code></pre></div><h3 id=list-construction>List Construction
+<a class=anchor href=#list-construction>#</a></h3><p>There are three main ways to construct lists:</p><ol><li><code>cons</code>: Always called on two arguments - a first value and the rest of the list</li><li><code>list</code>: Called on any number of arguments that all become values in a list</li><li><code>append</code>: Called on any number of list arguments that all become concatenated in a list</li></ol><p>Examples:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>scm&gt; (<span style=color:#66d9ef>define </span>s (cons <span style=color:#ae81ff>1</span> (cons <span style=color:#ae81ff>2</span> nil)))
+</span></span><span style=display:flex><span>scm&gt; (list <span style=color:#ae81ff>3</span> s)
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>3</span> (<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>))
+</span></span><span style=display:flex><span>scm&gt; (cons <span style=color:#ae81ff>3</span> s)
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>3</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>scm&gt; (append s s)
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>)
+</span></span></code></pre></div><h3 id=recursive-construction>Recursive Construction
+<a class=anchor href=#recursive-construction>#</a></h3><p>To build a list one element at a time, use <code>cons</code>. To build a list with a fixed length, use <code>list</code>.</p><p>Example of splitting a list:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span><span style=color:#75715e>;;; Return a list of two lists; the first n elements of s and the rest</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>;;; scm&gt; (split (list 3 4 5 6 7 8) 3)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>;;; ((3 4 5) (6 7 8))</span>
+</span></span><span style=display:flex><span>(<span style=color:#66d9ef>define </span>(<span style=color:#a6e22e>split</span> s n)
+</span></span><span style=display:flex><span>  (<span style=color:#66d9ef>if </span>(= n <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>      (list nil s)
+</span></span><span style=display:flex><span>      (<span style=color:#66d9ef>let </span>((<span style=color:#a6e22e>split-rest</span> (<span style=color:#a6e22e>split</span> (cdr s) (- n <span style=color:#ae81ff>1</span>))))
+</span></span><span style=display:flex><span>        (cons (cons (car s) (car split-rest))
+</span></span><span style=display:flex><span>              (cdr split-rest)))))
+</span></span></code></pre></div><h2 id=symbolic-programming>Symbolic Programming
+<a class=anchor href=#symbolic-programming>#</a></h2><p>Symbols normally refer to values, but we can refer to symbols directly using quotation:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>&gt; (<span style=color:#66d9ef>define </span>a <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>&gt; (<span style=color:#66d9ef>define </span>b <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>&gt; (list a b)
+</span></span><span style=display:flex><span>(<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>&gt; (list <span style=color:#e6db74>&#39;a</span> <span style=color:#e6db74>&#39;b</span>)
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>a</span> b)
+</span></span><span style=display:flex><span>&gt; (list <span style=color:#e6db74>&#39;a</span> b)
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>a</span> <span style=color:#ae81ff>2</span>)
+</span></span></code></pre></div><p>Quotation can also be applied to combinations to form lists:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>&gt; <span style=color:#f92672>&#39;</span>(a b c)
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>a</span> b c)
+</span></span><span style=display:flex><span>&gt; (car <span style=color:#f92672>&#39;</span>(a b c))
+</span></span><span style=display:flex><span>a
+</span></span><span style=display:flex><span>&gt; (cdr <span style=color:#f92672>&#39;</span>(a b c))
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>b</span> c)
+</span></span></code></pre></div><h2 id=list-processing>List Processing
+<a class=anchor href=#list-processing>#</a></h2><h3 id=built-in-list-processing-procedures>Built-in List Processing Procedures
+<a class=anchor href=#built-in-list-processing-procedures>#</a></h3><ul><li><code>(append s t)</code>: List the elements of s and t; append can be called on more than 2 lists</li><li><code>(map f s)</code>: Call a procedure f on each element of a list s and list the results</li><li><code>(filter f s)</code>: Call a procedure f on each element of a list s and list the elements for which a true value is the result</li><li><code>(apply f s)</code>: Call a procedure f with the elements of a list s as its arguments</li></ul><p>Example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-scheme data-lang=scheme><span style=display:flex><span>(<span style=color:#66d9ef>define </span>count (list <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>3</span> <span style=color:#ae81ff>4</span>))
+</span></span><span style=display:flex><span>(<span style=color:#66d9ef>define </span>beats (map (<span style=color:#66d9ef>lambda </span>(<span style=color:#a6e22e>x</span>) (list <span style=color:#e6db74>&#39;and</span> <span style=color:#e6db74>&#39;a</span> x)) count))
+</span></span><span style=display:flex><span>(<span style=color:#66d9ef>define </span>rhythm (apply append beats))
+</span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#scheme-lists>Scheme Lists</a><ul><li><a href=#special-forms>Special Forms</a><ul><li><a href=#cond--begin>Cond & Begin</a></li><li><a href=#let-expressions>Let Expressions</a></li></ul></li><li><a href=#turtle-graphics>Turtle Graphics</a><ul><li><a href=#drawing-stars>Drawing Stars</a></li></ul></li><li><a href=#scheme-lists-1>Scheme Lists</a><ul><li><a href=#list-construction>List Construction</a></li><li><a href=#recursive-construction>Recursive Construction</a></li></ul></li><li><a href=#symbolic-programming>Symbolic Programming</a></li><li><a href=#list-processing>List Processing</a><ul><li><a href=#built-in-list-processing-procedures>Built-in List Processing Procedures</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>

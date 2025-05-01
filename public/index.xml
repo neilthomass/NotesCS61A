@@ -1,131 +1,485 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Introduction on Hugo Book</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Introduction on Hugo Book</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>With ToC</title>
-      <link>http://localhost:1313/docs/example/table-of-contents/with-toc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/example/table-of-contents/with-toc/</guid>
-      <description>&lt;h1 id=&#34;caput-vino-delphine-in-tamen-vias&#34;&gt;&#xA;  Caput vino delphine in tamen vias&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#caput-vino-delphine-in-tamen-vias&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;cognita-laeva-illo-fracta&#34;&gt;&#xA;  Cognita laeva illo fracta&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#cognita-laeva-illo-fracta&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Lorem markdownum pavent auras, surgit nunc cingentibus libet &lt;strong&gt;Laomedonque que&lt;/strong&gt;&#xA;est. Pastor &#xA;  &lt;a href=&#34;http://est.org/ire.aspx&#34;&gt;An&lt;/a&gt; arbor filia foedat, ne &#xA;  &lt;a href=&#34;http://www.indiciumturbam.org/moramquid.php&#34;&gt;fugit&#xA;aliter&lt;/a&gt;, per. Helicona illas et&#xA;callida neptem est &lt;em&gt;Oresitrophos&lt;/em&gt; caput, dentibus est venit. Tenet reddite&#xA;&#xA;  &lt;a href=&#34;http://www.antro-et.net/&#34;&gt;famuli&lt;/a&gt; praesentem fortibus, quaeque vis foret si&#xA;frondes &lt;em&gt;gelidos&lt;/em&gt; gravidae circumtulit &#xA;  &lt;a href=&#34;http://incurvasustulit.io/illi-virtute.html&#34;&gt;inpulit armenta&#xA;nativum&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Te at cruciabere vides rubentis manebo&lt;/li&gt;&#xA;&lt;li&gt;Maturuit in praetemptat ruborem ignara postquam habitasse&lt;/li&gt;&#xA;&lt;li&gt;Subitarum supplevit quoque fontesque venabula spretis modo&lt;/li&gt;&#xA;&lt;li&gt;Montis tot est mali quasque gravis&lt;/li&gt;&#xA;&lt;li&gt;Quinquennem domus arsit ipse&lt;/li&gt;&#xA;&lt;li&gt;Pellem turis pugnabant locavit&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;natus-quaerere&#34;&gt;&#xA;  Natus quaerere&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#natus-quaerere&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Pectora et sine mulcere, coniuge dum tincta incurvae. Quis iam; est dextra&#xA;Peneosque, metuis a verba, primo. Illa sed colloque suis: magno: gramen, aera&#xA;excutiunt concipit.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Without ToC</title>
-      <link>http://localhost:1313/docs/example/table-of-contents/without-toc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/example/table-of-contents/without-toc/</guid>
-      <description>&lt;h1 id=&#34;at-me-ipso-nepotibus-nunc-celebratior-genus&#34;&gt;&#xA;  At me ipso nepotibus nunc celebratior genus&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#at-me-ipso-nepotibus-nunc-celebratior-genus&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;tanto-oblite&#34;&gt;&#xA;  Tanto oblite&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tanto-oblite&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque&#xA;illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro&#xA;clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens&#xA;vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat&#xA;admonitu concidit, ad resimas vultus et rugas vultu &lt;strong&gt;dignamque&lt;/strong&gt; Siphnon.&lt;/p&gt;&#xA;&lt;p&gt;Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt&#xA;dixit: ritu pharetramque. Exul Laurenti orantem modo, per densum missisque labor&#xA;manibus non colla unum, obiectat. Tu pervia collo, fessus quae Cretenque Myconon&#xA;crate! Tegumenque quae invisi sudore per vocari quaque plus ventis fluidos. Nodo&#xA;perque, fugisse pectora sorores.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Creating a New Theme</title>
-      <link>http://localhost:1313/posts/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/creating-a-new-theme/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;&#xA;  Introduction&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ll start with creating a new site with a very basic template. Then we&amp;rsquo;ll add in a few pages and posts. With small variations on that, you will be able to create many different types of web sites.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>http://localhost:1313/posts/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/migrate-from-jekyll/</guid>
-      <description>&lt;h2 id=&#34;move-static-content-to-static&#34;&gt;&#xA;  Move static content to &lt;code&gt;static&lt;/code&gt;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#move-static-content-to-static&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Jekyll has a rule that any directory not starting with &lt;code&gt;_&lt;/code&gt; will be copied as-is to the &lt;code&gt;_site&lt;/code&gt; output. Hugo keeps all static content under &lt;code&gt;static&lt;/code&gt;. You should therefore move it all there.&#xA;With Jekyll, something that looked like&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/&#xA;    ▾ images/&#xA;        logo.png&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;should become&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/&#xA;    ▾ static/&#xA;        ▾ images/&#xA;            logo.png&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as &lt;code&gt;CNAME&lt;/code&gt;) to be moved to &lt;code&gt;static&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>http://localhost:1313/posts/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/goisforlovers/</guid>
-      <description>&lt;p&gt;Hugo uses the excellent &#xA;  &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; &#xA;  &lt;a href=&#34;https://golang.org/pkg/html/template/&#34;&gt;html/template&lt;/a&gt; library for&#xA;its template engine. It is an extremely lightweight engine that provides a very&#xA;small amount of logic. In our experience that it is just the right amount of&#xA;logic to be able to create a good static website. If you have used other&#xA;template systems from different languages or frameworks you will find a lot of&#xA;similarities in Go templates.&lt;/p&gt;&#xA;&lt;p&gt;This document is a brief primer on using Go templates. The &#xA;  &lt;a href=&#34;https://golang.org/pkg/html/template/&#34;&gt;Go docs&lt;/a&gt;&#xA;provide more details.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>http://localhost:1313/posts/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugoisforlovers/</guid>
-      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;&#xA;  Step 1. Install Hugo&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#step-1-install-hugo&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Go to &#xA;  &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Hugo releases&lt;/a&gt; and download the&#xA;appropriate version for your OS and architecture.&lt;/p&gt;&#xA;&lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;&#xA;&lt;p&gt;More complete instructions are available at &#xA;  &lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;Install Hugo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-2-build-the-docs&#34;&gt;&#xA;  Step 2. Build the Docs&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#step-2-build-the-docs&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Hugo has its own example site which happens to also be the documentation site&#xA;you are reading right now.&lt;/p&gt;&#xA;&lt;p&gt;Follow the following steps:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/example/collapsed/3rd-level/4th-level/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/example/collapsed/3rd-level/4th-level/</guid>
-      <description>&lt;h1 id=&#34;4th-level-of-menu&#34;&gt;&#xA;  4th Level of Menu&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#4th-level-of-menu&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;caesorum-illa-tu-sentit-micat-vestes-papyriferi&#34;&gt;&#xA;  Caesorum illa tu sentit micat vestes papyriferi&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#caesorum-illa-tu-sentit-micat-vestes-papyriferi&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Inde aderam facti; Theseus vis de tauri illa peream. Oculos &lt;strong&gt;uberaque&lt;/strong&gt; non&#xA;regisque vobis cursuque, opus venit quam vulnera. Et maiora necemque, lege modo;&#xA;gestanda nitidi, vero? Dum ne pectoraque testantur.&lt;/p&gt;&#xA;&lt;p&gt;Venasque repulsa Samos qui, exspectatum eram animosque hinc, &#xA;  &lt;a href=&#34;http://www.creveratnon.net/apricaaetheriis&#34;&gt;aut&#xA;manes&lt;/a&gt;, Assyrii. Cupiens auctoribus&#xA;pariter rubet, profana magni super nocens. Vos ius sibilat inpar turba visae&#xA;iusto! Sedes ante dum superest &lt;strong&gt;extrema&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/example/hidden/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/example/hidden/</guid>
-      <description>&lt;h1 id=&#34;this-page-is-hidden-in-menu&#34;&gt;&#xA;  This page is hidden in menu&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#this-page-is-hidden-in-menu&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h1 id=&#34;quondam-non-pater-est-dignior-ille-eurotas&#34;&gt;&#xA;  Quondam non pater est dignior ille Eurotas&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#quondam-non-pater-est-dignior-ille-eurotas&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;latent-te-facies&#34;&gt;&#xA;  Latent te facies&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#latent-te-facies&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus,&#xA;frementes, qui in vel. Hippotades Peleus &#xA;  &lt;a href=&#34;http://gratia.net/tot-qua.php&#34;&gt;pennas&#xA;conscia&lt;/a&gt; cuiquam Caeneus quas.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Pater demittere evincitque reddunt&lt;/li&gt;&#xA;&lt;li&gt;Maxime adhuc pressit huc Danaas quid freta&lt;/li&gt;&#xA;&lt;li&gt;Soror ego&lt;/li&gt;&#xA;&lt;li&gt;Luctus linguam saxa ultroque prior Tatiumque inquit&lt;/li&gt;&#xA;&lt;li&gt;Saepe liquitur subita superata dederat Anius sudor&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;cum-honorum-latona&#34;&gt;&#xA;  Cum honorum Latona&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#cum-honorum-latona&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;O fallor &#xA;  &lt;a href=&#34;http://www.spectataharundine.org/aquas-relinquit.html&#34;&gt;in sustinui&#xA;iussorum&lt;/a&gt; equidem.&#xA;Nymphae operi oris alii fronde parens dumque, in auro ait mox ingenti proxima&#xA;iamdudum maius?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/buttons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/buttons/</guid>
-      <description>&lt;h1 id=&#34;buttons&#34;&gt;&#xA;  Buttons&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#buttons&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Buttons are styled links that can lead to local page or external link.&lt;/p&gt;&#xA;&lt;h2 id=&#34;example&#34;&gt;&#xA;  Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;relref&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;Get Home&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;Contribute&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a  href=&#34;http://localhost:1313/&#34;   class=&#34;book-btn&#34;&gt;Get Home&lt;/a&gt;&#xA;&#xA;&lt;a  href=&#34;https://github.com/alex-shpak/hugo-book&#34;   target=&#34;_blank&#34; rel=&#34;noopener&#34;  class=&#34;book-btn&#34;&gt;Contribute&lt;/a&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/columns/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/columns/</guid>
-      <description>&lt;h1 id=&#34;columns&#34;&gt;&#xA;  Columns&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#columns&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Columns help organize shorter pieces of content horizontally for readability.&lt;/p&gt;&#xA;&lt;h2 id=&#34;example&#34;&gt;&#xA;  Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{% columns [ratio=&amp;#34;1:1&amp;#34;] [class=&amp;#34;...&amp;#34;] %}} &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- begin columns block --&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Left Content&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Lorem markdownum insigne...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;---&lt;/span&gt;&amp;gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- magic separator, between columns --&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Mid Content&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Lorem markdownum insigne...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;---&lt;/span&gt;&amp;gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- magic separator, between columns --&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Right Content&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Lorem markdownum insigne...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{% /columns %}}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;book-columns flex flex-wrap&#34;&gt;&#xA;&lt;div class=&#34;flex-even markdown-inner&#34; style=&#34;flex-grow: 1;&#34;&gt;&#xA;&lt;h3 id=&#34;left-content&#34;&gt;&#xA;  Left Content&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#left-content&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat&#xA;stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa&#xA;protulit, sed sed aere valvis inhaesuro Pallas animam: qui &lt;em&gt;quid&lt;/em&gt;, ignes.&#xA;Miseratus fonte Ditis conubia.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/details/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/details/</guid>
-      <description>&lt;h1 id=&#34;details&#34;&gt;&#xA;  Details&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#details&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Details shortcode is a helper for &lt;code&gt;details&lt;/code&gt; html5 element. It is going to replace &lt;code&gt;expand&lt;/code&gt; shortcode.&lt;/p&gt;&#xA;&lt;h2 id=&#34;example&#34;&gt;&#xA;  Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;details&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Title&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;open&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;## Markdown content&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Lorem markdownum insigne...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;details&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;details&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Title&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;open&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;## Markdown content&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Lorem markdownum insigne...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;details&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details open&gt;&lt;summary&gt;Title&lt;/summary&gt;&#xA;  &lt;div class=&#34;markdown-inner&#34;&gt;&#xA;&lt;h2 id=&#34;markdown-content&#34;&gt;&#xA;  Markdown content&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#markdown-content&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Lorem markdownum insigne&amp;hellip;&lt;/p&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/details&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/hints/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/hints/</guid>
-      <description>&lt;h1 id=&#34;hints&#34;&gt;&#xA;  Hints&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#hints&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Hint shortcode can be used as hint/alerts/notification block.&lt;br&gt;&#xA;There are 3 colors to choose: &lt;code&gt;info&lt;/code&gt;, &lt;code&gt;warning&lt;/code&gt; and &lt;code&gt;danger&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hint&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;info&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;warning&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;danger&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**Markdown content**  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;hint&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;example&#34;&gt;&#xA;  Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;blockquote class=&#34;book-hint info&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Markdown content&lt;/strong&gt;&lt;br&gt;&#xA;Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat&#xA;stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote class=&#34;book-hint warning&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Markdown content&lt;/strong&gt;&lt;br&gt;&#xA;Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat&#xA;stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/mermaid/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/mermaid/</guid>
-      <description>&lt;h1 id=&#34;mermaid-chart&#34;&gt;&#xA;  Mermaid Chart&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#mermaid-chart&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&#xA;  &lt;a href=&#34;https://mermaid-js.github.io/&#34;&gt;MermaidJS&lt;/a&gt; is library for generating svg charts and diagrams from text.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;book-hint info&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Override Mermaid initialization config&lt;/strong&gt;&lt;br&gt;&#xA;To override the &#xA;  &lt;a href=&#34;https://mermaid-js.github.io/mermaid/#/Setup&#34;&gt;initialization config&lt;/a&gt; for Mermaid,&#xA;create a &lt;code&gt;mermaid.json&lt;/code&gt; file in your &lt;code&gt;assets&lt;/code&gt; folder!&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;example&#34;&gt;&#xA;  Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;div class=&#34;book-columns flex flex-wrap&#34;&gt;&#xA;&lt;div class=&#34;flex-even markdown-inner&#34; style=&#34;flex-grow: 1;&#34;&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;mermaid&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;stateDiagram-v2&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    State1: The state with a note&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    note right of State1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Important information! You can write&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        notes.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    end note&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    State1 --&amp;gt; State2&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    note left of State2 : This is the note to the left.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;mermaid&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;&#xA;&lt;div class=&#34;flex-even markdown-inner&#34; style=&#34;flex-grow: 1;&#34;&gt;&#xA;&lt;script src=&#34;http://localhost:1313/mermaid.min.js&#34;&gt;&lt;/script&gt;&#xA;  &lt;script&gt;mermaid.initialize({&#xA;  &#34;flowchart&#34;: {&#xA;    &#34;useMaxWidth&#34;:true&#xA;  },&#xA;  &#34;theme&#34;: &#34;default&#34;&#xA;}&#xA;)&lt;/script&gt;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;&#xA;stateDiagram-v2&#xA;    State1: The state with a note&#xA;    note right of State1&#xA;        Important information! You can write&#xA;        notes.&#xA;    end note&#xA;    State1 --&gt; State2&#xA;    note left of State2 : This is the note to the left.&#xA;&lt;/pre&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/section/first-page/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/section/first-page/</guid>
-      <description>&lt;h1 id=&#34;first-page&#34;&gt;&#xA;  First page&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#first-page&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/section/second-page/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/section/second-page/</guid>
-      <description>&lt;h1 id=&#34;second-page&#34;&gt;&#xA;  Second Page&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#second-page&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/docs/shortcodes/tabs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/tabs/</guid>
-      <description>&lt;h1 id=&#34;tabs&#34;&gt;&#xA;  Tabs&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tabs&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Tabs let you organize content by context, for example installation instructions for each supported platform.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tpl&#34; data-lang=&#34;tpl&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tabs&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tab&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;MacOS&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt; # MacOS Content &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tab&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tab&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Linux&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt; # Linux Content &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tab&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tab&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Windows&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt; # Windows Content &lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tab&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;{{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tabs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;}}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;example&#34;&gt;&#xA;  Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;div class=&#34;book-tabs&#34;&gt;&#xA;&#xA;&#xA;&#xA;&lt;input type=&#34;radio&#34; class=&#34;toggle&#34; name=&#34;tabs-0&#34; id=&#34;tabs-0-0&#34; checked=&#34;checked&#34; /&gt;&#xA;&lt;label for=&#34;tabs-0-0&#34;&gt;MacOS&lt;/label&gt;&#xA;&lt;div class=&#34;book-tabs-content markdown-inner&#34;&gt;&lt;h1 id=&#34;macos&#34;&gt;&#xA;  MacOS&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#macos&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;This is tab &lt;strong&gt;MacOS&lt;/strong&gt; content.&lt;/p&gt;&#xA;&lt;p&gt;Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat&#xA;stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa&#xA;protulit, sed sed aere valvis inhaesuro Pallas animam: qui &lt;em&gt;quid&lt;/em&gt;, ignes.&#xA;Miseratus fonte Ditis conubia.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>KaTeX</title>
-      <link>http://localhost:1313/docs/shortcodes/katex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/shortcodes/katex/</guid>
-      <description>&lt;h1 id=&#34;katex&#34;&gt;&#xA;  KaTeX&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#katex&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;KaTeX shortcode let you render math typesetting in markdown document. See &#xA;  &lt;a href=&#34;https://katex.org/&#34;&gt;KaTeX&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;example&#34;&gt;&#xA;  Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;div class=&#34;book-columns flex flex-wrap&#34;&gt;&#xA;&lt;div class=&#34;flex-even markdown-inner&#34; style=&#34;flex-grow: 1;&#34;&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{&amp;lt; katex display=true &amp;gt;}}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;f(x) = &lt;span style=&#34;color:#66d9ef&#34;&gt;\int&lt;/span&gt;_{-&lt;span style=&#34;color:#66d9ef&#34;&gt;\infty&lt;/span&gt;}^&lt;span style=&#34;color:#66d9ef&#34;&gt;\infty\hat&lt;/span&gt; f(&lt;span style=&#34;color:#66d9ef&#34;&gt;\xi&lt;/span&gt;)&lt;span style=&#34;color:#66d9ef&#34;&gt;\,&lt;/span&gt;e^{2 &lt;span style=&#34;color:#66d9ef&#34;&gt;\pi&lt;/span&gt; i &lt;span style=&#34;color:#66d9ef&#34;&gt;\xi&lt;/span&gt; x}&lt;span style=&#34;color:#66d9ef&#34;&gt;\,&lt;/span&gt;d&lt;span style=&#34;color:#66d9ef&#34;&gt;\xi&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{&amp;lt; /katex &amp;gt;}}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;&#xA;&lt;div class=&#34;flex-even markdown-inner&#34; style=&#34;flex-grow: 1;&#34;&gt;&#xA;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/katex/katex.min.css&#34; /&gt;&#xA;&lt;script defer src=&#34;http://localhost:1313/katex/katex.min.js&#34;&gt;&lt;/script&gt;&#xA;&lt;script defer src=&#34;http://localhost:1313/katex/auto-render.min.js&#34; onload=&#34;renderMathInElement(document.body);&#34;&gt;&lt;/script&gt;&lt;span&gt;&#xA;  \[&#xA;f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi&#xA;\]&#xA;&lt;/span&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;display-mode-example&#34;&gt;&#xA;  Display Mode Example&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#display-mode-example&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Here is some inline example: &lt;span&gt;&#xA;  \(\pi(x)\)&#xA;&lt;/span&gt;&#xA;, rendered in the same line. And below is &lt;code&gt;display&lt;/code&gt; example, having &lt;code&gt;display: block&lt;/code&gt;&#xA;&lt;span&gt;&#xA;  \[&#xA;f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi&#xA;\]&#xA;&lt;/span&gt;&#xA;&#xA;Text continues here.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on CS61A NT</title><link>http://localhost:1313/</link><description>Recent content in Home on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml"/><item><title>Control</title><link>http://localhost:1313/docs/week-2/control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-2/control/</guid><description>&lt;h1 id="control">
+ Control
+ &lt;a class="anchor" href="#control">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="side-effects">
+ Side Effects
+ &lt;a class="anchor" href="#side-effects">#&lt;/a>
+&lt;/h2>
+&lt;p>Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects.&lt;/p></description></item><item><title>Higher Order Functions</title><link>http://localhost:1313/docs/week-2/higher-order-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-2/higher-order-functions/</guid><description>&lt;h1 id="higher-order-functions">
+ Higher Order Functions
+ &lt;a class="anchor" href="#higher-order-functions">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="designing-functions">
+ Designing Functions
+ &lt;a class="anchor" href="#designing-functions">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="describing-functions">
+ Describing Functions
+ &lt;a class="anchor" href="#describing-functions">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Aspect&lt;/th>
+ &lt;th>Example&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>The domain of a function is the expected range of inputs (similarly to a domain in mathematics)&lt;/td>
+ &lt;td>x is a string&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>The range of a function is the set of output values that could be returned&lt;/td>
+ &lt;td>Function square returns a non-negative number&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>The behavior of a (pure) function is the relationship between the input and the output&lt;/td>
+ &lt;td>Function square returns the square of an input x&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="dont-repeat-yourself">
+ Don&amp;rsquo;t Repeat Yourself!
+ &lt;a class="anchor" href="#dont-repeat-yourself">#&lt;/a>
+&lt;/h2>
+&lt;p>When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write.&lt;/p></description></item><item><title>Environment Diagrams</title><link>http://localhost:1313/docs/week-2/environment-diagrams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-2/environment-diagrams/</guid><description>&lt;h1 id="environment-diagrams">
+ Environment Diagrams
+ &lt;a class="anchor" href="#environment-diagrams">#&lt;/a>
+&lt;/h1>
+&lt;p>Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.&lt;/p>
+&lt;p>PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible.&lt;/p></description></item><item><title>Basics of Python</title><link>http://localhost:1313/docs/week-1/basics-of-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-1/basics-of-python/</guid><description>&lt;h1 id="basics-of-python">
+ Basics of Python
+ &lt;a class="anchor" href="#basics-of-python">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="expressions-and-values">
+ Expressions and Values
+ &lt;a class="anchor" href="#expressions-and-values">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>Programs work to manipulate values&lt;/li>
+&lt;li>Expressions in programs evaluate to values&lt;/li>
+&lt;li>Values can have different data types (string, float, boolean, integer, etc.)&lt;/li>
+&lt;li>Python evaluates these expressions, and then (potentially) displays its values&lt;/li>
+&lt;/ul>
+&lt;h2 id="data-types">
+ Data Types
+ &lt;a class="anchor" href="#data-types">#&lt;/a>
+&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Data Type&lt;/th>
+ &lt;th>Example Values&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Integers&lt;/td>
+ &lt;td>2, 44, 25&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Floats&lt;/td>
+ &lt;td>3.14, 2.73, 69.69432&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Booleans&lt;/td>
+ &lt;td>True, False&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Strings&lt;/td>
+ &lt;td>&amp;ldquo;Hi&amp;rdquo;, &amp;ldquo;ben&amp;rdquo;&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="operators">
+ Operators
+ &lt;a class="anchor" href="#operators">#&lt;/a>
+&lt;/h2>
+&lt;p>These are pretty self-explanatory&lt;/p></description></item><item><title>Calculator Language</title><link>http://localhost:1313/docs/week-12/calculator-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-12/calculator-language/</guid><description>&lt;h1 id="calculator-language">
+ Calculator Language
+ &lt;a class="anchor" href="#calculator-language">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="compiled-vs-interpreted">
+ Compiled vs Interpreted
+ &lt;a class="anchor" href="#compiled-vs-interpreted">#&lt;/a>
+&lt;/h2>
+&lt;p>High Level Languages (basically languages with a lot of abstraction from machine code - essentially 1s and 0s) are typically either compiled or interpreted.&lt;/p>
+&lt;h3 id="compiling">
+ Compiling
+ &lt;a class="anchor" href="#compiling">#&lt;/a>
+&lt;/h3>
+&lt;p>When a program is compiled, the source code is directly translated to machine code right from the start - this code can then be distributed and run repeatedly.&lt;/p>
+&lt;h3 id="interpreted">
+ Interpreted
+ &lt;a class="anchor" href="#interpreted">#&lt;/a>
+&lt;/h3>
+&lt;p>When a program is interpreted, the source code is run directly without first compiling it. This gives interpreted languages more overhead, but also makes it such that you remove the time needed for compilation.&lt;/p></description></item><item><title>Containers</title><link>http://localhost:1313/docs/week-5/containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-5/containers/</guid><description>&lt;h1 id="containers">
+ Containers
+ &lt;a class="anchor" href="#containers">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="lists">
+ Lists
+ &lt;a class="anchor" href="#lists">#&lt;/a>
+&lt;/h2>
+&lt;p>A list is a container that can hold a sequence of information (usually related information).&lt;/p>
+&lt;p>Lists can hold any Python values (not the same behaviour in every language), including other lists/objects etc.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>empty &lt;span style="color:#f92672">=&lt;/span> [] &lt;span style="color:#75715e"># empty list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>B &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;Ben&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Box&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Bufy&amp;#34;&lt;/span>] &lt;span style="color:#75715e"># Strings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>numbers &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">7&lt;/span>] &lt;span style="color:#75715e"># Integers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>floats &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">2.0&lt;/span>, &lt;span style="color:#ae81ff">3.5&lt;/span>, &lt;span style="color:#ae81ff">7.5&lt;/span>] &lt;span style="color:#75715e"># Floats&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nested &lt;span style="color:#f92672">=&lt;/span> [[&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>], &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">4&lt;/span>] &lt;span style="color:#75715e"># Storing a list inside a list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mixed &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;Hi&amp;#34;&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3.2&lt;/span>] &lt;span style="color:#75715e"># Different data types inside a list&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="list-length">
+ List Length
+ &lt;a class="anchor" href="#list-length">#&lt;/a>
+&lt;/h3>
+&lt;p>The globally defined &lt;code>len()&lt;/code> function in Python allows you to find the length of an array, and can be called by simply passing in the array as an argument.&lt;/p></description></item><item><title>Data Abstraction</title><link>http://localhost:1313/docs/week-5/data-abstraction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-5/data-abstraction/</guid><description>&lt;h1 id="data-abstraction">
+ Data Abstraction
+ &lt;a class="anchor" href="#data-abstraction">#&lt;/a>
+&lt;/h1>
+&lt;p>Many values in programs are compound values — a value composed of multiple values (for example coordinates, dates, or geographic positions).&lt;/p>
+&lt;p>By using a data abstraction, you can manipulate compound values as units without needing to worry about the way that values are stored.&lt;/p>
+&lt;h2 id="pair-abstraction">
+ Pair Abstraction
+ &lt;a class="anchor" href="#pair-abstraction">#&lt;/a>
+&lt;/h2>
+&lt;p>For data that is stored in pairs, we can manipulate these values using a pair data abstraction:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>couple &lt;span style="color:#f92672">=&lt;/span> pair(&lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;b&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#f92672">=&lt;/span> first(couple)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#f92672">=&lt;/span> second(couple)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By implementing &lt;code>pair()&lt;/code> (our constructor), &lt;code>first()&lt;/code>, and &lt;code>second()&lt;/code> (the selectors), you can access these elements without needing to worry about how the data is stored. The only time that people need to worry about how the data is stored is when implementing the functions themselves. One example (implying that there are multiple ways) of implementing these functions can be seen below:&lt;/p></description></item><item><title>Decorators</title><link>http://localhost:1313/docs/week-3/decorators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-3/decorators/</guid><description>&lt;h1 id="decorators">
+ Decorators
+ &lt;a class="anchor" href="#decorators">#&lt;/a>
+&lt;/h1>
+&lt;p>Python decorators allow you to wrap functions inside one another easily. These may not be seen that often in the CS61A course, but in general, are pretty good to know due to the simplicity that it has as well as the common usage of it in web frameworks such as Flask, or in larger codebases.&lt;/p>
+&lt;h2 id="example-usage">
+ Example Usage
+ &lt;a class="anchor" href="#example-usage">#&lt;/a>
+&lt;/h2>
+&lt;p>Let&amp;rsquo;s take this trace function for example:&lt;/p>
+&lt;p>It returns a function that takes a single argument which traces the inputs and outputs of each function.&lt;/p></description></item><item><title>Design</title><link>http://localhost:1313/docs/week-3/design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-3/design/</guid><description>&lt;h1 id="design">
+ Design
+ &lt;a class="anchor" href="#design">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="abstraction">
+ Abstraction
+ &lt;a class="anchor" href="#abstraction">#&lt;/a>
+&lt;/h2>
+&lt;p>Abstraction (in a CS context) is broadly understood as extracting relevant information from other sources in order to simplify the codebase.&lt;/p>
+&lt;h3 id="abstraction-by-parameterization">
+ Abstraction by Parameterization
+ &lt;a class="anchor" href="#abstraction-by-parameterization">#&lt;/a>
+&lt;/h3>
+&lt;p>This is pretty much DRY (Don&amp;rsquo;t Repeat Yourself). Instead of hard-coding code that have similar structure, you could write a function that takes in parameters (arguments) which can be used to do the same thing. (Taken from CS61A Fall 2021 Design Slides)&lt;/p></description></item><item><title>Efficiency</title><link>http://localhost:1313/docs/week-9/efficiency/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-9/efficiency/</guid><description>&lt;h1 id="efficiency">
+ Efficiency
+ &lt;a class="anchor" href="#efficiency">#&lt;/a>
+&lt;/h1>
+&lt;p>The efficiency of an algorithm is very important. While it isn&amp;rsquo;t too important in CS 61A due to the (relatively) small data set and number of computations needed, in big sets of data or some extremely computer taxing computations, efficiency makes a world of a difference in terms of actually being able to make computations.&lt;/p>
+&lt;p>However, CS 61A still wants you to understand how to calculate efficiency in a broad sense.&lt;/p></description></item><item><title>Generators</title><link>http://localhost:1313/docs/week-7/generators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-7/generators/</guid><description>&lt;h1 id="what-is-a-generator">
+ What is a Generator
+ &lt;a class="anchor" href="#what-is-a-generator">#&lt;/a>
+&lt;/h1>
+&lt;p>Generators can be used to create your own iterators with custom values. This is useful when you want to create an iterator with unpredictable results (for example numbers with irregular intervals, possibly based on different arguments in a given function).&lt;/p>
+&lt;p>The way you define a generator function is through the yield keyword (instead of return in a function). In this sense, a generator is a type of iterator that yields results from a generator function.&lt;/p></description></item><item><title>Inheritance</title><link>http://localhost:1313/docs/week-8/inheritance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-8/inheritance/</guid><description>&lt;h1 id="inheritance">
+ Inheritance
+ &lt;a class="anchor" href="#inheritance">#&lt;/a>
+&lt;/h1>
+&lt;p>Inheritance is a powerful tool that is very often used to reduce redundant code. If you have more specific versions of a larger class, inheritance can be extremely useful. Using our Animal class from the Objects notes, we can use all its general attributes, but then add more specific classes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> default_food &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> __init__(self, name, energy &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">100&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name &lt;span style="color:#f92672">=&lt;/span> name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>food &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>default_food[:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>energy &lt;span style="color:#f92672">=&lt;/span> energy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>times_fed &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">feed&lt;/span>(self, food):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>food &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>food &lt;span style="color:#f92672">+&lt;/span> [food]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>times_fed &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>energy &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">play&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> energy &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Not Enough Energy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>energy &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>is_happy &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span> &lt;span style="color:#75715e"># Creates new instance variable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>self&lt;span style="color:#f92672">.&lt;/span>name&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> has &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>self&lt;span style="color:#f92672">.&lt;/span>energy&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> energy.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_cat &lt;span style="color:#f92672">=&lt;/span> Animal(&lt;span style="color:#e6db74">&amp;#34;Sochi&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_cat&lt;span style="color:#f92672">.&lt;/span>feed(&lt;span style="color:#e6db74">&amp;#34;Tuna&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Instead of making my_cat an instance of the Animal class, we could instead create a Cat class that inherits from the Animal class - meaning that it contains the same class, methods, and instance variables as the Animal class (which can then be overridden).&lt;/p></description></item><item><title>Interpreting Scheme</title><link>http://localhost:1313/docs/week-12/interpreting-scheme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-12/interpreting-scheme/</guid><description>&lt;h1 id="interpreting-scheme">
+ Interpreting Scheme
+ &lt;a class="anchor" href="#interpreting-scheme">#&lt;/a>
+&lt;/h1>
+&lt;p>Interpreters keep going through an evaluate/apply cycle.&lt;/p>
+&lt;h2 id="eval">
+ Eval
+ &lt;a class="anchor" href="#eval">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="base-case">
+ Base Case
+ &lt;a class="anchor" href="#base-case">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Primitive Values&lt;/li>
+&lt;/ul>
+&lt;h3 id="recursive-case">
+ Recursive Case
+ &lt;a class="anchor" href="#recursive-case">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Evaluate(operator, operands) of call expressions&lt;/li>
+&lt;li>Apply(procedure, arguments)&lt;/li>
+&lt;/ul>
+&lt;h2 id="apply">
+ Apply
+ &lt;a class="anchor" href="#apply">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="base-case-1">
+ Base Case
+ &lt;a class="anchor" href="#base-case-1">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Built in procedures&lt;/li>
+&lt;/ul>
+&lt;h3 id="recursive-case-1">
+ Recursive Case
+ &lt;a class="anchor" href="#recursive-case-1">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>User defined procedures&lt;/li>
+&lt;/ul>
+&lt;h2 id="scheme-specific-traits">
+ Scheme Specific Traits
+ &lt;a class="anchor" href="#scheme-specific-traits">#&lt;/a>
+&lt;/h2>
+&lt;p>Nearly everything in Scheme is a list (as mentioned countless times); additionally, nearly everything in scheme is a call expression where the operator is evaluated, then the operands are all evaluated, then these operands are applied to the operator.&lt;/p></description></item><item><title>Iterators</title><link>http://localhost:1313/docs/week-7/iterators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-7/iterators/</guid><description>&lt;h1 id="what-is-an-iterator">
+ What is an Iterator
+ &lt;a class="anchor" href="#what-is-an-iterator">#&lt;/a>
+&lt;/h1>
+&lt;p>An iterator is an object that provides sequential access to values in an iterable one by one.&lt;/p>
+&lt;p>While you may not see the use of them at the moment, the benefits of using them will be explained a bit later in these sets of notes.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>iter(iterable)&lt;/code> returns an iterator over the elements of iterable.&lt;/li>
+&lt;li>&lt;code>next(&amp;lt;iter&amp;gt;)&lt;/code> returns the next element in an iterator.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>numbers &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iter_numbers &lt;span style="color:#f92672">=&lt;/span> iter(numbers)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>next(iter_numbers) &lt;span style="color:#75715e"># Error (StopIterator exception)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In CS61A, questions will never get to the point where handling the StopIterator error will need to happen, but a try &amp;hellip; except code block can handle that error. If you ever get a StopIterator error in your HW or Lab questions, you can just assume you did something wrong.&lt;/p></description></item><item><title>Macros and Exceptions</title><link>http://localhost:1313/docs/week-12/macros-exceptions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-12/macros-exceptions/</guid><description>&lt;h1 id="macros-and-exceptions">
+ Macros and Exceptions
+ &lt;a class="anchor" href="#macros-and-exceptions">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="macros">
+ Macros
+ &lt;a class="anchor" href="#macros">#&lt;/a>
+&lt;/h2>
+&lt;p>In Scheme, everything is a list. For example, &lt;code>(quotient 1 2)&lt;/code> can also be seen as a Scheme list with the elements quotient, 1, and 2. What the &amp;rsquo; operator lets us do in Scheme is create a list without evaluating certain options, then delay the evaluation until you need it later. For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scheme" data-lang="scheme">&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; (&lt;span style="color:#66d9ef">define &lt;/span>lst (list &lt;span style="color:#e6db74">&amp;#39;quotient&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lst
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; lst
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(quotient &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; (eval lst)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">0.5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; (eval (list &lt;span style="color:#e6db74">&amp;#39;quotient&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">0.5&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="quoting">
+ Quoting
+ &lt;a class="anchor" href="#quoting">#&lt;/a>
+&lt;/h3>
+&lt;p>There are two ways to quote an expression:&lt;/p></description></item><item><title>Mutability</title><link>http://localhost:1313/docs/week-6/mutability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-6/mutability/</guid><description>&lt;h1 id="mutability">
+ Mutability
+ &lt;a class="anchor" href="#mutability">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="objects">
+ Objects
+ &lt;a class="anchor" href="#objects">#&lt;/a>
+&lt;/h2>
+&lt;p>An object is a bundle of data and behaviour, with each type of object called a class.&lt;/p>
+&lt;p>Every value in Python is an object.&lt;/p>
+&lt;p>All objects have attributes, and objects often have associated methods.&lt;/p>
+&lt;h3 id="example-strings">
+ Example (Strings)
+ &lt;a class="anchor" href="#example-strings">#&lt;/a>
+&lt;/h3>
+&lt;p>A string is an object — try running &lt;code>type(&amp;quot;&amp;quot;)&lt;/code> in Python console and seeing what it outputs.&lt;/p>
+&lt;p>Strings have attributes (for example the data inside it) and also has methods such as &lt;code>string.upper()&lt;/code>.&lt;/p></description></item><item><title>No Content This Week</title><link>http://localhost:1313/docs/week-10/break/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-10/break/</guid><description>&lt;h1 id="no-content-this-week">
+ No Content This Week
+ &lt;a class="anchor" href="#no-content-this-week">#&lt;/a>
+&lt;/h1>
+&lt;p>No new content was covered this week due to Spring/Thanksgiving break.&lt;/p></description></item><item><title>Objects</title><link>http://localhost:1313/docs/week-7/objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-7/objects/</guid><description>&lt;h1 id="object-oriented-programming-oop">
+ Object Oriented Programming (OOP)
+ &lt;a class="anchor" href="#object-oriented-programming-oop">#&lt;/a>
+&lt;/h1>
+&lt;p>OOP is a method for organizing programs. It includes:&lt;/p>
+&lt;ul>
+&lt;li>Data Abstraction&lt;/li>
+&lt;li>Bundling together related programs/information/behaviour&lt;/li>
+&lt;li>Each object can have its own local state (meaning its own variables), and also knows how to manage its own state.&lt;/li>
+&lt;/ul>
+&lt;p>OOP is particularly useful when you have many similar things that can be further generalized to avoid repeating redundant code. For example, you could have an Animal object, with other sub-classes of the Animal (for example, Turtle, Cat, Bear, etc.) - this (inheritance) will be covered in the next page.&lt;/p></description></item><item><title>Recursion</title><link>http://localhost:1313/docs/week-4/recursion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-4/recursion/</guid><description>&lt;h1 id="recursion">
+ Recursion
+ &lt;a class="anchor" href="#recursion">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="recursive-functions">
+ Recursive Functions
+ &lt;a class="anchor" href="#recursive-functions">#&lt;/a>
+&lt;/h2>
+&lt;p>A function is recursive if the body of the function calls itself (either directly or indirectly).&lt;/p>
+&lt;p>Recursive functions pretty much always lead to a base case by operating on increasingly smaller instances of the problem. A base case is the simplest case possible where a calculation can actually be done.&lt;/p>
+&lt;p>For example, a recursive function to sum the digits in a number can be written as below:&lt;/p></description></item><item><title>Recursive Data</title><link>http://localhost:1313/docs/week-8/recursive-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-8/recursive-data/</guid><description>&lt;h1 id="recursive-data">
+ Recursive Data
+ &lt;a class="anchor" href="#recursive-data">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="linked-lists">
+ Linked Lists
+ &lt;a class="anchor" href="#linked-lists">#&lt;/a>
+&lt;/h2>
+&lt;p>Python lists are implemented in a way that makes inserting and deleting from the front of a list very inefficient. This is because Python implemented a list such that the first element of the list is always at the same memory location and elements in a list are located right next to each other, so when something is inserted to the start, everything gets pushed forward by one space in memory to make space for an element.&lt;/p></description></item><item><title>Scheme Lists</title><link>http://localhost:1313/docs/week-11/scheme-lists/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-11/scheme-lists/</guid><description>&lt;h1 id="scheme-lists">
+ Scheme Lists
+ &lt;a class="anchor" href="#scheme-lists">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="special-forms">
+ Special Forms
+ &lt;a class="anchor" href="#special-forms">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="cond--begin">
+ Cond &amp;amp; Begin
+ &lt;a class="anchor" href="#cond--begin">#&lt;/a>
+&lt;/h3>
+&lt;p>The &lt;code>cond&lt;/code> special form behaves like if-elif-else statements in Python:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> x &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;big&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">elif&lt;/span> x &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;medium&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;small&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In Scheme:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scheme" data-lang="scheme">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#66d9ef">cond &lt;/span>((&amp;gt; x &lt;span style="color:#ae81ff">10&lt;/span>) (&lt;span style="color:#a6e22e">print&lt;/span> &lt;span style="color:#e6db74">&amp;#39;big&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ((&amp;gt; x &lt;span style="color:#ae81ff">5&lt;/span>) (&lt;span style="color:#a6e22e">print&lt;/span> &lt;span style="color:#e6db74">&amp;#39;medium&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">else &lt;/span>(&lt;span style="color:#a6e22e">print&lt;/span> &lt;span style="color:#e6db74">&amp;#39;small&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#66d9ef">cond &lt;/span>((&amp;gt; x &lt;span style="color:#ae81ff">10&lt;/span>) &lt;span style="color:#e6db74">&amp;#39;big&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ((&amp;gt; x &lt;span style="color:#ae81ff">5&lt;/span>) &lt;span style="color:#e6db74">&amp;#39;medium&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">else &lt;/span>&lt;span style="color:#e6db74">&amp;#39;small&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>begin&lt;/code> special form combines multiple expressions into one expression:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> x &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;big&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;guy&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;small&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;fry&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In Scheme:&lt;/p></description></item><item><title>Scheme Specification</title><link>http://localhost:1313/docs/week-11/scheme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-11/scheme/</guid><description>&lt;h1 id="scheme-specification">
+ Scheme Specification
+ &lt;a class="anchor" href="#scheme-specification">#&lt;/a>
+&lt;/h1>
+&lt;p>This document describes the variant of Scheme used in CS61A, which is closest to R5RS with some modifications for educational purposes.&lt;/p>
+&lt;h2 id="overview-and-terminology">
+ Overview and Terminology
+ &lt;a class="anchor" href="#overview-and-terminology">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="expressions-and-environments">
+ Expressions and Environments
+ &lt;a class="anchor" href="#expressions-and-environments">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Every expression evaluates to a value&lt;/li>
+&lt;li>Some expressions are self-evaluating (numbers, booleans, strings, nil)&lt;/li>
+&lt;li>Frames map symbols to values with optional parent frames&lt;/li>
+&lt;li>Environment lookup follows the chain of parent frames&lt;/li>
+&lt;/ul>
+&lt;h3 id="atomic-expressions">
+ Atomic Expressions
+ &lt;a class="anchor" href="#atomic-expressions">#&lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Numbers, booleans, strings, and nil are self-evaluating&lt;/li>
+&lt;li>Symbols evaluate to their bound values in the environment&lt;/li>
+&lt;/ul>
+&lt;h3 id="call-expressions">
+ Call Expressions
+ &lt;a class="anchor" href="#call-expressions">#&lt;/a>
+&lt;/h3>
+&lt;p>Most combinations are evaluated as call expressions with three steps:&lt;/p></description></item><item><title>Sequences</title><link>http://localhost:1313/docs/week-5/sequences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-5/sequences/</guid><description>&lt;h1 id="sequences">
+ Sequences
+ &lt;a class="anchor" href="#sequences">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="lists-in-environment-diagrams">
+ Lists in Environment Diagrams
+ &lt;a class="anchor" href="#lists-in-environment-diagrams">#&lt;/a>
+&lt;/h2>
+&lt;p>Lists can represented with box and pointer notation (similarly to functions); however, unlike functions, each element in the array has its own box, and is index labelled.&lt;/p>
+&lt;p>What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make.&lt;/p></description></item><item><title>SQL</title><link>http://localhost:1313/docs/week-13/sql-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-13/sql-intro/</guid><description>&lt;h1 id="introduction-to-sql">
+ Introduction to SQL
+ &lt;a class="anchor" href="#introduction-to-sql">#&lt;/a>
+&lt;/h1>
+&lt;p>SQL (Structured Query Language) is a powerful language used for managing and manipulating relational databases. It allows us to create, read, update, and delete data in a structured way.&lt;/p>
+&lt;h2 id="basic-concepts">
+ Basic Concepts
+ &lt;a class="anchor" href="#basic-concepts">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="tables">
+ Tables
+ &lt;a class="anchor" href="#tables">#&lt;/a>
+&lt;/h3>
+&lt;p>Tables are the fundamental structure in SQL databases. They consist of:&lt;/p>
+&lt;ul>
+&lt;li>Columns (attributes)&lt;/li>
+&lt;li>Rows (records)&lt;/li>
+&lt;li>Primary keys (unique identifiers)&lt;/li>
+&lt;/ul>
+&lt;p>Example table structure:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">TABLE&lt;/span> students (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> id INTEGER &lt;span style="color:#66d9ef">PRIMARY&lt;/span> &lt;span style="color:#66d9ef">KEY&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name TEXT &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> major TEXT,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> gpa FLOAT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="basic-operations">
+ Basic Operations
+ &lt;a class="anchor" href="#basic-operations">#&lt;/a>
+&lt;/h3>
+&lt;h4 id="select">
+ SELECT
+ &lt;a class="anchor" href="#select">#&lt;/a>
+&lt;/h4>
+&lt;p>The most common operation to retrieve data:&lt;/p></description></item><item><title>String Interpolation and Representation</title><link>http://localhost:1313/docs/week-8/representation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-8/representation/</guid><description>&lt;h1 id="string-interpolation-and-representation">
+ String Interpolation and Representation
+ &lt;a class="anchor" href="#string-interpolation-and-representation">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="string-interpolation">
+ String Interpolation
+ &lt;a class="anchor" href="#string-interpolation">#&lt;/a>
+&lt;/h2>
+&lt;p>This is not part of representation, but is instead an extremely useful tool to make writing strings with multiple variables far cleaner. You may have already seen me use string interpolation earlier on in the course.&lt;/p>
+&lt;p>In Python, the cleanest way to use string interpolation is with an f-string, where the letter f is appended before quotation marks.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can see the syntax highlighting sees the f in a different colour! With this notation, we can then put expressions in our string itself and have them evaluate to &amp;lsquo;proper&amp;rsquo; values. Different languages deal with string interpolation in different manners.&lt;/p></description></item><item><title>Tree Recursion</title><link>http://localhost:1313/docs/week-4/tree-recursion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-4/tree-recursion/</guid><description>&lt;h1 id="tree-recursion">
+ Tree Recursion
+ &lt;a class="anchor" href="#tree-recursion">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="order-of-recursive-calls">
+ Order of Recursive Calls
+ &lt;a class="anchor" href="#order-of-recursive-calls">#&lt;/a>
+&lt;/h2>
+&lt;p>If you know the behaviour of environment diagrams, you could derive the behaviour of recursive calls.&lt;/p>
+&lt;p>Recaling how environment diagrams behave, a new frame is opened when a user-defined function call occurs, meaning that whenever a recursive function is called on a non-base case scenario, a new frame is opened, and that frame will be evaluated.&lt;/p>
+&lt;p>As a result, in a tree recursive return value (more on that later), for example &lt;code>recursive(3) + recursive(4)&lt;/code>, the whole value of &lt;code>recursive(3)&lt;/code> is evaluated first before &lt;code>recursive(4)&lt;/code> is evaluated (due to the order of operations of Python).&lt;/p></description></item><item><title>Trees</title><link>http://localhost:1313/docs/week-6/trees/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-6/trees/</guid><description>&lt;h1 id="trees">
+ Trees
+ &lt;a class="anchor" href="#trees">#&lt;/a>
+&lt;/h1>
+&lt;p>A tree is an abstract data structure (basically not implemented by default in Python), which means we need to use data abstractions in order to implement this structure.&lt;/p>
+&lt;h2 id="what-does-a-tree-look-like">
+ What does a tree look like?
+ &lt;a class="anchor" href="#what-does-a-tree-look-like">#&lt;/a>
+&lt;/h2>
+&lt;p>A tree has a root and a list of branches, where each branch is a tree itself.&lt;/p>
+&lt;p>A tree with zero branches (the white circles in the drawing above) is called a leaf. A tree also starts at the root, which in the drawing above, is the blue circle.&lt;/p></description></item></channel></rss>

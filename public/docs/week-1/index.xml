@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-1/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-1/index.xml" rel="self" type="application/rss+xml"/><item><title>Basics of Python</title><link>http://localhost:1313/docs/week-1/basics-of-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-1/basics-of-python/</guid><description>&lt;h1 id="basics-of-python">
+ Basics of Python
+ &lt;a class="anchor" href="#basics-of-python">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="expressions-and-values">
+ Expressions and Values
+ &lt;a class="anchor" href="#expressions-and-values">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>Programs work to manipulate values&lt;/li>
+&lt;li>Expressions in programs evaluate to values&lt;/li>
+&lt;li>Values can have different data types (string, float, boolean, integer, etc.)&lt;/li>
+&lt;li>Python evaluates these expressions, and then (potentially) displays its values&lt;/li>
+&lt;/ul>
+&lt;h2 id="data-types">
+ Data Types
+ &lt;a class="anchor" href="#data-types">#&lt;/a>
+&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Data Type&lt;/th>
+ &lt;th>Example Values&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Integers&lt;/td>
+ &lt;td>2, 44, 25&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Floats&lt;/td>
+ &lt;td>3.14, 2.73, 69.69&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Booleans&lt;/td>
+ &lt;td>True, False&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Strings&lt;/td>
+ &lt;td>&amp;ldquo;Hi&amp;rdquo;, &amp;ldquo;ben&amp;rdquo;&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="operators">
+ Operators
+ &lt;a class="anchor" href="#operators">#&lt;/a>
+&lt;/h2>
+&lt;p>These are pretty self-explanatory&lt;/p></description></item></channel></rss>

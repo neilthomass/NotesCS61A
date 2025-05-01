@@ -1,0 +1,140 @@
+<!doctype html><html lang=en dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  What is an Iterator
+  #
+
+An iterator is an object that provides sequential access to values in an iterable one by one.
+While you may not see the use of them at the moment, the benefits of using them will be explained a bit later in these sets of notes.
+
+iter(iterable) returns an iterator over the elements of iterable.
+next(<iter>) returns the next element in an iterator.
+
+numbers = [1, 2, 3]
+
+iter_numbers = iter(numbers)
+
+next(iter_numbers) # 1
+next(iter_numbers) # 2
+next(iter_numbers) # 3
+next(iter_numbers) # Error (StopIterator exception)
+In CS61A, questions will never get to the point where handling the StopIterator error will need to happen, but a try &mldr; except code block can handle that error. If you ever get a StopIterator error in your HW or Lab questions, you can just assume you did something wrong."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/week-7/iterators/"><meta property="og:site_name" content="CS61A NT"><meta property="og:title" content="Iterators"><meta property="og:description" content="What is an Iterator # An iterator is an object that provides sequential access to values in an iterable one by one.
+While you may not see the use of them at the moment, the benefits of using them will be explained a bit later in these sets of notes.
+iter(iterable) returns an iterator over the elements of iterable. next(<iter>) returns the next element in an iterator. numbers = [1, 2, 3] iter_numbers = iter(numbers) next(iter_numbers) # 1 next(iter_numbers) # 2 next(iter_numbers) # 3 next(iter_numbers) # Error (StopIterator exception) In CS61A, questions will never get to the point where handling the StopIterator error will need to happen, but a try … except code block can handle that error. If you ever get a StopIterator error in your HW or Lab questions, you can just assume you did something wrong."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Iterators | CS61A NT</title>
+<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://localhost:1313/docs/week-7/iterators/><link rel=stylesheet href=/book.min.a7616cf2799b58bddffce9438e31fdbfc6393687cfc0950a4a17cd1cce7e35f6.css integrity="sha256-p2Fs8nmbWL3f/OlDjjH9v8Y5NofPwJUKShfNHM5+NfY=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.c7ae51f584126b4a11733ecf708e4bea18be3f7cd29997867583234c3fbf7213.js integrity="sha256-x65R9YQSa0oRcz7PcI5L6hi+P3zSmZeGdYMjTD+/chM=" crossorigin=anonymous></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>CS61A NT</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href target=_blank rel=noopener></a></li></ul><ul><li class=book-section-flat><span>Week 1</span><ul><li><a href=/docs/week-1/basics-of-python/>Basics of Python</a></li></ul></li><li class=book-section-flat><span>Week 2</span><ul><li><a href=/docs/week-2/control/>Control</a></li><li><a href=/docs/week-2/higher-order-functions/>Higher Order Functions</a></li><li><a href=/docs/week-2/environment-diagrams/>Environment Diagrams</a></li></ul></li><li class=book-section-flat><span>Week 3</span><ul><li><a href=/docs/week-3/decorators/>Decorators</a></li><li><a href=/docs/week-3/design/>Design</a></li></ul></li><li class=book-section-flat><span>Week 4</span><ul><li><a href=/docs/week-4/recursion/>Recursion</a></li><li><a href=/docs/week-4/tree-recursion/>Tree Recursion</a></li></ul></li><li class=book-section-flat><span>Week 5</span><ul><li><a href=/docs/week-5/containers/>Containers</a></li><li><a href=/docs/week-5/data-abstraction/>Data Abstraction</a></li><li><a href=/docs/week-5/sequences/>Sequences</a></li></ul></li><li class=book-section-flat><span>Week 6</span><ul><li><a href=/docs/week-6/mutability/>Mutability</a></li><li><a href=/docs/week-6/trees/>Trees</a></li></ul></li><li class=book-section-flat><span>Week 7</span><ul><li><a href=/docs/week-7/generators/>Generators</a></li><li><a href=/docs/week-7/iterators/ class=active>Iterators</a></li><li><a href=/docs/week-7/objects/>Objects</a></li></ul></li><li class=book-section-flat><span>Week 8</span><ul><li><a href=/docs/week-8/inheritance/>Inheritance</a></li><li><a href=/docs/week-8/recursive-data/>Recursive Data</a></li><li><a href=/docs/week-8/representation/>String Interpolation and Representation</a></li></ul></li><li class=book-section-flat><span>Week 9</span><ul><li><a href=/docs/week-9/efficiency/>Efficiency</a></li></ul></li><li class=book-section-flat><span>Week 10</span><ul><li><a href=/docs/week-10/break/>No Content This Week</a></li></ul></li><li class=book-section-flat><span>Week 11</span><ul><li><a href=/docs/week-11/scheme-lists/>Scheme Lists</a></li><li><a href=/docs/week-11/scheme/>Scheme Specification</a></li></ul></li><li class=book-section-flat><span>Week 12</span><ul><li><a href=/docs/week-12/calculator-language/>Calculator Language</a></li><li><a href=/docs/week-12/interpreting-scheme/>Interpreting Scheme</a></li><li><a href=/docs/week-12/macros-exceptions/>Macros and Exceptions</a></li></ul></li><li class=book-section-flat><span>Week 13</span><ul><li><a href=/docs/week-13/sql-intro/>SQL</a></li></ul></li></ul><ul><li><a href=https://linkedin.com/in/neiltthomas target=_blank rel=noopener>About Me</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Iterators</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#what-is-an-iterator>What is an Iterator</a><ul><li><a href=#calling-an-iterator-on-an-iterator>Calling an Iterator on an Iterator</a></li><li><a href=#calling-iterators-on-iterables>Calling Iterators on Iterables</a><ul><li><a href=#dictionaries>Dictionaries</a></li></ul></li><li><a href=#iterators-with-for-loops>Iterators with For Loops</a></li><li><a href=#useful-built-in-functions>Useful Built-in Functions</a><ul><li><a href=#functions-that-return-iterables>Functions that return iterables</a></li><li><a href=#functions-that-return-iterators>Functions that return iterators</a></li></ul></li><li><a href=#map-and-filter>Map and Filter</a><ul><li><a href=#mapfunction-iterable>map(function, iterable)</a></li><li><a href=#filterfunction-iterable>filter(function, iterable)</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=what-is-an-iterator>What is an Iterator
+<a class=anchor href=#what-is-an-iterator>#</a></h1><p>An iterator is an object that provides sequential access to values in an iterable one by one.</p><p>While you may not see the use of them at the moment, the benefits of using them will be explained a bit later in these sets of notes.</p><ul><li><code>iter(iterable)</code> returns an iterator over the elements of iterable.</li><li><code>next(&lt;iter>)</code> returns the next element in an iterator.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>numbers <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>iter_numbers <span style=color:#f92672>=</span> iter(numbers)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>next(iter_numbers) <span style=color:#75715e># 1</span>
+</span></span><span style=display:flex><span>next(iter_numbers) <span style=color:#75715e># 2</span>
+</span></span><span style=display:flex><span>next(iter_numbers) <span style=color:#75715e># 3</span>
+</span></span><span style=display:flex><span>next(iter_numbers) <span style=color:#75715e># Error (StopIterator exception)</span>
+</span></span></code></pre></div><p>In CS61A, questions will never get to the point where handling the StopIterator error will need to happen, but a try &mldr; except code block can handle that error. If you ever get a StopIterator error in your HW or Lab questions, you can just assume you did something wrong.</p><p>You can think of an iterator like a bookmark and a book.</p><p>Imagine we have a list lst that contains chapters of a book, with every element containing a single chapter:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>]
+</span></span></code></pre></div><p>When we call iter on said list, we essentially create a bookmark starting on chapter 0 (before any other chapters). After finishing a chapter, calling next on the iterator will move the bookmark to chapter 1.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>]
+</span></span><span style=display:flex><span>bookmark1 <span style=color:#f92672>=</span> iter(lst)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># [1, 2, 3, 4, 5, 6] - no bookmark so far</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ^</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>next(bookmark1) <span style=color:#75715e># 1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># [(1), 2, 3, 4, 5, 6] - bookmark on 1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#   ^</span>
+</span></span></code></pre></div><p>If we wanted to create a new bookmark with the same book, we can just call iter again, which would keep bookmark1 the same.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>]
+</span></span><span style=display:flex><span>bookmark1 <span style=color:#f92672>=</span> iter(lst)
+</span></span><span style=display:flex><span>bookmark2 <span style=color:#f92672>=</span> iter(lst)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>next(bookmark1) <span style=color:#75715e># 1</span>
+</span></span><span style=display:flex><span>next(bookmark1) <span style=color:#75715e># 2</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># [1, (2), 3, 4, 5, 6] - bookmark on 2</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#      ^</span>
+</span></span><span style=display:flex><span>next(bookmark2) <span style=color:#75715e># 1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># [(1), 2, 3, 4, 5, 6] - bookmark on 1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#   ^</span>
+</span></span></code></pre></div><h2 id=calling-an-iterator-on-an-iterator>Calling an Iterator on an Iterator
+<a class=anchor href=#calling-an-iterator-on-an-iterator>#</a></h2><p>If you call iter on an already-made iterator, similarly to lists, it just points to the same iterator. With our bookmark analogy, it&rsquo;s like getting another variable pointing to the same bookmark — calling next on one instance will also update the bookmark for the other variable.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>]
+</span></span><span style=display:flex><span>bookmark1 <span style=color:#f92672>=</span> iter(lst)
+</span></span><span style=display:flex><span>alt_bookmark1 <span style=color:#f92672>=</span> iter(bookmark1)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>next(bookmark1) <span style=color:#75715e># 1</span>
+</span></span><span style=display:flex><span>next(alt_bookmark1) <span style=color:#75715e># 2</span>
+</span></span></code></pre></div><h2 id=calling-iterators-on-iterables>Calling Iterators on Iterables
+<a class=anchor href=#calling-iterators-on-iterables>#</a></h2><p>strings, lists, dictionaries, tuples, ranges, etc. are all iterables. You can call iterators on them and access them sequentially. This should be pretty obvious, but there are special methods that exists for dictionaries.</p><h3 id=dictionaries>Dictionaries
+<a class=anchor href=#dictionaries>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>numbers <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;one&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;two&#34;</span>: <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;three&#34;</span>: <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Iterator for keys</span>
+</span></span><span style=display:flex><span>key_iter <span style=color:#f92672>=</span> iter(numbers<span style=color:#f92672>.</span>keys())
+</span></span><span style=display:flex><span>next(key_iter) <span style=color:#75715e># &#34;one&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Iterator for values</span>
+</span></span><span style=display:flex><span>value_iter <span style=color:#f92672>=</span> iter(numbers<span style=color:#f92672>.</span>values())
+</span></span><span style=display:flex><span>next(value_iter) <span style=color:#75715e># 1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Iterators for key/value tuples</span>
+</span></span><span style=display:flex><span>dict_iter <span style=color:#f92672>=</span> iter(numbers<span style=color:#f92672>.</span>items())
+</span></span><span style=display:flex><span>next(dict_iter) <span style=color:#75715e># (&#34;one&#34;, 1)</span>
+</span></span></code></pre></div><h2 id=iterators-with-for-loops>Iterators with For Loops
+<a class=anchor href=#iterators-with-for-loops>#</a></h2><p>When an iterator is used in a for &mldr; in loop, Python will keep calling next on the iterator until a StopIterator error occurs.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]
+</span></span><span style=display:flex><span>iter_lst <span style=color:#f92672>=</span> iter(lst)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> item <span style=color:#f92672>in</span> iter_list:
+</span></span><span style=display:flex><span>    print(item)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 2</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 3</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>next(iter_lst) <span style=color:#75715e># StopIterator error</span>
+</span></span></code></pre></div><p>The for loop would go through the whole book, moving the bookmark to the end. As a result, when you call next again, the bookmark would be at the end, meaning that there are no more additional chapters, so a StopIterator error will occur.</p><p>This behaviour implies that iterators are mutable. One an iterator moves forward, it is unable to return the values that came before.</p><h2 id=useful-built-in-functions>Useful Built-in Functions
+<a class=anchor href=#useful-built-in-functions>#</a></h2><h3 id=functions-that-return-iterables>Functions that return iterables
+<a class=anchor href=#functions-that-return-iterables>#</a></h3><table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody><tr><td><code>list(iterator)</code></td><td>Returns a list of all items in iterator starting on the current pointer location.</td></tr><tr><td><code>tuple(iterator)</code></td><td>Returns a tuple of all items in iterator starting on the current pointer location.</td></tr><tr><td><code>sorted(iterator)</code></td><td>Returns a sorted list of all items in iterator starting on the current pointer location.</td></tr></tbody></table><h3 id=functions-that-return-iterators>Functions that return iterators
+<a class=anchor href=#functions-that-return-iterators>#</a></h3><p>These are slightly more complicated, so examples will be given for each of the following below:</p><h4 id=reversedsequence>reversed(sequence)
+<a class=anchor href=#reversedsequence>#</a></h4><p>Iterates over item in sequence in reverse order. Returns an iterator.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(list(reversed(lst))) <span style=color:#75715e># [3, 2, 1]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># list() needs to be called because reversed returns an iterator</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> item <span style=color:#f92672>in</span> reversed(lst):
+</span></span><span style=display:flex><span>    print(item)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 2</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 1</span>
+</span></span></code></pre></div><h4 id=zipiterables>zip(*iterables)
+<a class=anchor href=#zipiterables>#</a></h4><p>Iterates over co-indexed tuples with elements from each iterable. Stops at the shortest list.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst1 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]
+</span></span><span style=display:flex><span>lst2 <span style=color:#f92672>=</span> [<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> t <span style=color:#f92672>in</span> zip(lst1, lst2):
+</span></span><span style=display:flex><span>    print(t)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># (1, 4)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># (2, 5)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># (3, 6)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> x, y <span style=color:#f92672>in</span> zip(lst1, lst2):
+</span></span><span style=display:flex><span>    print(x <span style=color:#f92672>+</span> y)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 5</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 7</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 9</span>
+</span></span></code></pre></div><h2 id=map-and-filter>Map and Filter
+<a class=anchor href=#map-and-filter>#</a></h2><p>For map and filter specifically, you can simply use list comprehensions — they&rsquo;re shorter and far more &lsquo;Pythonic&rsquo;. However, knowing the notation for these two functions can help you recognize them in other languages.</p><h3 id=mapfunction-iterable>map(function, iterable)
+<a class=anchor href=#mapfunction-iterable>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]
+</span></span><span style=display:flex><span>mapped_lst <span style=color:#f92672>=</span> map(<span style=color:#66d9ef>lambda</span> x: x<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span>, lst)
+</span></span><span style=display:flex><span>print(list(mapped_lst)) <span style=color:#75715e># [2, 4, 6]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Which is the same thing as</span>
+</span></span><span style=display:flex><span>[x<span style=color:#f92672>*</span><span style=color:#ae81ff>2</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> lst]
+</span></span></code></pre></div><h3 id=filterfunction-iterable>filter(function, iterable)
+<a class=anchor href=#filterfunction-iterable>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>lst <span style=color:#f92672>=</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]
+</span></span><span style=display:flex><span>mapped_lst <span style=color:#f92672>=</span> map(<span style=color:#66d9ef>lambda</span> x: x <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>, lst)
+</span></span><span style=display:flex><span>print(list(mapped_lst)) <span style=color:#75715e># [1, 3]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Which is the same thing as</span>
+</span></span><span style=display:flex><span>[x <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> lst <span style=color:#66d9ef>if</span> x <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>]
+</span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#what-is-an-iterator>What is an Iterator</a><ul><li><a href=#calling-an-iterator-on-an-iterator>Calling an Iterator on an Iterator</a></li><li><a href=#calling-iterators-on-iterables>Calling Iterators on Iterables</a><ul><li><a href=#dictionaries>Dictionaries</a></li></ul></li><li><a href=#iterators-with-for-loops>Iterators with For Loops</a></li><li><a href=#useful-built-in-functions>Useful Built-in Functions</a><ul><li><a href=#functions-that-return-iterables>Functions that return iterables</a></li><li><a href=#functions-that-return-iterators>Functions that return iterators</a></li></ul></li><li><a href=#map-and-filter>Map and Filter</a><ul><li><a href=#mapfunction-iterable>map(function, iterable)</a></li><li><a href=#filterfunction-iterable>filter(function, iterable)</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>

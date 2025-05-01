@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-5/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-5/index.xml" rel="self" type="application/rss+xml"/><item><title>Containers</title><link>http://localhost:1313/docs/week-5/containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-5/containers/</guid><description>&lt;h1 id="containers">
+ Containers
+ &lt;a class="anchor" href="#containers">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="lists">
+ Lists
+ &lt;a class="anchor" href="#lists">#&lt;/a>
+&lt;/h2>
+&lt;p>A list is a container that can hold a sequence of information (usually related information).&lt;/p>
+&lt;p>Lists can hold any Python values (not the same behaviour in every language), including other lists/objects etc.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>empty &lt;span style="color:#f92672">=&lt;/span> [] &lt;span style="color:#75715e"># empty list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>B &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;Ben&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Box&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Bufy&amp;#34;&lt;/span>] &lt;span style="color:#75715e"># Strings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>numbers &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">7&lt;/span>] &lt;span style="color:#75715e"># Integers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>floats &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">2.0&lt;/span>, &lt;span style="color:#ae81ff">3.5&lt;/span>, &lt;span style="color:#ae81ff">7.5&lt;/span>] &lt;span style="color:#75715e"># Floats&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nested &lt;span style="color:#f92672">=&lt;/span> [[&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>], &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">4&lt;/span>] &lt;span style="color:#75715e"># Storing a list inside a list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mixed &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;Hi&amp;#34;&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3.2&lt;/span>] &lt;span style="color:#75715e"># Different data types inside a list&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="list-length">
+ List Length
+ &lt;a class="anchor" href="#list-length">#&lt;/a>
+&lt;/h3>
+&lt;p>The globally defined &lt;code>len()&lt;/code> function in Python allows you to find the length of an array, and can be called by simply passing in the array as an argument.&lt;/p></description></item><item><title>Data Abstraction</title><link>http://localhost:1313/docs/week-5/data-abstraction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-5/data-abstraction/</guid><description>&lt;h1 id="data-abstraction">
+ Data Abstraction
+ &lt;a class="anchor" href="#data-abstraction">#&lt;/a>
+&lt;/h1>
+&lt;p>Many values in programs are compound values — a value composed of multiple values (for example coordinates, dates, or geographic positions).&lt;/p>
+&lt;p>By using a data abstraction, you can manipulate compound values as units without needing to worry about the way that values are stored.&lt;/p>
+&lt;h2 id="pair-abstraction">
+ Pair Abstraction
+ &lt;a class="anchor" href="#pair-abstraction">#&lt;/a>
+&lt;/h2>
+&lt;p>For data that is stored in pairs, we can manipulate these values using a pair data abstraction:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>couple &lt;span style="color:#f92672">=&lt;/span> pair(&lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;b&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#f92672">=&lt;/span> first(couple)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#f92672">=&lt;/span> second(couple)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By implementing &lt;code>pair()&lt;/code> (our constructor), &lt;code>first()&lt;/code>, and &lt;code>second()&lt;/code> (the selectors), you can access these elements without needing to worry about how the data is stored. The only time that people need to worry about how the data is stored is when implementing the functions themselves. One example (implying that there are multiple ways) of implementing these functions can be seen below:&lt;/p></description></item><item><title>Sequences</title><link>http://localhost:1313/docs/week-5/sequences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-5/sequences/</guid><description>&lt;h1 id="sequences">
+ Sequences
+ &lt;a class="anchor" href="#sequences">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="lists-in-environment-diagrams">
+ Lists in Environment Diagrams
+ &lt;a class="anchor" href="#lists-in-environment-diagrams">#&lt;/a>
+&lt;/h2>
+&lt;p>Lists can represented with box and pointer notation (similarly to functions); however, unlike functions, each element in the array has its own box, and is index labelled.&lt;/p>
+&lt;p>What this implies is that assigning a variable to another list will not create a copy of that list, but rather point towards the same list — this ends up being a correct assumption to make.&lt;/p></description></item></channel></rss>

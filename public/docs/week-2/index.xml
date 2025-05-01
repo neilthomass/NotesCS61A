@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-2/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-2/index.xml" rel="self" type="application/rss+xml"/><item><title>Control</title><link>http://localhost:1313/docs/week-2/control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-2/control/</guid><description>&lt;h1 id="control">
+ Control
+ &lt;a class="anchor" href="#control">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="side-effects">
+ Side Effects
+ &lt;a class="anchor" href="#side-effects">#&lt;/a>
+&lt;/h2>
+&lt;p>Side effects occur in functions when the function alters the global environment in some form. This could be in the form of altering a variable in the global scope, or using a print statement inside a function. One easy way to tell if a function contains side effects is that if a function acts like a mathematical function, it has no side effects.&lt;/p></description></item><item><title>Higher Order Functions</title><link>http://localhost:1313/docs/week-2/higher-order-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-2/higher-order-functions/</guid><description>&lt;h1 id="higher-order-functions">
+ Higher Order Functions
+ &lt;a class="anchor" href="#higher-order-functions">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="designing-functions">
+ Designing Functions
+ &lt;a class="anchor" href="#designing-functions">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="describing-functions">
+ Describing Functions
+ &lt;a class="anchor" href="#describing-functions">#&lt;/a>
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Aspect&lt;/th>
+ &lt;th>Example&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>The domain of a function is the expected range of inputs (similarly to a domain in mathematics)&lt;/td>
+ &lt;td>x is a string&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>The range of a function is the set of output values that could be returned&lt;/td>
+ &lt;td>Function square returns a non-negative number&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>The behavior of a (pure) function is the relationship between the input and the output&lt;/td>
+ &lt;td>Function square returns the square of an input x&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="dont-repeat-yourself">
+ Don&amp;rsquo;t Repeat Yourself!
+ &lt;a class="anchor" href="#dont-repeat-yourself">#&lt;/a>
+&lt;/h2>
+&lt;p>When making a function, give each function exactly one job, but allow it to be flexible to apply to many related situations. Doing this allows you to remove redundant code and make your code clearer to read, and easier to write.&lt;/p></description></item><item><title>Environment Diagrams</title><link>http://localhost:1313/docs/week-2/environment-diagrams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-2/environment-diagrams/</guid><description>&lt;h1 id="environment-diagrams">
+ Environment Diagrams
+ &lt;a class="anchor" href="#environment-diagrams">#&lt;/a>
+&lt;/h1>
+&lt;p>Environment Diagrams are a good way to visualize how Python deals with its execution, and can also help you to visualize how more complicated pieces of code (e.g. Higher Order Functions) work.&lt;/p>
+&lt;p>PyTutor has a way of converting from code to environment diagrams, so please use that as a resource! The diagrams below are not going to match those from PyTutor exactly due to Markdown constraints, but I will try to emulate them as well as possible.&lt;/p></description></item></channel></rss>

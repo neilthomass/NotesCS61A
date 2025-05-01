@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS61A NT</title><link>http://localhost:1313/docs/week-3/</link><description>Recent content on CS61A NT</description><generator>Hugo</generator><language>en</language><atom:link href="http://localhost:1313/docs/week-3/index.xml" rel="self" type="application/rss+xml"/><item><title>Decorators</title><link>http://localhost:1313/docs/week-3/decorators/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-3/decorators/</guid><description>&lt;h1 id="decorators">
+ Decorators
+ &lt;a class="anchor" href="#decorators">#&lt;/a>
+&lt;/h1>
+&lt;p>Python decorators allow you to wrap functions inside one another easily. These may not be seen that often in the CS61A course, but in general, are pretty good to know due to the simplicity that it has as well as the common usage of it in web frameworks such as Flask, or in larger codebases.&lt;/p>
+&lt;h2 id="example-usage">
+ Example Usage
+ &lt;a class="anchor" href="#example-usage">#&lt;/a>
+&lt;/h2>
+&lt;p>Let&amp;rsquo;s take this trace function for example:&lt;/p>
+&lt;p>It returns a function that takes a single argument which traces the inputs and outputs of each function.&lt;/p></description></item><item><title>Design</title><link>http://localhost:1313/docs/week-3/design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/docs/week-3/design/</guid><description>&lt;h1 id="design">
+ Design
+ &lt;a class="anchor" href="#design">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="abstraction">
+ Abstraction
+ &lt;a class="anchor" href="#abstraction">#&lt;/a>
+&lt;/h2>
+&lt;p>Abstraction (in a CS context) is broadly understood as extracting relevant information from other sources in order to simplify the codebase.&lt;/p>
+&lt;h3 id="abstraction-by-parameterization">
+ Abstraction by Parameterization
+ &lt;a class="anchor" href="#abstraction-by-parameterization">#&lt;/a>
+&lt;/h3>
+&lt;p>This is pretty much DRY (Don&amp;rsquo;t Repeat Yourself). Instead of hard-coding code that have similar structure, you could write a function that takes in parameters (arguments) which can be used to do the same thing. (Taken from CS61A Fall 2021 Design Slides)&lt;/p></description></item></channel></rss>
